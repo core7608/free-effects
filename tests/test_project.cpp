@@ -21,8 +21,8 @@ TEST(asset_reference_missing_file) {
 }
 
 TEST(asset_reference_existing_file) {
-    // Create a temp file
-    std::string tempPath = "/tmp/freeeffect_test_asset.txt";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string tempPath = (tempDir / "freeeffect_test_asset.txt").string();
     std::ofstream f(tempPath);
     f << "test";
     f.close();
@@ -105,8 +105,8 @@ TEST(missing_footage_relink) {
     
     MissingFootageHandler handler(&project);
     
-    // Create a temp file at new location
-    std::string newPath = "/tmp/freeeffect_relink_test.mp4";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string newPath = (tempDir / "freeeffect_relink_test.mp4").string();
     std::ofstream f(newPath);
     f << "test";
     f.close();

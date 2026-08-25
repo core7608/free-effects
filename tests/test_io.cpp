@@ -53,8 +53,8 @@ TEST(importer_existing_file) {
     ProjectState project;
     Importer importer(&project);
     
-    // Create temp file
-    std::string tempPath = "/tmp/freeeffect_import_test.png";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string tempPath = (tempDir / "freeeffect_import_test.png").string();
     std::ofstream f(tempPath);
     f << "fake image data";
     f.close();
@@ -71,7 +71,8 @@ TEST(project_file_save) {
     ProjectState project;
     project.addComposition("Comp 1", {1920, 1080}, {30.0}, 10.0);
     
-    std::string savePath = "/tmp/freeeffect_test_project.feproj";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string savePath = (tempDir / "freeeffect_test_project.feproj").string();
     
     ProjectFile pf;
     bool result = pf.save(project, savePath);
@@ -85,7 +86,8 @@ TEST(project_file_save_load_roundtrip) {
     ProjectState project;
     project.addComposition("My Comp", {1920, 1080}, {30.0}, 5.0);
     
-    std::string path = "/tmp/freeeffect_roundtrip.feproj";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string path = (tempDir / "freeeffect_roundtrip.feproj").string();
     
     ProjectFile pf;
     pf.save(project, path);
@@ -101,7 +103,8 @@ TEST(project_file_save_load_roundtrip) {
 TEST(project_file_invalid_format) {
     ProjectState project;
     
-    std::string path = "/tmp/freeeffect_invalid.feproj";
+    auto tempDir = std::filesystem::temp_directory_path();
+    std::string path = (tempDir / "freeeffect_invalid.feproj").string();
     std::ofstream f(path);
     f << "this is not a valid project file";
     f.close();
