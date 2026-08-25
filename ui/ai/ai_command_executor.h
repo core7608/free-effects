@@ -35,7 +35,7 @@ private:
     void registerCommands();
 
     MainWindow* m_mainWindow;
-    std::unordered_map<QString, std::function<bool(const AICommand&)>> m_commands;
+    std::unordered_map<std::string, std::function<bool(const AICommand&)>> m_commands;
 };
 
 } // namespace FreeEffect
