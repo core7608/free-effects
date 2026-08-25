@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../timeline/types.h"
+#include <memory>
 #include <string>
 
 namespace FreeEffect {
