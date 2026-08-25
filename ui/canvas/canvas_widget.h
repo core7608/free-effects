@@ -21,6 +21,9 @@ public:
     void setShowGrid(bool show);
     void setShowRulers(bool show);
 
+signals:
+    void zoomChanged(double zoom);
+
 protected:
     void paintEvent(QPaintEvent* event) override;
     void resizeEvent(QResizeEvent* event) override;
@@ -34,10 +37,12 @@ private:
     void drawCheckerboard(QPainter& painter, const QRect& rect);
     void drawGrid(QPainter& painter, const QRect& rect);
     void drawRulers(QPainter& painter);
+    void drawCompositionBounds(QPainter& painter, const QRect& targetRect);
     
     std::shared_ptr<Composition> m_composition;
     Renderer m_renderer;
     QImage m_frameImage;
+    QImage m_checkerPattern;
     double m_currentTime = 0.0;
     double m_zoom = 1.0;
     bool m_showGrid = false;

@@ -2,6 +2,7 @@
 #include "../mainwindow/main_window.h"
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QTreeWidgetItem>
 
 namespace FreeEffect {
 
@@ -13,16 +14,27 @@ EffectControlsPanel::EffectControlsPanel(MainWindow* parent)
 
 void EffectControlsPanel::setupUi() {
     QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->setContentsMargins(4, 4, 4, 4);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
     
     m_emptyLabel = new QLabel("No layer selected", this);
     m_emptyLabel->setAlignment(Qt::AlignCenter);
-    m_emptyLabel->setStyleSheet("color: #888; font-size: 12px;");
+    m_emptyLabel->setStyleSheet("color: #666666; font-size: 12px; background: transparent;");
     layout->addWidget(m_emptyLabel);
     
-    m_propertiesWidget = new QWidget(this);
-    m_propertiesWidget->setVisible(false);
-    layout->addWidget(m_propertiesWidget);
+    m_propsTree = new QTreeWidget(this);
+    m_propsTree->setHeaderHidden(true);
+    m_propsTree->setRootIsDecorated(true);
+    m_propsTree->setIndentation(16);
+    m_propsTree->setAnimated(true);
+    m_propsTree->setStyleSheet(
+        "QTreeWidget { background-color: #1a1a1a; color: #cccccc; border: none; font-size: 11px; }"
+        "QTreeWidget::item { padding: 2px 4px; border: none; height: 22px; }"
+        "QTreeWidget::item:selected { background-color: #ffffff; color: #000000; }"
+        "QTreeWidget::item:hover { background-color: #2a2a2a; }"
+    );
+    m_propsTree->setVisible(false);
+    layout->addWidget(m_propsTree, 1);
 }
 
 void EffectControlsPanel::setLayer(std::shared_ptr<Layer> layer) {
@@ -36,49 +48,50 @@ void EffectControlsPanel::setLayer(std::shared_ptr<Layer> layer) {
 
 void EffectControlsPanel::showEmptyState() {
     m_emptyLabel->setVisible(true);
-    m_propertiesWidget->setVisible(false);
+    m_propsTree->setVisible(false);
 }
 
 void EffectControlsPanel::showLayerProperties() {
     m_emptyLabel->setVisible(false);
-    m_propertiesWidget->setVisible(true);
-    
-    // Clear old properties
-    QLayout* oldLayout = m_propertiesWidget->layout();
-    if (oldLayout) {
-        QLayoutItem* item;
-        while ((item = oldLayout->takeAt(0)) != nullptr) {
-            if (item->widget()) item->widget()->deleteLater();
-            delete item;
-        }
-        delete oldLayout;
-    }
+    m_propsTree->setVisible(true);
+    m_propsTree->clear();
     
     if (!m_layer) return;
     
-    QVBoxLayout* layout = new QVBoxLayout(m_propertiesWidget);
+    QTreeWidgetItem* transformGroup = createPropertyGroup("Transform", true);
+    m_propsTree->addTopLevelItem(transformGroup);
     
-    QLabel* nameLabel = new QLabel(QString("<b>%1</b>").arg(QString::fromStdString(m_layer->getName())), this);
-    layout->addWidget(nameLabel);
+    createPropertyItem(transformGroup, "Anchor Point", 
+        QString::number(m_layer->getAnchorPoint().getDefaultValue(), 'f', 1));
+    createPropertyItem(transformGroup, "Position", 
+        QString::number(m_layer->getPosition().getDefaultValue(), 'f', 1));
+    createPropertyItem(transformGroup, "Scale", 
+        QString::number(m_layer->getScale().getDefaultValue(), 'f', 1) + "%");
+    createPropertyItem(transformGroup, "Rotation", 
+        QString::number(m_layer->getRotation().getDefaultValue(), 'f', 1) + QString::fromUtf8("\xc2\xb0"));
+    createPropertyItem(transformGroup, "Opacity", 
+        QString::number(m_layer->getOpacity().getDefaultValue() * 100.0, 'f', 0) + "%");
     
-    auto addPropertyRow = [&](const QString& name, const PropertyTrack& track) {
-        QHBoxLayout* row = new QHBoxLayout();
-        QLabel* propLabel = new QLabel(name, this);
-        propLabel->setFixedWidth(100);
-        QLabel* valueLabel = new QLabel(QString::number(track.getDefaultValue()), this);
-        row->addWidget(propLabel);
-        row->addWidget(valueLabel);
-        row->addStretch();
-        layout->addLayout(row);
-    };
-    
-    addPropertyRow("Position", m_layer->getPosition());
-    addPropertyRow("Scale", m_layer->getScale());
-    addPropertyRow("Rotation", m_layer->getRotation());
-    addPropertyRow("Opacity", m_layer->getOpacity());
-    addPropertyRow("Anchor Point", m_layer->getAnchorPoint());
-    
-    layout->addStretch();
+    transformGroup->setExpanded(true);
+}
+
+QTreeWidgetItem* EffectControlsPanel::createPropertyGroup(const QString& name, bool expanded) {
+    QTreeWidgetItem* group = new QTreeWidgetItem();
+    group->setText(0, "> " + name);
+    group->setExpanded(expanded);
+    group->setForeground(0, QColor(180, 180, 180));
+    QFont font = group->font(0);
+    font.setBold(true);
+    font.setPointSize(11);
+    group->setFont(0, font);
+    return group;
+}
+
+QTreeWidgetItem* EffectControlsPanel::createPropertyItem(QTreeWidgetItem* parent, const QString& name, const QString& value) {
+    QTreeWidgetItem* item = new QTreeWidgetItem(parent);
+    item->setText(0, "    " + name + "    " + value);
+    item->setForeground(0, QColor(170, 170, 170));
+    return item;
 }
 
 void EffectControlsPanel::refreshControls() {

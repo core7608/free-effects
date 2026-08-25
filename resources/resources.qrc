@@ -1,6 +1,24 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
     <qresource prefix="/">
+        <!-- App -->
+        <file alias="app/icon.png">../textures/app/icon.png</file>
+        <file alias="app/icon.svg">../textures/app/icon.svg</file>
+        <file alias="splash/splash.png">../textures/splash/splash.png</file>
+
+        <!-- Tools -->
+        <file alias="icons/tools/selection.svg">../textures/icons/tools/selection.svg</file>
+        <file alias="icons/tools/hand.svg">../textures/icons/tools/hand.svg</file>
+        <file alias="icons/tools/zoom.svg">../textures/icons/tools/zoom.svg</file>
+        <file alias="icons/tools/rotation.svg">../textures/icons/tools/rotation.svg</file>
+        <file alias="icons/tools/anchor.svg">../textures/icons/tools/anchor.svg</file>
+        <file alias="icons/tools/shape.svg">../textures/icons/tools/shape.svg</file>
+        <file alias="icons/tools/pen.svg">../textures/icons/tools/pen.svg</file>
+        <file alias="icons/tools/text.svg">../textures/icons/tools/text.svg</file>
+        <file alias="icons/tools/crop.svg">../textures/icons/tools/crop.svg</file>
+        <file alias="icons/tools/roto.svg">../textures/icons/tools/roto.svg</file>
+
+        <!-- Legacy tool icons (backward compat) -->
         <file alias="icons/tool_selection.svg">../textures/icons/tool_selection.svg</file>
         <file alias="icons/tool_hand.svg">../textures/icons/tool_hand.svg</file>
         <file alias="icons/tool_zoom.svg">../textures/icons/tool_zoom.svg</file>
@@ -9,6 +27,94 @@
         <file alias="icons/tool_shape.svg">../textures/icons/tool_shape.svg</file>
         <file alias="icons/tool_pen.svg">../textures/icons/tool_pen.svg</file>
         <file alias="icons/tool_text.svg">../textures/icons/tool_text.svg</file>
+
+        <!-- Panels -->
+        <file alias="icons/panels/project.svg">../textures/icons/panels/project.svg</file>
+        <file alias="icons/panels/composition.svg">../textures/icons/panels/composition.svg</file>
+        <file alias="icons/panels/timeline.svg">../textures/icons/panels/timeline.svg</file>
+        <file alias="icons/panels/effect_controls.svg">../textures/icons/panels/effect_controls.svg</file>
+        <file alias="icons/panels/align.svg">../textures/icons/panels/align.svg</file>
+
+        <!-- Menu -->
+        <file alias="icons/menu/file.svg">../textures/icons/menu/file.svg</file>
+        <file alias="icons/menu/edit.svg">../textures/icons/menu/edit.svg</file>
+        <file alias="icons/menu/composition.svg">../textures/icons/menu/composition.svg</file>
+        <file alias="icons/menu/layer.svg">../textures/icons/menu/layer.svg</file>
+        <file alias="icons/menu/effect.svg">../textures/icons/menu/effect.svg</file>
+        <file alias="icons/menu/animation.svg">../textures/icons/menu/animation.svg</file>
+        <file alias="icons/menu/view.svg">../textures/icons/menu/view.svg</file>
+        <file alias="icons/menu/window.svg">../textures/icons/menu/window.svg</file>
+        <file alias="icons/menu/help.svg">../textures/icons/menu/help.svg</file>
+
+        <!-- Status -->
+        <file alias="icons/status/missing.svg">../textures/icons/status/missing.svg</file>
+        <file alias="icons/status/available.svg">../textures/icons/status/available.svg</file>
+        <file alias="icons/status/locked.svg">../textures/icons/status/locked.svg</file>
+        <file alias="icons/status/unlocked.svg">../textures/icons/status/unlocked.svg</file>
+        <file alias="icons/status/solo.svg">../textures/icons/status/solo.svg</file>
+        <file alias="icons/status/visible.svg">../textures/icons/status/visible.svg</file>
+        <file alias="icons/status/invisible.svg">../textures/icons/status/invisible.svg</file>
+        <file alias="icons/status/audio_on.svg">../textures/icons/status/audio_on.svg</file>
+        <file alias="icons/status/audio_off.svg">../textures/icons/status/audio_off.svg</file>
+
+        <!-- Layer types -->
+        <file alias="icons/layer/video.svg">../textures/icons/layer/video.svg</file>
+        <file alias="icons/layer/image.svg">../textures/icons/layer/image.svg</file>
+        <file alias="icons/layer/audio.svg">../textures/icons/layer/audio.svg</file>
+        <file alias="icons/layer/text.svg">../textures/icons/layer/text.svg</file>
+        <file alias="icons/layer/shape.svg">../textures/icons/layer/shape.svg</file>
+        <file alias="icons/layer/null.svg">../textures/icons/layer/null.svg</file>
+        <file alias="icons/layer/solid.svg">../textures/icons/layer/solid.svg</file>
+        <file alias="icons/layer/adjustment.svg">../textures/icons/layer/adjustment.svg</file>
+        <file alias="icons/layer/camera.svg">../textures/icons/layer/camera.svg</file>
+        <file alias="icons/layer/light.svg">../textures/icons/layer/light.svg</file>
+
+        <!-- Properties -->
+        <file alias="icons/property/position.svg">../textures/icons/property/position.svg</file>
+        <file alias="icons/property/scale.svg">../textures/icons/property/scale.svg</file>
+        <file alias="icons/property/rotation.svg">../textures/icons/property/rotation.svg</file>
+        <file alias="icons/property/opacity.svg">../textures/icons/property/opacity.svg</file>
+        <file alias="icons/property/anchor_point.svg">../textures/icons/property/anchor_point.svg</file>
+
+        <!-- UI -->
+        <file alias="icons/ui/close.svg">../textures/icons/ui/close.svg</file>
+        <file alias="icons/ui/minimize.svg">../textures/icons/ui/minimize.svg</file>
+        <file alias="icons/ui/maximize.svg">../textures/icons/ui/maximize.svg</file>
+        <file alias="icons/ui/collapse.svg">../textures/icons/ui/collapse.svg</file>
+        <file alias="icons/ui/expand.svg">../textures/icons/ui/expand.svg</file>
+        <file alias="icons/ui/add.svg">../textures/icons/ui/add.svg</file>
+        <file alias="icons/ui/remove.svg">../textures/icons/ui/remove.svg</file>
+        <file alias="icons/ui/dropdown.svg">../textures/icons/ui/dropdown.svg</file>
+        <file alias="icons/ui/refresh.svg">../textures/icons/ui/refresh.svg</file>
+        <file alias="icons/ui/search.svg">../textures/icons/ui/search.svg</file>
+        <file alias="icons/ui/settings.svg">../textures/icons/ui/settings.svg</file>
+        <file alias="icons/ui/save.svg">../textures/icons/ui/save.svg</file>
+        <file alias="icons/ui/open.svg">../textures/icons/ui/open.svg</file>
+        <file alias="icons/ui/undo.svg">../textures/icons/ui/undo.svg</file>
+        <file alias="icons/ui/redo.svg">../textures/icons/ui/redo.svg</file>
+        <file alias="icons/ui/cut.svg">../textures/icons/ui/cut.svg</file>
+        <file alias="icons/ui/copy.svg">../textures/icons/ui/copy.svg</file>
+        <file alias="icons/ui/paste.svg">../textures/icons/ui/paste.svg</file>
+        <file alias="icons/ui/trash.svg">../textures/icons/ui/trash.svg</file>
+        <file alias="icons/ui/check.svg">../textures/icons/ui/check.svg</file>
+
+        <!-- Transport -->
+        <file alias="icons/transport/play.svg">../textures/icons/transport/play.svg</file>
+        <file alias="icons/transport/pause.svg">../textures/icons/transport/pause.svg</file>
+        <file alias="icons/transport/stop.svg">../textures/icons/transport/stop.svg</file>
+        <file alias="icons/transport/prev_frame.svg">../textures/icons/transport/prev_frame.svg</file>
+        <file alias="icons/transport/next_frame.svg">../textures/icons/transport/next_frame.svg</file>
+        <file alias="icons/transport/go_start.svg">../textures/icons/transport/go_start.svg</file>
+        <file alias="icons/transport/go_end.svg">../textures/icons/transport/go_end.svg</file>
+        <file alias="icons/transport/loop.svg">../textures/icons/transport/loop.svg</file>
+
+        <!-- Render -->
+        <file alias="icons/render/queue.svg">../textures/icons/render/queue.svg</file>
+        <file alias="icons/render/render.svg">../textures/icons/render/render.svg</file>
+        <file alias="icons/render/done.svg">../textures/icons/render/done.svg</file>
+        <file alias="icons/render/failed.svg">../textures/icons/render/failed.svg</file>
+
+        <!-- Legacy file type icons -->
         <file alias="icons/missing_footage.svg">../textures/icons/missing_footage.svg</file>
         <file alias="icons/folder.svg">../textures/icons/folder.svg</file>
         <file alias="icons/image_file.svg">../textures/icons/image_file.svg</file>

@@ -26,8 +26,11 @@ private:
     void createWindowMenu();
     void createHelpMenu();
     
-    QAction* createAction(const QString& text, QMenu* menu = nullptr);
-    QAction* createActionWithShortcut(const QString& text, ShortcutAction shortcut, QMenu* menu = nullptr);
+    QAction* createNamedAction(const QString& name, const QString& text, QMenu* menu = nullptr);
+    QAction* createNamedActionWithShortcut(const QString& name, const QString& text, 
+                                           ShortcutAction shortcut, QMenu* menu = nullptr);
+    QAction* createMenuAction(const QString& text, QMenu* menu = nullptr);
+    QAction* createMenuActionWithShortcut(const QString& text, ShortcutAction shortcut, QMenu* menu = nullptr);
     
     MainWindow* m_mainWindow;
     

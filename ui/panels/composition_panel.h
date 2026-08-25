@@ -31,8 +31,8 @@ signals:
 private slots:
     void onZoomChanged(int index);
     void onResolutionChanged(int index);
-    void onPlayClicked();
-    void onPauseClicked();
+    void onPlayPause();
+    void onFitToWindow();
 
 private:
     void setupUi();
@@ -44,6 +44,7 @@ private:
     std::shared_ptr<Composition> m_composition;
     
     CanvasWidget* m_canvas;
+    QVBoxLayout* m_mainLayout = nullptr;
     QComboBox* m_zoomCombo;
     QComboBox* m_resolutionCombo;
     QLabel* m_timeLabel;
