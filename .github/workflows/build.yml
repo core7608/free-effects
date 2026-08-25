@@ -142,25 +142,32 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
     - uses: jurplel/install-qt-action@v4
       with:
         version: '6.7.0'
 
+    - name: Install Ninja
+      run: choco install ninja -y
+
     - name: Configure
       run: |
-        cmake -B build -G "Visual Studio 17 2022" -A x64 `
+        cmake -B build -G Ninja `
           -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
 
     - name: Build
-      run: cmake --build build --config ${{ env.BUILD_TYPE }}
+      run: cmake --build build
 
     - name: Test
-      run: cd build && ctest --output-on-failure -C ${{ env.BUILD_TYPE }}
+      run: ctest --test-dir build --output-on-failure
 
     - uses: actions/upload-artifact@v4
       with:
         name: FreeEffect-${{ env.VERSION }}-windows-x64
-        path: build/bin/${{ env.BUILD_TYPE }}/FreeEffect.exe
+        path: build/FreeEffect.exe
 
   # ═══════════════════════════════════════════════════════
   # Release — attach all artifacts to GitHub Release
