@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=FreeEffect
+GenericName=Motion Graphics Editor
+Comment=Open-source motion graphics and compositing application
+Exec=FreeEffect %F
+Icon=com.freeeffect.FreeEffect
+Categories=Graphics;2DGraphics;Video;AudioVideo;
+MimeType=application/x-freeeffect-project;
+StartupNotify=true
+StartupWMClass=FreeEffect
+Keywords=video;animation;motion;graphics;compositing;vfx;effects;after effects;

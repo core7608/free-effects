@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package
+    InstallerVersion="200"
+    Compressed="yes"
+    InstallerIcon="icon"
+    UninstallerIcon="icon"
+    Name="FreeEffect"
+    Manufacturer="FreeEffect Project"
+    Version="$(var.Version)"
+    UpgradeCode="A1B2C3D4-E5F6-7890-ABCD-EF1234567890">
+
+    <SummaryInformation Description="Open-source motion graphics and compositing application" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+
+    <Media Id="1" Cabinet="FreeEffect.cab" EmbedCab="yes" />
+
+    <Feature Id="MainApplication" Title="FreeEffect" Level="1">
+        <ComponentRef Id="MainExecutable" />
+        <ComponentRef Id="QtLibraries" />
+        <ComponentRef Id="IconFiles" />
+        <ComponentRef Id="ShortcutFiles" />
+    </Feature>
+
+    <Component Id="MainExecutable" Directory="INSTALLDIR" Guid="*">
+        <File Id="FreeEffect.exe" Source="$(var.BuildDir)\bin\FreeEffect.exe" KeyPath="yes" />
+    </Component>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id="ProgramFilesFolder">
+            <Directory Id="INSTALLDIR" Name="FreeEffect">
+                <Directory Id="bin" Name="bin" />
+                <Directory Id="lib" Name="lib" />
+                <Directory Id="share" Name="share">
+                    <Directory Id="icons" Name="icons" />
+                    <Directory Id="desktop" Name="desktop" />
+                </Directory>
+            </Directory>
+        </Directory>
+    </Directory>
+
+    <DirectoryRef Id="bin">
+        <Component Id="QtLibraries" Guid="*">
+            <File Source="$(var.BuildDir)\bin\Qt6Core.dll" />
+            <File Source="$(var.BuildDir)\bin\Qt6Gui.dll" />
+            <File Source="$(var.BuildDir)\bin\Qt6Widgets.dll" />
+            <File Source="$(var.BuildDir)\bin\Qt6Network.dll" />
+        </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="share\icons">
+        <Component Id="IconFiles" Guid="*">
+            <File Source="$(var.SourceDir)\textures\app\icon.svg" />
+        </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="TARGETDIR">
+        <Component Id="ShortcutFiles" Guid="*">
+            <Shortcut Id="DesktopShortcut"
+                      Directory="DesktopFolder"
+                      Name="FreeEffect"
+                      Description="Open-source motion graphics editor"
+                      Target="[INSTALLDIR]\bin\FreeEffect.exe"
+                      WorkingDirectory="INSTALLDIR" />
+            <Shortcut Id="ProgramMenuShortcut"
+                      Directory="ProgramMenuDir"
+                      Name="FreeEffect"
+                      Description="Open-source motion graphics editor"
+                      Target="[INSTALLDIR]\bin\FreeEffect.exe"
+                      WorkingDirectory="INSTALLDIR" />
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+        </Component>
+    </DirectoryRef>
+
+    <Directory Id="ProgramMenuDir" Name="FreeEffect" />
+</Package>

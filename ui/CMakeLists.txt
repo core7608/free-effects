@@ -45,6 +45,10 @@ set(UI_SOURCES
     ai/ai_panel.cpp
     ai/ai_settings_dialog.h
     ai/ai_settings_dialog.cpp
+    ai/ai_command_executor.h
+    ai/ai_command_executor.cpp
+    panels/timeline_canvas.h
+    panels/timeline_canvas.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../resources/resources.qrc
 )
 

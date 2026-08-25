@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-freeeffect-project">
+    <comment>FreeEffect Project</comment>
+    <glob pattern="*.feproj"/>
+    <icon name="com.freeeffect.FreeEffect"/>
+  </mime-type>
+</mime-info>
