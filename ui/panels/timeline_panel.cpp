@@ -1,4 +1,5 @@
 #include "timeline_panel.h"
+#include "timeline_canvas.h"
 #include "../mainwindow/main_window.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -69,32 +70,20 @@ void TimelinePanel::setupLayerList() {
 void TimelinePanel::setupTimelineView() {
     m_timelineView = new QWidget(this);
     m_timelineView->setMinimumWidth(400);
-    m_timelineView->setAutoFillBackground(true);
-    
-    QPalette pal = m_timelineView->palette();
-    pal.setColor(QPalette::Window, QColor(35, 35, 35));
-    m_timelineView->setPalette(pal);
     
     QVBoxLayout* layout = new QVBoxLayout(m_timelineView);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
     
-    // Time ruler area
-    QWidget* rulerWidget = new QWidget(m_timelineView);
-    rulerWidget->setFixedHeight(24);
-    rulerWidget->setAutoFillBackground(true);
-    QPalette rulerPal = rulerWidget->palette();
-    rulerPal.setColor(QPalette::Window, QColor(40, 40, 40));
-    rulerWidget->setPalette(rulerPal);
-    layout->addWidget(rulerWidget);
+    m_timelineCanvas = new TimelineCanvas(m_timelineView);
+    layout->addWidget(m_timelineCanvas);
     
-    // Layer content area (for keyframes, bars, etc.)
-    QWidget* contentWidget = new QWidget(m_timelineView);
-    contentWidget->setAutoFillBackground(true);
-    QPalette contentPal = contentWidget->palette();
-    contentPal.setColor(QPalette::Window, QColor(30, 30, 30));
-    contentWidget->setPalette(contentPal);
-    layout->addWidget(contentWidget, 1);
+    connect(m_timelineCanvas, &TimelineCanvas::timeClicked, this, &TimelinePanel::onCanvasTimeClicked);
+    connect(m_timelineCanvas, &TimelineCanvas::layerClicked, this, &TimelinePanel::onCanvasLayerClicked);
+    connect(m_timelineCanvas, &TimelineCanvas::zoomChanged, this, [this](double pps) {
+        Q_UNUSED(pps);
+        // Could update zoom indicator
+    });
 }
 
 void TimelinePanel::setupTransportControls() {
@@ -178,11 +167,17 @@ void TimelinePanel::setComposition(std::shared_ptr<Composition> comp, CommandSta
     if (m_timeSlider && comp) {
         m_timeSlider->setMaximum(static_cast<int>(comp->getDuration() * comp->getFrameRate().fps));
     }
+    
+    if (m_timelineCanvas) {
+        m_timelineCanvas->setComposition(comp);
+        m_timelineCanvas->setCurrentTime(0.0);
+    }
 }
 
 void TimelinePanel::refreshTimeline() {
     refreshLayerList();
     updateTimeDisplay();
+    if (m_timelineCanvas) m_timelineCanvas->update();
 }
 
 void TimelinePanel::refreshLayerList() {
@@ -222,6 +217,8 @@ void TimelinePanel::refreshLayerList() {
         item->setForeground(3, layerColor);
         item->setForeground(4, layerColor);
     }
+    
+    if (m_timelineCanvas) m_timelineCanvas->update();
 }
 
 void TimelinePanel::setCurrentTime(double timeInSeconds) {
@@ -233,6 +230,7 @@ void TimelinePanel::setCurrentTime(double timeInSeconds) {
         m_timeSlider->setValue(frame);
         m_timeSlider->blockSignals(false);
     }
+    if (m_timelineCanvas) m_timelineCanvas->setCurrentTime(timeInSeconds);
     emit currentTimeChanged(timeInSeconds);
 }
 
@@ -322,8 +320,28 @@ void TimelinePanel::onLayerClicked(QTreeWidgetItem* item, int column) {
     QVariant data = item->data(3, Qt::UserRole);
     if (data.isValid()) {
         m_selectedLayerIndex = data.toInt();
+        if (m_timelineCanvas) m_timelineCanvas->setSelectedLayer(m_selectedLayerIndex);
         emit layerSelected(m_selectedLayerIndex);
     }
+}
+
+void TimelinePanel::onCanvasTimeClicked(double time) {
+    setCurrentTime(time);
+}
+
+void TimelinePanel::onCanvasLayerClicked(int index) {
+    m_selectedLayerIndex = index;
+    if (m_timelineCanvas) m_timelineCanvas->setSelectedLayer(index);
+    
+    // Sync with tree widget (select the corresponding item)
+    if (m_composition) {
+        int treeRow = m_composition->getLayerCount() - 1 - index;
+        if (treeRow >= 0 && treeRow < m_layerTree->topLevelItemCount()) {
+            m_layerTree->setCurrentItem(m_layerTree->topLevelItem(treeRow));
+        }
+    }
+    
+    emit layerSelected(index);
 }
 
 } // namespace FreeEffect

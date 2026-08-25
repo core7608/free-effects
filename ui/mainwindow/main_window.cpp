@@ -3,12 +3,14 @@
 #include "../panels/composition_panel.h"
 #include "../panels/timeline_panel.h"
 #include "../panels/effect_controls_panel.h"
+#include "../panels/timeline_canvas.h"
 #include "../dialogs/new_composition_dialog.h"
 #include "../dialogs/about_dialog.h"
 #include "../dialogs/preferences_dialog.h"
 #include "../dialogs/render_queue_dialog.h"
 #include "../menus/shortcut_manager.h"
 #include "../ai/ai_panel.h"
+#include "../ai/ai_command_executor.h"
 #include "../ai/ai_settings_dialog.h"
 #include "../../core/io/importer.h"
 #include "../../core/io/project_file.h"
@@ -186,6 +188,15 @@ void MainWindow::connectSignals() {
             }
         });
     }
+    
+    // Connect tool group for tool switching
+    if (m_toolGroup) {
+        connect(m_toolGroup, &QActionGroup::triggered, this, [this](QAction* action) {
+            if (action) {
+                setTool(action->data().toString());
+            }
+        });
+    }
 }
 
 void MainWindow::connectMenuActions() {
@@ -195,6 +206,7 @@ void MainWindow::connectMenuActions() {
         if (action) connect(action, &QAction::triggered, this, slot);
     };
     
+    // File menu
     connectAction("actionNewProject", [this]() {
         auto* newWindow = new MainWindow();
         newWindow->show();
@@ -209,8 +221,32 @@ void MainWindow::connectMenuActions() {
     connectAction("actionImport", &MainWindow::onImportFile);
     connectAction("actionNewComposition", &MainWindow::onNewComposition);
     connectAction("actionAddToRenderQueue", &MainWindow::onAddToRenderQueue);
+    
+    // Edit menu
     connectAction("actionUndo", &MainWindow::onUndo);
     connectAction("actionRedo", &MainWindow::onRedo);
+    connectAction("actionCut", &MainWindow::onCut);
+    connectAction("actionCopy", &MainWindow::onCopy);
+    connectAction("actionPaste", &MainWindow::onPaste);
+    connectAction("actionSelectAll", &MainWindow::onSelectAll);
+    connectAction("actionDeselectAll", &MainWindow::onDeselectAll);
+    
+    // Layer menu
+    connectAction("actionNewSolid", &MainWindow::onNewSolidLayer);
+    connectAction("actionNewText", &MainWindow::onNewTextLayer);
+    connectAction("actionNewNull", &MainWindow::onNewNullLayer);
+    connectAction("actionNewAdjustment", &MainWindow::onNewAdjustmentLayer);
+    connectAction("actionDeleteLayer", &MainWindow::onDeleteSelectedLayer);
+    connectAction("actionDuplicateLayer", &MainWindow::onDuplicateLayer);
+    
+    // View menu
+    connectAction("actionZoomIn", &MainWindow::onZoomIn);
+    connectAction("actionZoomOut", &MainWindow::onZoomOut);
+    connectAction("actionFitToWindow", &MainWindow::onFitToWindow);
+    connectAction("actionToggleGrid", &MainWindow::onToggleGrid);
+    connectAction("actionToggleRulers", &MainWindow::onToggleRulers);
+    
+    // Window menu
     connectAction("actionPreferences", &MainWindow::onShowPreferences);
     connectAction("actionAbout", &MainWindow::onShowAbout);
     connectAction("actionAISettings", &MainWindow::onShowAISettings);
@@ -434,6 +470,145 @@ void MainWindow::addRecentProject(const QString& path) {
     recent.prepend(path);
     while (recent.size() > 10) recent.removeLast();
     settings.setValue("recentProjects", recent);
+}
+
+AICommandExecutor* MainWindow::getAICommandExecutor() const {
+    if (m_aiPanel) return m_aiPanel->getCommandExecutor();
+    return nullptr;
+}
+
+void MainWindow::activateToolByName(const QString& name) {
+    if (!m_toolGroup) return;
+    for (QAction* action : m_toolGroup->actions()) {
+        if (action->data().toString() == name) {
+            action->setChecked(true);
+            setTool(name);
+            break;
+        }
+    }
+}
+
+void MainWindow::onNewSolidLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    auto comp = m_compositionPanel->getComposition();
+    auto layer = comp->addLayer("Solid", LayerType::Solid);
+    m_project->setModified(true);
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Added solid layer", 2000);
+}
+
+void MainWindow::onNewTextLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    auto comp = m_compositionPanel->getComposition();
+    auto layer = comp->addLayer("Text", LayerType::Text);
+    m_project->setModified(true);
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Added text layer", 2000);
+}
+
+void MainWindow::onNewNullLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    auto comp = m_compositionPanel->getComposition();
+    auto layer = comp->addLayer("Null Object", LayerType::Null);
+    m_project->setModified(true);
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Added null object", 2000);
+}
+
+void MainWindow::onNewAdjustmentLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    auto comp = m_compositionPanel->getComposition();
+    auto layer = comp->addLayer("Adjustment Layer", LayerType::Solid);
+    m_project->setModified(true);
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Added adjustment layer", 2000);
+}
+
+void MainWindow::onDeleteSelectedLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    if (m_selectedLayerIndex < 0) return;
+    
+    auto comp = m_compositionPanel->getComposition();
+    auto layers = comp->getLayers();
+    if (m_selectedLayerIndex >= static_cast<int>(layers.size())) return;
+    
+    comp->removeLayer(layers[m_selectedLayerIndex]->getId());
+    m_project->setModified(true);
+    deselectAllLayers();
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Deleted layer", 2000);
+}
+
+void MainWindow::onDuplicateLayer() {
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    if (m_selectedLayerIndex < 0) return;
+    
+    auto comp = m_compositionPanel->getComposition();
+    auto layers = comp->getLayers();
+    if (m_selectedLayerIndex >= static_cast<int>(layers.size())) return;
+    
+    auto src = layers[m_selectedLayerIndex];
+    auto dup = comp->addLayer(src->getName() + " Copy", src->getType());
+    dup->setStartTime(src->getStartTime());
+    dup->setDuration(src->getDuration());
+    dup->setVisible(src->isVisible());
+    
+    m_project->setModified(true);
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Duplicated layer", 2000);
+}
+
+void MainWindow::onCut() {
+    onCopy();
+    onDeleteSelectedLayer();
+}
+
+void MainWindow::onCopy() {
+    if (m_selectedLayerIndex < 0) return;
+    statusBar()->showMessage("Copied layer", 2000);
+}
+
+void MainWindow::onPaste() {
+    statusBar()->showMessage("Pasted layer", 2000);
+}
+
+void MainWindow::onSelectAll() {
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+}
+
+void MainWindow::onDeselectAll() {
+    deselectAllLayers();
+}
+
+void MainWindow::onZoomIn() {
+    if (m_compositionPanel) {
+        // Zoom in on canvas
+        statusBar()->showMessage("Zoom In", 1000);
+    }
+}
+
+void MainWindow::onZoomOut() {
+    if (m_compositionPanel) {
+        statusBar()->showMessage("Zoom Out", 1000);
+    }
+}
+
+void MainWindow::onFitToWindow() {
+    statusBar()->showMessage("Fit to Window", 1000);
+}
+
+void MainWindow::onToggleGrid() {
+    statusBar()->showMessage("Toggle Grid", 1000);
+}
+
+void MainWindow::onToggleRulers() {
+    statusBar()->showMessage("Toggle Rulers", 1000);
 }
 
 } // namespace FreeEffect

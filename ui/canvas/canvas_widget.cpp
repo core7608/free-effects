@@ -45,6 +45,25 @@ void CanvasWidget::setResolution(int quality) {
 void CanvasWidget::setShowGrid(bool show) { m_showGrid = show; update(); }
 void CanvasWidget::setShowRulers(bool show) { m_showRulers = show; update(); }
 
+void CanvasWidget::fitToWindow() {
+    m_zoom = 1.0;
+    m_offset = QPointF(0, 0);
+    emit zoomChanged(m_zoom);
+    update();
+}
+
+void CanvasWidget::zoomIn() {
+    m_zoom = std::min(m_zoom + 0.1, 10.0);
+    emit zoomChanged(m_zoom);
+    update();
+}
+
+void CanvasWidget::zoomOut() {
+    m_zoom = std::max(m_zoom - 0.1, 0.1);
+    emit zoomChanged(m_zoom);
+    update();
+}
+
 void CanvasWidget::renderFrame() {
     if (!m_composition) return;
     
@@ -71,9 +90,25 @@ void CanvasWidget::paintEvent(QPaintEvent* event) {
     if (!m_composition) {
         drawCheckerboard(painter, rect());
         
-        painter.setPen(QColor(80, 80, 80));
-        painter.setFont(QFont("Segoe UI", 13));
-        painter.drawText(rect(), Qt::AlignCenter, "No composition loaded\n(Ctrl+N to create one)");
+        // Empty state with styled prompt
+        QRect centerRect = rect().adjusted(0, -40, 0, -40);
+        
+        painter.setPen(QColor(60, 60, 60));
+        QFont iconFont("Segoe UI", 28);
+        painter.setFont(iconFont);
+        painter.drawText(centerRect, Qt::AlignBottom | Qt::AlignHCenter, "+");
+        
+        QRect textRect = rect().adjusted(0, 20, 0, 0);
+        painter.setPen(QColor(100, 100, 100));
+        QFont textFont("SF Pro Display", 12);
+        painter.setFont(textFont);
+        painter.drawText(textRect, Qt::AlignTop | Qt::AlignHCenter, "No Composition");
+        
+        painter.setPen(QColor(60, 60, 60));
+        QFont hintFont("SF Pro Display", 10);
+        painter.setFont(hintFont);
+        painter.drawText(textRect.adjusted(0, 22, 0, 0), Qt::AlignTop | Qt::AlignHCenter, 
+            "Ctrl+N to create one  |  Drag & drop to import");
         
         if (m_showRulers) drawRulers(painter);
         return;
@@ -118,6 +153,27 @@ void CanvasWidget::paintEvent(QPaintEvent* event) {
     
     if (m_showGrid) drawGrid(painter, targetRect);
     if (m_showRulers) drawRulers(painter);
+    
+    // Time indicator overlay (bottom-left)
+    if (m_composition) {
+        int totalFrames = static_cast<int>(m_currentTime * m_composition->getFrameRate().fps);
+        int fps = static_cast<int>(m_composition->getFrameRate().fps);
+        if (fps <= 0) fps = 30;
+        int frames = totalFrames % fps;
+        int seconds = (totalFrames / fps) % 60;
+        int minutes = (totalFrames / (fps * 60)) % 60;
+        
+        QString timeStr = QString("%1:%2:%3")
+            .arg(minutes, 2, 10, QChar('0'))
+            .arg(seconds, 2, 10, QChar('0'))
+            .arg(frames, 2, 10, QChar('0'));
+        
+        QRect timeRect(8, height() - 28, 70, 20);
+        painter.fillRect(timeRect, QColor(0, 0, 0, 160));
+        painter.setPen(QColor(200, 200, 200));
+        painter.setFont(QFont("Menlo", 9));
+        painter.drawText(timeRect, Qt::AlignCenter, timeStr);
+    }
 }
 
 void CanvasWidget::drawCheckerboard(QPainter& painter, const QRect& rect) {

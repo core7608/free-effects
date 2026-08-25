@@ -127,6 +127,8 @@ void MenuBar::createLayerMenu() {
     newLayerMenu->addAction(createNamedAction("actionNewLight", "Light..."));
     
     m_layerMenu->addSeparator();
+    m_layerMenu->addAction(createNamedAction("actionDuplicateLayer", "Duplicate Layer"));
+    m_layerMenu->addAction(createNamedAction("actionDeleteLayer", "Delete Layer"));
     m_layerMenu->addAction(createMenuAction("Layer &Settings..."));
     
     QMenu* transformMenu = m_layerMenu->addMenu("&Transform");
@@ -158,12 +160,12 @@ void MenuBar::createAnimationMenu() {
 
 void MenuBar::createViewMenu() {
     m_viewMenu = addMenu("&View");
-    m_viewMenu->addAction(createMenuActionWithShortcut("Zoom &In", ShortcutAction::ZoomInView));
-    m_viewMenu->addAction(createMenuActionWithShortcut("Zoom &Out", ShortcutAction::ZoomOutView));
-    m_viewMenu->addAction(createMenuActionWithShortcut("&Fit to Window", ShortcutAction::FitToWindow));
+    m_viewMenu->addAction(createNamedActionWithShortcut("actionZoomIn", "Zoom &In", ShortcutAction::ZoomInView));
+    m_viewMenu->addAction(createNamedActionWithShortcut("actionZoomOut", "Zoom &Out", ShortcutAction::ZoomOutView));
+    m_viewMenu->addAction(createNamedActionWithShortcut("actionFitToWindow", "&Fit to Window", ShortcutAction::FitToWindow));
     m_viewMenu->addSeparator();
-    m_viewMenu->addAction(createMenuActionWithShortcut("Show &Grid", ShortcutAction::ToggleGrid));
-    m_viewMenu->addAction(createMenuActionWithShortcut("Show &Rulers", ShortcutAction::ToggleRulers));
+    m_viewMenu->addAction(createNamedActionWithShortcut("actionToggleGrid", "Show &Grid", ShortcutAction::ToggleGrid));
+    m_viewMenu->addAction(createNamedActionWithShortcut("actionToggleRulers", "Show &Rulers", ShortcutAction::ToggleRulers));
     m_viewMenu->addAction(createMenuAction("Show &Guides"));
 }
 

@@ -13,6 +13,7 @@
 namespace FreeEffect {
 
 class MainWindow;
+class AICommandExecutor;
 
 class AIPanel : public QWidget {
     Q_OBJECT
@@ -21,6 +22,7 @@ public:
     ~AIPanel() override = default;
     
     AIConnector* getConnector() { return m_connector.get(); }
+    AICommandExecutor* getCommandExecutor() { return m_commandExecutor.get(); }
     void sendMessage(const QString& text);
     
     static QString getSystemPrompts(int index);
@@ -49,6 +51,7 @@ private:
     
     MainWindow* m_mainWindow;
     std::unique_ptr<AIConnector> m_connector;
+    std::unique_ptr<AICommandExecutor> m_commandExecutor;
     QVBoxLayout* m_mainLayout = nullptr;
     
     QLabel* m_statusLabel;

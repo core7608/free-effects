@@ -19,6 +19,7 @@ class TimelinePanel;
 class EffectControlsPanel;
 class CanvasWidget;
 class AIPanel;
+class AICommandExecutor;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -32,6 +33,7 @@ public:
     TimelinePanel* getTimelinePanel() const { return m_timelinePanel; }
     ProjectPanel* getProjectPanel() const { return m_projectPanel; }
     EffectControlsPanel* getEffectControlsPanel() const { return m_effectControlsPanel; }
+    AICommandExecutor* getAICommandExecutor() const;
     
     void updateTitle();
     void refreshAllPanels();
@@ -50,9 +52,32 @@ public:
     void onRedo();
     
     void setTool(const QString& toolName);
+    void activateToolByName(const QString& name);
     
     void selectLayer(int index);
     void deselectAllLayers();
+    
+    // Layer operations
+    void onNewSolidLayer();
+    void onNewTextLayer();
+    void onNewNullLayer();
+    void onNewAdjustmentLayer();
+    void onDeleteSelectedLayer();
+    void onDuplicateLayer();
+    
+    // Edit operations
+    void onCut();
+    void onCopy();
+    void onPaste();
+    void onSelectAll();
+    void onDeselectAll();
+    
+    // View operations
+    void onZoomIn();
+    void onZoomOut();
+    void onFitToWindow();
+    void onToggleGrid();
+    void onToggleRulers();
 
 private:
     void setupUi();

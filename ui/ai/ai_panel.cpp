@@ -1,4 +1,5 @@
 #include "ai_panel.h"
+#include "ai_command_executor.h"
 #include "../mainwindow/main_window.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -17,7 +18,8 @@ namespace FreeEffect {
 AIPanel::AIPanel(MainWindow* parent)
     : QWidget(parent)
     , m_mainWindow(parent)
-    , m_connector(std::make_unique<AIConnector>(this)) {
+    , m_connector(std::make_unique<AIConnector>(this))
+    , m_commandExecutor(std::make_unique<AICommandExecutor>(parent)) {
     
     setupUi();
     
@@ -32,6 +34,17 @@ AIPanel::AIPanel(MainWindow* parent)
         m_sendBtn->setEnabled(true);
         m_sendBtn->setText("Send");
         m_receivingResponse = false;
+    });
+    
+    connect(m_commandExecutor.get(), &AICommandExecutor::message, this, [this](const QString& msg) {
+        addSystemMessage(msg);
+    });
+    connect(m_commandExecutor.get(), &AICommandExecutor::commandExecuted, this, [this](const QString& action, bool success) {
+        if (success) {
+            addSystemMessage("Command executed: " + action);
+        } else {
+            addSystemMessage("Command failed: " + action);
+        }
     });
     
     // Initial greeting
@@ -170,6 +183,12 @@ void AIPanel::onInputReturnPressed() {
 
 void AIPanel::sendMessage(const QString& text) {
     addMessage("user", text);
+    
+    // Check if this is a local command
+    if (m_commandExecutor && m_commandExecutor->parseAndExecute(text)) {
+        return; // Command was executed locally, no need to call AI
+    }
+    
     m_statusLabel->setText("Thinking...");
     m_connector->sendMessage(text);
 }

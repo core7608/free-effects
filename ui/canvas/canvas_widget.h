@@ -20,6 +20,10 @@ public:
     void setResolution(int quality);
     void setShowGrid(bool show);
     void setShowRulers(bool show);
+    void fitToWindow();
+    void zoomIn();
+    void zoomOut();
+    double getZoom() const { return m_zoom; }
 
 signals:
     void zoomChanged(double zoom);

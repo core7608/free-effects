@@ -14,8 +14,7 @@
 namespace FreeEffect {
 
 class MainWindow;
-class TimelineRuler;
-class KeyframeCanvas;
+class TimelineCanvas;
 
 class TimelinePanel : public QWidget {
     Q_OBJECT
@@ -28,6 +27,7 @@ public:
     void setCurrentTime(double timeInSeconds);
     double getCurrentTime() const { return m_currentTime; }
     bool isPlaying() const { return m_playing; }
+    TimelineCanvas* getCanvas() const { return m_timelineCanvas; }
 
 signals:
     void currentTimeChanged(double timeInSeconds);
@@ -42,6 +42,8 @@ private slots:
     void onZoomIn();
     void onZoomOut();
     void onLayerClicked(QTreeWidgetItem* item, int column);
+    void onCanvasTimeClicked(double time);
+    void onCanvasLayerClicked(int index);
 
 private:
     void setupUi();
@@ -61,6 +63,7 @@ private:
     
     QTreeWidget* m_layerTree;
     QWidget* m_timelineView;
+    TimelineCanvas* m_timelineCanvas = nullptr;
     QVBoxLayout* m_mainLayout = nullptr;
     QLabel* m_timeLabel;
     QPushButton* m_playButton;
