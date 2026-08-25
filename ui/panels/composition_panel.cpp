@@ -52,21 +52,27 @@ void CompositionPanel::setupToolbar() {
     m_resolutionCombo->setFixedWidth(70);
     connect(m_resolutionCombo, QOverload<int>::of(&QComboBox::activated), this, &CompositionPanel::onResolutionChanged);
     
-    QPushButton* gridBtn = new QPushButton("Grid", this);
-    gridBtn->setCheckable(true);
-    gridBtn->setStyleSheet(
+    m_gridBtn = new QPushButton("Grid", this);
+    m_gridBtn->setCheckable(true);
+    m_gridBtn->setStyleSheet(
         "QPushButton { background: transparent; color: #888888; border: none; font-size: 11px; padding: 2px 6px; }"
         "QPushButton:hover { color: #cccccc; }"
         "QPushButton:checked { color: #00d4ff; }"
     );
+    connect(m_gridBtn, &QPushButton::toggled, this, [this](bool checked) {
+        if (m_canvas) m_canvas->setShowGrid(checked);
+    });
     
-    QPushButton* rulersBtn = new QPushButton("Rulers", this);
-    rulersBtn->setCheckable(true);
-    rulersBtn->setStyleSheet(gridBtn->styleSheet());
+    m_rulersBtn = new QPushButton("Rulers", this);
+    m_rulersBtn->setCheckable(true);
+    m_rulersBtn->setStyleSheet(m_gridBtn->styleSheet());
+    connect(m_rulersBtn, &QPushButton::toggled, this, [this](bool checked) {
+        if (m_canvas) m_canvas->setShowRulers(checked);
+    });
     
     QPushButton* guidesBtn = new QPushButton("Guides", this);
     guidesBtn->setCheckable(true);
-    guidesBtn->setStyleSheet(gridBtn->styleSheet());
+    guidesBtn->setStyleSheet(m_gridBtn->styleSheet());
     
     toolbar->addWidget(zoomLabel);
     toolbar->addWidget(m_zoomCombo);
@@ -74,8 +80,8 @@ void CompositionPanel::setupToolbar() {
     toolbar->addWidget(resLabel);
     toolbar->addWidget(m_resolutionCombo);
     toolbar->addSpacing(8);
-    toolbar->addWidget(gridBtn);
-    toolbar->addWidget(rulersBtn);
+    toolbar->addWidget(m_gridBtn);
+    toolbar->addWidget(m_rulersBtn);
     toolbar->addWidget(guidesBtn);
     toolbar->addStretch();
     
@@ -126,6 +132,20 @@ void CompositionPanel::setupBottomBar() {
     bar->addWidget(loopBtn);
     
     m_mainLayout->addWidget(bottomBar);
+    
+    // Play timer for composition panel
+    m_playTimer = new QTimer(this);
+    connect(m_playTimer, &QTimer::timeout, this, [this]() {
+        if (!m_composition) return;
+        double frameDuration = 1.0 / m_composition->getFrameRate().fps;
+        m_currentTime += frameDuration;
+        if (m_currentTime >= m_composition->getDuration()) {
+            m_currentTime = 0.0;
+        }
+        updateTimeDisplay();
+        if (m_canvas) m_canvas->setCurrentTime(m_currentTime);
+        emit timeChanged(m_currentTime);
+    });
 }
 
 void CompositionPanel::setComposition(std::shared_ptr<Composition> comp) {
@@ -133,10 +153,23 @@ void CompositionPanel::setComposition(std::shared_ptr<Composition> comp) {
     m_currentTime = 0.0;
     updateTimeDisplay();
     if (m_canvas) m_canvas->setComposition(comp);
+    if (comp && m_canvas) {
+        m_canvas->fitToWindow();
+    }
 }
 
 void CompositionPanel::refreshView() {
     if (m_canvas) m_canvas->update();
+}
+
+void CompositionPanel::updateZoomCombo(double zoom) {
+    if (!m_zoomCombo) return;
+    if (std::abs(zoom - 0.25) < 0.05) m_zoomCombo->setCurrentText("25%");
+    else if (std::abs(zoom - 0.5) < 0.05) m_zoomCombo->setCurrentText("50%");
+    else if (std::abs(zoom - 1.0) < 0.05) m_zoomCombo->setCurrentText("100%");
+    else if (std::abs(zoom - 1.5) < 0.05) m_zoomCombo->setCurrentText("150%");
+    else if (std::abs(zoom - 2.0) < 0.05) m_zoomCombo->setCurrentText("200%");
+    else m_zoomCombo->setCurrentText("Fit");
 }
 
 void CompositionPanel::updateTimeDisplay() {
@@ -164,25 +197,39 @@ void CompositionPanel::onZoomChanged(int index) {
     double zoomValues[] = {0.25, 0.5, 1.0, 1.5, 2.0};
     if (index >= 0 && index < 5) {
         if (m_canvas) m_canvas->setZoom(zoomValues[index]);
+    } else if (index == 5) {
+        // "Fit"
+        if (m_canvas) m_canvas->fitToWindow();
     }
 }
 
 void CompositionPanel::onResolutionChanged(int index) {
-    Q_UNUSED(index);
+    if (!m_canvas) return;
+    // 0=Full, 1=Half, 2=Third, 3=Quarter
+    int qualities[] = {100, 50, 33, 25};
+    if (index >= 0 && index < 4) {
+        m_canvas->setResolution(qualities[index]);
+    }
 }
 
 void CompositionPanel::onPlayPause() {
     m_playing = !m_playing;
+    
     if (m_playing) {
         m_playButton->setIcon(QIcon(":/icons/transport/pause.svg"));
+        if (m_composition && m_playTimer) {
+            double frameDuration = 1000.0 / m_composition->getFrameRate().fps;
+            m_playTimer->start(static_cast<int>(frameDuration));
+        }
     } else {
         m_playButton->setIcon(QIcon(":/icons/transport/play.svg"));
+        if (m_playTimer) m_playTimer->stop();
     }
 }
 
 void CompositionPanel::onFitToWindow() {
     if (m_zoomCombo) m_zoomCombo->setCurrentText("Fit");
-    if (m_canvas) m_canvas->setZoom(1.0);
+    if (m_canvas) m_canvas->fitToWindow();
 }
 
 } // namespace FreeEffect

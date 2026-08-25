@@ -4,6 +4,7 @@
 #include "../panels/timeline_panel.h"
 #include "../panels/effect_controls_panel.h"
 #include "../panels/timeline_canvas.h"
+#include "../canvas/canvas_widget.h"
 #include "../dialogs/new_composition_dialog.h"
 #include "../dialogs/about_dialog.h"
 #include "../dialogs/preferences_dialog.h"
@@ -22,6 +23,8 @@
 #include <QSettings>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMimeData>
+#include <QClipboard>
 
 namespace FreeEffect {
 
@@ -33,6 +36,7 @@ MainWindow::MainWindow(QWidget* parent)
     setWindowTitle("FreeEffect - Untitled Project");
     setMinimumSize(1280, 720);
     setWindowIcon(QIcon(":/app/icon.svg"));
+    setAcceptDrops(true);
     
     setupUi();
     setupMenuBar();
@@ -178,13 +182,26 @@ void MainWindow::connectSignals() {
     // Connect project panel signals
     if (m_projectPanel) {
         connect(m_projectPanel, &ProjectPanel::assetDoubleClicked, this, [this](const UUID& id) {
-            // Open composition when double-clicked in project panel
             auto comp = m_project->getCompositionById(id);
             if (comp) {
                 if (m_compositionPanel) m_compositionPanel->setComposition(comp);
                 if (m_timelinePanel) m_timelinePanel->setComposition(comp, m_commandStack.get());
                 m_compositionDock->setWindowTitle(QString("Composition: %1").arg(QString::fromStdString(comp->getName())));
                 m_timelineDock->setWindowTitle(QString("Timeline: %1").arg(QString::fromStdString(comp->getName())));
+            }
+        });
+    }
+    
+    // Connect canvas file drop for import
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        connect(canvas, &CanvasWidget::fileDropped, this, [this](const QString& filePath) {
+            Importer importer(m_project.get());
+            auto asset = importer.importFile(filePath.toStdString());
+            if (asset) {
+                m_project->setModified(true);
+                updateTitle();
+                refreshAllPanels();
+                statusBar()->showMessage("Imported: " + filePath, 3000);
             }
         });
     }
@@ -288,6 +305,20 @@ void MainWindow::refreshAllPanels() {
 
 void MainWindow::setTool(const QString& toolName) {
     statusBar()->showMessage(toolName + " Tool", 2000);
+    // Update canvas cursor based on tool
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        if (toolName == "hand") {
+            canvas->setCursor(Qt::OpenHandCursor);
+        } else if (toolName == "zoom") {
+            canvas->setCursor(Qt::CrossCursor);
+        } else if (toolName == "rotation") {
+            canvas->setCursor(Qt::SizeAllCursor);
+        } else if (toolName == "text" || toolName == "pen" || toolName == "shape") {
+            canvas->setCursor(Qt::CrossCursor);
+        } else {
+            canvas->setCursor(Qt::ArrowCursor);
+        }
+    }
 }
 
 void MainWindow::selectLayer(int index) {
@@ -477,6 +508,16 @@ AICommandExecutor* MainWindow::getAICommandExecutor() const {
     return nullptr;
 }
 
+CanvasWidget* MainWindow::getCanvasWidget() const {
+    if (m_compositionPanel) {
+        // Access canvas through composition panel's layout
+        if (auto* canvas = m_compositionPanel->findChild<CanvasWidget*>()) {
+            return canvas;
+        }
+    }
+    return nullptr;
+}
+
 void MainWindow::activateToolByName(const QString& name) {
     if (!m_toolGroup) return;
     for (QAction* action : m_toolGroup->actions()) {
@@ -571,15 +612,58 @@ void MainWindow::onCut() {
 
 void MainWindow::onCopy() {
     if (m_selectedLayerIndex < 0) return;
-    statusBar()->showMessage("Copied layer", 2000);
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    
+    auto comp = m_compositionPanel->getComposition();
+    auto layers = comp->getLayers();
+    if (m_selectedLayerIndex >= static_cast<int>(layers.size())) return;
+    
+    auto layer = layers[m_selectedLayerIndex];
+    QJsonObject obj;
+    obj["name"] = QString::fromStdString(layer->getName());
+    obj["type"] = static_cast<int>(layer->getType());
+    obj["duration"] = layer->getDuration();
+    obj["startTime"] = layer->getStartTime();
+    
+    QMimeData* mime = new QMimeData();
+    mime->setData("application/x-freeeffect-layer", QJsonDocument(obj).toJson());
+    QApplication::clipboard()->setMimeData(mime);
+    statusBar()->showMessage("Copied layer: " + QString::fromStdString(layer->getName()), 2000);
 }
 
 void MainWindow::onPaste() {
-    statusBar()->showMessage("Pasted layer", 2000);
+    const QMimeData* mime = QApplication::clipboard()->mimeData();
+    if (!mime || !mime->hasFormat("application/x-freeeffect-layer")) return;
+    if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+    
+    QJsonDocument doc = QJsonDocument::fromJson(mime->data("application/x-freeeffect-layer"));
+    QJsonObject obj = doc.object();
+    
+    auto comp = m_compositionPanel->getComposition();
+    LayerType type = static_cast<LayerType>(obj["type"].toInt());
+    auto layer = comp->addLayer(obj["name"].toString().toStdString(), type);
+    layer->setStartTime(obj["startTime"].toDouble());
+    layer->setDuration(obj["duration"].toDouble());
+    
+    m_project->setModified(true);
+    updateTitle();
+    refreshAllPanels();
+    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    statusBar()->showMessage("Pasted layer: " + obj["name"].toString(), 2000);
 }
 
 void MainWindow::onSelectAll() {
-    if (m_timelinePanel) m_timelinePanel->refreshTimeline();
+    if (m_timelinePanel) {
+        // Select all layers in timeline
+        m_timelinePanel->refreshTimeline();
+    }
+    if (m_compositionPanel && m_compositionPanel->getComposition()) {
+        auto layers = m_compositionPanel->getComposition()->getLayers();
+        if (!layers.empty()) {
+            selectLayer(0);
+        }
+    }
+    statusBar()->showMessage("Selected all layers", 1000);
 }
 
 void MainWindow::onDeselectAll() {
@@ -587,28 +671,64 @@ void MainWindow::onDeselectAll() {
 }
 
 void MainWindow::onZoomIn() {
-    if (m_compositionPanel) {
-        // Zoom in on canvas
-        statusBar()->showMessage("Zoom In", 1000);
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        canvas->zoomIn();
     }
+    statusBar()->showMessage("Zoom In", 1000);
 }
 
 void MainWindow::onZoomOut() {
-    if (m_compositionPanel) {
-        statusBar()->showMessage("Zoom Out", 1000);
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        canvas->zoomOut();
     }
+    statusBar()->showMessage("Zoom Out", 1000);
 }
 
 void MainWindow::onFitToWindow() {
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        canvas->fitToWindow();
+    }
+    if (m_compositionPanel) m_compositionPanel->updateZoomCombo(1.0);
     statusBar()->showMessage("Fit to Window", 1000);
 }
 
 void MainWindow::onToggleGrid() {
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        canvas->setShowGrid(!canvas->isShowGrid());
+    }
     statusBar()->showMessage("Toggle Grid", 1000);
 }
 
 void MainWindow::onToggleRulers() {
+    if (CanvasWidget* canvas = getCanvasWidget()) {
+        canvas->setShowRulers(!canvas->isShowRulers());
+    }
     statusBar()->showMessage("Toggle Rulers", 1000);
+}
+
+void MainWindow::dragEnterEvent(QDragEnterEvent* event) {
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+    }
+}
+
+void MainWindow::dropEvent(QDropEvent* event) {
+    const QMimeData* mime = event->mimeData();
+    if (mime->hasUrls()) {
+        for (const QUrl& url : mime->urls()) {
+            if (url.isLocalFile()) {
+                QString filePath = url.toLocalFile();
+                Importer importer(m_project.get());
+                auto asset = importer.importFile(filePath.toStdString());
+                if (asset) {
+                    m_project->setModified(true);
+                    updateTitle();
+                    refreshAllPanels();
+                    statusBar()->showMessage("Imported: " + filePath, 3000);
+                }
+            }
+        }
+    }
 }
 
 } // namespace FreeEffect

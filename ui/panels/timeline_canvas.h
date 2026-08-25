@@ -17,6 +17,7 @@ public:
     void setCurrentTime(double time);
     void setPixelsPerSecond(double pps);
     void setSelectedLayer(int index);
+    double getPixelsPerSecond() const { return m_pixelsPerSecond; }
 
 signals:
     void timeClicked(double time);
@@ -35,6 +36,7 @@ private:
     void drawPlayhead(QPainter& painter, const QRect& fullRect);
     void drawWorkArea(QPainter& painter, const QRect& rulerRect);
     void drawAlternatingRows(QPainter& painter, const QRect& contentRect);
+    void drawKeyframes(QPainter& painter, const QRect& contentRect);
 
     double xToTime(int x) const;
     int timeToX(double time) const;

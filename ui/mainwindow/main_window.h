@@ -6,6 +6,8 @@
 #include <QSplitter>
 #include <QToolBar>
 #include <QActionGroup>
+#include <QDragEnterEvent>
+#include <QDropEvent>
 #include <memory>
 #include "../../core/project/project_state.h"
 #include "../../core/commands/command_stack.h"
@@ -28,6 +30,7 @@ public:
     ~MainWindow() override;
     
     ProjectState& getProjectState() { return *m_project; }
+    ProjectState* getProjectStatePtr() { return m_project.get(); }
     CommandStack& getCommandStack() { return *m_commandStack; }
     CompositionPanel* getCompositionPanel() const { return m_compositionPanel; }
     TimelinePanel* getTimelinePanel() const { return m_timelinePanel; }
@@ -78,6 +81,9 @@ public:
     void onFitToWindow();
     void onToggleGrid();
     void onToggleRulers();
+    
+    // Canvas access
+    CanvasWidget* getCanvasWidget() const;
 
 private:
     void setupUi();
@@ -90,6 +96,8 @@ private:
     void setupKeyboardShortcuts();
     void applyAELayout();
     void addRecentProject(const QString& path);
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
     
     std::unique_ptr<ProjectState> m_project;
     std::unique_ptr<CommandStack> m_commandStack;

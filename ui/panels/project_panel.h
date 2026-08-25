@@ -20,6 +20,9 @@ public:
     
     void refreshAssetList();
     void setSelectedAsset(const UUID& assetId);
+    
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
 
 signals:
     void assetSelected(const UUID& assetId);

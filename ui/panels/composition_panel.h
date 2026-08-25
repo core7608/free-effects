@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QScrollArea>
+#include <QTimer>
 #include "../../core/timeline/composition.h"
 
 namespace FreeEffect {
@@ -22,8 +23,10 @@ public:
     
     void setComposition(std::shared_ptr<Composition> comp);
     std::shared_ptr<Composition> getComposition() const { return m_composition; }
+    CanvasWidget* getCanvas() const { return m_canvas; }
     
     void refreshView();
+    void updateZoomCombo(double zoom);
 
 signals:
     void timeChanged(double timeInSeconds);
@@ -49,8 +52,11 @@ private:
     QComboBox* m_resolutionCombo;
     QLabel* m_timeLabel;
     QPushButton* m_playButton;
-    bool m_playing = false;
+    QPushButton* m_gridBtn = nullptr;
+    QPushButton* m_rulersBtn = nullptr;
+    QTimer* m_playTimer = nullptr;
     double m_currentTime = 0.0;
+    bool m_playing = false;
 };
 
 } // namespace FreeEffect

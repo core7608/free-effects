@@ -2,6 +2,9 @@
 #include <QPainter>
 #include <QWheelEvent>
 #include <QResizeEvent>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMimeData>
 #include <cmath>
 
 namespace FreeEffect {
@@ -10,6 +13,7 @@ CanvasWidget::CanvasWidget(QWidget* parent)
     : QWidget(parent) {
     setMinimumSize(320, 240);
     setAutoFillBackground(true);
+    setAcceptDrops(true);
     
     QPalette pal = palette();
     pal.setColor(QPalette::Window, QColor(25, 25, 25));
@@ -46,7 +50,17 @@ void CanvasWidget::setShowGrid(bool show) { m_showGrid = show; update(); }
 void CanvasWidget::setShowRulers(bool show) { m_showRulers = show; update(); }
 
 void CanvasWidget::fitToWindow() {
-    m_zoom = 1.0;
+    if (m_composition) {
+        int compW = m_composition->getResolution().width;
+        int compH = m_composition->getResolution().height;
+        if (compW > 0 && compH > 0) {
+            double scaleX = static_cast<double>(width()) / compW;
+            double scaleY = static_cast<double>(height()) / compH;
+            m_zoom = std::min(scaleX, scaleY) / 0.9;
+        }
+    } else {
+        m_zoom = 1.0;
+    }
     m_offset = QPointF(0, 0);
     emit zoomChanged(m_zoom);
     update();
@@ -276,6 +290,23 @@ void CanvasWidget::mouseReleaseEvent(QMouseEvent* event) {
     if (event->button() == Qt::MiddleButton || event->button() == Qt::RightButton) {
         m_dragging = false;
         setCursor(Qt::ArrowCursor);
+    }
+}
+
+void CanvasWidget::dragEnterEvent(QDragEnterEvent* event) {
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+    }
+}
+
+void CanvasWidget::dropEvent(QDropEvent* event) {
+    const QMimeData* mime = event->mimeData();
+    if (mime->hasUrls()) {
+        for (const QUrl& url : mime->urls()) {
+            if (url.isLocalFile()) {
+                emit fileDropped(url.toLocalFile());
+            }
+        }
     }
 }
 

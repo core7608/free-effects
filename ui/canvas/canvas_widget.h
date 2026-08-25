@@ -24,9 +24,14 @@ public:
     void zoomIn();
     void zoomOut();
     double getZoom() const { return m_zoom; }
+    bool isShowGrid() const { return m_showGrid; }
+    bool isShowRulers() const { return m_showRulers; }
+    
+    void setToolMode(const QString& mode) { m_toolMode = mode; }
 
 signals:
     void zoomChanged(double zoom);
+    void fileDropped(const QString& filePath);
 
 protected:
     void paintEvent(QPaintEvent* event) override;
@@ -35,6 +40,8 @@ protected:
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
     void mouseReleaseEvent(QMouseEvent* event) override;
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
 
 private:
     void renderFrame();
@@ -54,6 +61,7 @@ private:
     bool m_dragging = false;
     QPoint m_lastMousePos;
     QPointF m_offset;
+    QString m_toolMode = "selection";
 };
 
 } // namespace FreeEffect

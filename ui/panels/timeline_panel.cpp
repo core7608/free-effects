@@ -310,8 +310,17 @@ void TimelinePanel::onStepBackward() {
     setCurrentTime(std::max(m_currentTime - frameDuration, 0.0));
 }
 
-void TimelinePanel::onZoomIn() {}
-void TimelinePanel::onZoomOut() {}
+void TimelinePanel::onZoomIn() {
+    if (m_timelineCanvas) {
+        m_timelineCanvas->setPixelsPerSecond(m_timelineCanvas->getPixelsPerSecond() * 1.3);
+    }
+}
+
+void TimelinePanel::onZoomOut() {
+    if (m_timelineCanvas) {
+        m_timelineCanvas->setPixelsPerSecond(m_timelineCanvas->getPixelsPerSecond() / 1.3);
+    }
+}
 
 void TimelinePanel::onLayerClicked(QTreeWidgetItem* item, int column) {
     Q_UNUSED(column);

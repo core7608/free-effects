@@ -66,6 +66,7 @@ void TimelineCanvas::paintEvent(QPaintEvent* event) {
 
     drawAlternatingRows(painter, contentRect);
     drawLayerBars(painter, contentRect);
+    drawKeyframes(painter, contentRect);
     drawTimeRuler(painter, rulerRect);
     drawWorkArea(painter, rulerRect);
     drawPlayhead(painter, fullRect);
@@ -233,6 +234,50 @@ void TimelineCanvas::drawTimeRuler(QPainter& painter, const QRect& rulerRect) {
 
             painter.setPen(QColor(140, 140, 140));
             painter.drawText(x + 3, rulerRect.top() + 10, label);
+        }
+    }
+}
+
+void TimelineCanvas::drawKeyframes(QPainter& painter, const QRect& contentRect) {
+    if (!m_composition) return;
+
+    const auto& layers = m_composition->getLayers();
+    for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
+        const auto& layer = layers[i];
+        int y = contentRect.top() + i * LAYER_ROW_HEIGHT;
+        if (y >= contentRect.bottom()) break;
+
+        int diamondY = y + LAYER_ROW_HEIGHT / 2;
+
+        auto drawDiamond = [&](double time) {
+            int x = timeToX(time);
+            if (x < contentRect.left() - 8 || x > contentRect.right() + 8) return;
+
+            QPainterPath diamond;
+            diamond.moveTo(x, diamondY - 4);
+            diamond.lineTo(x + 4, diamondY);
+            diamond.lineTo(x, diamondY + 4);
+            diamond.lineTo(x - 4, diamondY);
+            diamond.closeSubpath();
+
+            QColor fillColor = (i == m_selectedLayer) ? QColor(255, 200, 0) : QColor(200, 160, 0);
+            painter.fillPath(diamond, fillColor);
+            painter.setPen(QPen(QColor(180, 140, 0), 1));
+            painter.drawPath(diamond);
+        };
+
+        // Draw keyframes for transform properties
+        for (auto& kf : layer->getPosition().getKeyframes()) {
+            drawDiamond(kf.getTime());
+        }
+        for (auto& kf : layer->getScale().getKeyframes()) {
+            drawDiamond(kf.getTime());
+        }
+        for (auto& kf : layer->getRotation().getKeyframes()) {
+            drawDiamond(kf.getTime());
+        }
+        for (auto& kf : layer->getOpacity().getKeyframes()) {
+            drawDiamond(kf.getTime());
         }
     }
 }

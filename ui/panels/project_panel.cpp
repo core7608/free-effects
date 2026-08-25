@@ -2,6 +2,10 @@
 #include "../mainwindow/main_window.h"
 #include <QHeaderView>
 #include <QFileDialog>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMimeData>
+#include "../../core/io/importer.h"
 
 namespace FreeEffect {
 
@@ -9,6 +13,7 @@ ProjectPanel::ProjectPanel(MainWindow* parent)
     : QWidget(parent)
     , m_mainWindow(parent) {
     setupUi();
+    setAcceptDrops(true);
     refreshAssetList();
 }
 
@@ -152,9 +157,14 @@ void ProjectPanel::onContextMenu(const QPoint& pos) {
         "QMenu::separator { height: 1px; background: #555555; margin: 4px 10px; }"
     );
     
-    menu.addAction("Import File...");
+    QAction* importAction = menu.addAction("Import File...");
+    connect(importAction, &QAction::triggered, m_mainWindow, &MainWindow::onImportFile);
+    
     menu.addSeparator();
-    menu.addAction("New Composition...");
+    
+    QAction* newCompAction = menu.addAction("New Composition...");
+    connect(newCompAction, &QAction::triggered, m_mainWindow, &MainWindow::onNewComposition);
+    
     menu.addAction("New Folder");
     menu.addSeparator();
     
@@ -188,6 +198,30 @@ void ProjectPanel::onSearchChanged(const QString& text) {
                 child->setHidden(false);
             } else {
                 child->setHidden(true);
+            }
+        }
+    }
+}
+
+void ProjectPanel::dragEnterEvent(QDragEnterEvent* event) {
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+    }
+}
+
+void ProjectPanel::dropEvent(QDropEvent* event) {
+    const QMimeData* mime = event->mimeData();
+    if (!mime->hasUrls()) return;
+    
+    for (const QUrl& url : mime->urls()) {
+        if (url.isLocalFile()) {
+            QString filePath = url.toLocalFile();
+            Importer importer(m_mainWindow->getProjectStatePtr());
+            auto asset = importer.importFile(filePath.toStdString());
+            if (asset) {
+                m_mainWindow->getProjectState().setModified(true);
+                m_mainWindow->updateTitle();
+                refreshAssetList();
             }
         }
     }
