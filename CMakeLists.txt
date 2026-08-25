@@ -16,6 +16,38 @@ add_subdirectory(ui)
 add_subdirectory(tests)
 
 # ──────────────────────────────────────────────────────────
+# Install Rules (for packaging: AppImage, DEB, RPM, etc.)
+# ──────────────────────────────────────────────────────────
+
+include(GNUInstallDirs)
+
+install(TARGETS FreeEffect
+    BUNDLE DESTINATION .
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+install(TARGETS freeeffect_core
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/textures/
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/freeeffect/textures
+    FILES_MATCHING
+    PATTERN "*.svg"
+    PATTERN "*.png"
+)
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    install(FILES ${CMAKE_SOURCE_DIR}/packaging/linux/com.freeeffect.FreeEffect.desktop
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications
+    )
+    install(FILES ${CMAKE_SOURCE_DIR}/textures/app/icon.svg
+        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/scalable/apps
+        RENAME com.freeeffect.FreeEffect.svg
+    )
+endif()
+
+# ──────────────────────────────────────────────────────────
 # CPack Packaging Configuration
 # ──────────────────────────────────────────────────────────
 
