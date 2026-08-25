@@ -1,0 +1,23 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file alias="icons/tool_selection.svg">../textures/icons/tool_selection.svg</file>
+        <file alias="icons/tool_hand.svg">../textures/icons/tool_hand.svg</file>
+        <file alias="icons/tool_zoom.svg">../textures/icons/tool_zoom.svg</file>
+        <file alias="icons/tool_rotation.svg">../textures/icons/tool_rotation.svg</file>
+        <file alias="icons/tool_anchor.svg">../textures/icons/tool_anchor.svg</file>
+        <file alias="icons/tool_shape.svg">../textures/icons/tool_shape.svg</file>
+        <file alias="icons/tool_pen.svg">../textures/icons/tool_pen.svg</file>
+        <file alias="icons/tool_text.svg">../textures/icons/tool_text.svg</file>
+        <file alias="icons/missing_footage.svg">../textures/icons/missing_footage.svg</file>
+        <file alias="icons/folder.svg">../textures/icons/folder.svg</file>
+        <file alias="icons/image_file.svg">../textures/icons/image_file.svg</file>
+        <file alias="icons/video_file.svg">../textures/icons/video_file.svg</file>
+        <file alias="icons/audio_file.svg">../textures/icons/audio_file.svg</file>
+        <file alias="icons/composition.svg">../textures/icons/composition.svg</file>
+        <file alias="icons/play.svg">../textures/icons/play.svg</file>
+        <file alias="icons/pause.svg">../textures/icons/pause.svg</file>
+        <file alias="icons/grid.svg">../textures/icons/grid.svg</file>
+        <file alias="icons/rulers.svg">../textures/icons/rulers.svg</file>
+    </qresource>
+</RCC>

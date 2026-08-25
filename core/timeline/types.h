@@ -20,15 +20,13 @@ inline UUID generateUUID() {
     uint32_t timeMid = dis(gen) & 0xFFFF;
     uint32_t timeHi = (dis(gen) & 0x0FFF) | 0x4000;
     uint32_t clockSeq = (dis(gen) & 0x3FFF) | 0x8000;
-    uint32_t clockSeqLow = dis(gen) & 0xFFFF;
     // Node: 48 bits = 12 hex chars
     uint64_t node = (static_cast<uint64_t>(dis(gen) & 0xFFFFFF) << 24) | dis(gen);
     
     char buf[37];
-    snprintf(buf, sizeof(buf), "%08x-%04x-%04x-%04x-%04x%08x",
-             timeLow, timeMid, timeHi, clockSeq, clockSeqLow,
-             static_cast<uint32_t>(node >> 16),
-             static_cast<uint32_t>(node & 0xFFFF));
+    snprintf(buf, sizeof(buf), "%08x-%04x-%04x-%04x-%012llx",
+             timeLow, timeMid, timeHi, clockSeq,
+             (unsigned long long)(node & 0xFFFFFFFFFFFFULL));
     
     return std::string(buf);
 }
