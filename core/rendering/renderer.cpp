@@ -1,5 +1,9 @@
 #include "renderer.h"
 #include "../effects/effect.h"
+#include "../timeline/layer_style.h"
+#include "../performance/frame_cache.h"
+#include "../performance/spatial_grid.h"
+#include "../performance/profiler.h"
 #include <algorithm>
 #include <cmath>
 #include <cstring>
@@ -22,84 +26,122 @@ void Renderer::setCameraMatrices(const float view[16], const float projection[16
 }
 
 PixelBuffer Renderer::renderFrame(const Composition& comp, double timeInSeconds) {
-    PixelBuffer buffer;
-    buffer.resize(comp.getResolution().width, comp.getResolution().height);
-    
-    clearBuffer(buffer, comp.getBackgroundColor());
+    FREEEFFECT_PROFILE_FUNCTION();
 
-    Mat4 viewProj = Mat4::identity();
-    bool hasCamera = false;
-
-    if (comp.getActiveCamera()) {
-        viewProj = comp.getActiveCamera()->getViewProjectionMatrix();
-        hasCamera = true;
-        m_use3D = true;
+    // Try frame cache first
+    int compId = 0;
+    {
+        const char* idStr = comp.getId().c_str();
+        compId = static_cast<int>(std::hash<std::string>{}(comp.getId()));
     }
 
-    const auto& layers = comp.getLayers();
+    // Always invalidate cache for this comp+time (composition state may have changed)
+    FrameCache::instance().invalidate(timeInSeconds, compId);
 
-    std::vector<int> sortedIndices;
-    sortedIndices.reserve(layers.size());
-    for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
-        sortedIndices.push_back(i);
-    }
+    PixelBuffer result;
+    {
+        int w = comp.getResolution().width;
+        int h = comp.getResolution().height;
+        result.resize(w, h);
+        clearBuffer(result, comp.getBackgroundColor());
 
-    if (m_use3D && hasCamera) {
-        std::sort(sortedIndices.begin(), sortedIndices.end(),
-            [&](int a, int b) {
-                const auto& la = layers[a];
-                const auto& lb = layers[b];
-                double za = la->is3D() ? la->getTransform3D().position.z : 0.0;
-                double zb = lb->is3D() ? lb->getTransform3D().position.z : 0.0;
-                return za > zb;
-            });
-    }
+        // Build spatial grid for hit-testing
+        SpatialGrid spatialGrid;
+        spatialGrid.setBounds(0, 0, static_cast<float>(w), static_cast<float>(h), 64);
 
-    for (int idx : sortedIndices) {
-        const auto& layer = layers[idx];
-        if (!layer->isVisible() || !layer->isActiveAtTime(timeInSeconds)) continue;
-        if (layer->getType() == LayerType::Adjustment) continue;
-
-        if (layer->is3D() && hasCamera) {
-            Mat4 model = computeWorldTransform(*layer, comp);
-            Mat4 mvp = Mat4::multiply(viewProj, model);
-
-            Vec3 worldPos(layer->getTransform3D().position.x,
-                          layer->getTransform3D().position.y,
-                          layer->getTransform3D().position.z);
-
-            auto parent = layer->getParentLayer();
-            while (parent) {
-                worldPos = worldPos + Vec3(parent->getTransform3D().position.x,
-                                           parent->getTransform3D().position.y,
-                                           parent->getTransform3D().position.z);
-                parent = parent->getParentLayer();
-            }
-
-            Vec3 screenPos = layer->getTransform3D().projectTo2D(worldPos, viewProj,
-                                             comp.getResolution().width,
-                                             comp.getResolution().height);
-
-            double depth = screenPos.z;
-            if (depth < -1.0 || depth > 1.0) continue;
+        const auto& layers = comp.getLayers();
+        for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
+            const auto& layer = layers[i];
+            if (!layer->isVisible() || !layer->isActiveAtTime(timeInSeconds)) continue;
+            double posX = layer->getPosition().getValueAtTime(timeInSeconds);
+            double posY = layer->getPosition().getValueAtTime(timeInSeconds);
+            double scaleX = layer->getScale().getValueAtTime(timeInSeconds) / 100.0;
+            double scaleY = layer->getScale().getValueAtTime(timeInSeconds) / 100.0;
+            float bw = static_cast<float>(200.0 * scaleX);
+            float bh = static_cast<float>(200.0 * scaleY);
+            SpatialItem si;
+            si.layerIndex = i;
+            si.bounds[0] = static_cast<float>(posX) - bw * 0.5f;
+            si.bounds[1] = static_cast<float>(posY) - bh * 0.5f;
+            si.bounds[2] = bw;
+            si.bounds[3] = bh;
+            si.zOrder = i;
+            spatialGrid.insert(si);
         }
 
-        BlendModeType layerBlend = mapBlendMode(layer->getBlendMode());
-        compositeLayer(buffer, *layer, timeInSeconds, comp);
+        Mat4 viewProj = Mat4::identity();
+        bool hasCamera = false;
+
+        if (comp.getActiveCamera()) {
+            viewProj = comp.getActiveCamera()->getViewProjectionMatrix();
+            hasCamera = true;
+        }
+
+        std::vector<int> sortedIndices;
+        sortedIndices.reserve(layers.size());
+        for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
+            sortedIndices.push_back(i);
+        }
+
+        if (hasCamera) {
+            std::sort(sortedIndices.begin(), sortedIndices.end(),
+                [&](int a, int b) {
+                    const auto& la = layers[a];
+                    const auto& lb = layers[b];
+                    double za = la->is3D() ? la->getTransform3D().position.z : 0.0;
+                    double zb = lb->is3D() ? lb->getTransform3D().position.z : 0.0;
+                    return za > zb;
+                });
+        }
+
+        for (int idx : sortedIndices) {
+            const auto& layer = layers[idx];
+            if (!layer->isVisible() || !layer->isActiveAtTime(timeInSeconds)) continue;
+            if (layer->isGuideLayer()) continue;
+            if (layer->getType() == LayerType::Adjustment || layer->isAdjustmentLayer()) continue;
+
+            if (layer->is3D() && hasCamera) {
+                Mat4 model = computeWorldTransform(*layer, comp);
+                Mat4 mvp = Mat4::multiply(viewProj, model);
+
+                Vec3 worldPos(layer->getTransform3D().position.x,
+                              layer->getTransform3D().position.y,
+                              layer->getTransform3D().position.z);
+
+                auto parent = layer->getParentLayer();
+                while (parent) {
+                    worldPos = worldPos + Vec3(parent->getTransform3D().position.x,
+                                               parent->getTransform3D().position.y,
+                                               parent->getTransform3D().position.z);
+                    parent = parent->getParentLayer();
+                }
+
+                Vec3 screenPos = layer->getTransform3D().projectTo2D(worldPos, viewProj,
+                                                 comp.getResolution().width,
+                                                 comp.getResolution().height);
+
+                double depth = screenPos.z;
+                if (depth < -1.0 || depth > 1.0) continue;
+            }
+
+            compositeLayer(result, *layer, timeInSeconds, comp);
+        }
+
+        // Apply adjustment layers
+        const auto& allLayers = comp.getLayers();
+        for (int i = 0; i < static_cast<int>(allLayers.size()); ++i) {
+            const auto& layer = allLayers[i];
+            if (!layer->isVisible() || !layer->isActiveAtTime(timeInSeconds)) continue;
+            if (layer->getType() != LayerType::Adjustment && !layer->isAdjustmentLayer()) continue;
+            applyAdjustmentLayers(result, comp, timeInSeconds, i);
+        }
     }
 
-    const auto& allLayers = comp.getLayers();
-    for (int i = 0; i < static_cast<int>(allLayers.size()); ++i) {
-        const auto& layer = allLayers[i];
-        if (!layer->isVisible() || !layer->isActiveAtTime(timeInSeconds)) continue;
-        if (layer->getType() != LayerType::Adjustment) continue;
-        applyAdjustmentLayers(buffer, comp, timeInSeconds, i);
-    }
-
-    return buffer;
+    return result;
 }
 
 void Renderer::clearBuffer(PixelBuffer& buffer, Color bgColor) {
+    FREEEFFECT_PROFILE_SCOPE("clearBuffer");
     uint8_t r = static_cast<uint8_t>(std::clamp(bgColor.r, 0.0, 1.0) * 255.0);
     uint8_t g = static_cast<uint8_t>(std::clamp(bgColor.g, 0.0, 1.0) * 255.0);
     uint8_t b = static_cast<uint8_t>(std::clamp(bgColor.b, 0.0, 1.0) * 255.0);
@@ -115,6 +157,7 @@ void Renderer::clearBuffer(PixelBuffer& buffer, Color bgColor) {
 }
 
 Mat4 Renderer::computeWorldTransform(const Layer& layer, const Composition& comp) {
+    FREEEFFECT_PROFILE_SCOPE("computeWorldTransform");
     Mat4 localTransform = Mat4::identity();
     const auto& t3d = layer.getTransform3D();
 
@@ -151,9 +194,14 @@ Mat4 Renderer::computeWorldTransform(const Layer& layer, const Composition& comp
 }
 
 void Renderer::compositeLayer(PixelBuffer& target, const Layer& layer, double time, const Composition& comp) {
+    FREEEFFECT_PROFILE_SCOPE("compositeLayer");
     double effectiveTime = time;
     if (layer.isTimeRemapEnabled()) {
         effectiveTime = layer.remapTime(time);
+    }
+
+    if (layer.getTimeStretch() != 100.0) {
+        effectiveTime = (effectiveTime - layer.getStartTime()) * (100.0 / layer.getTimeStretch()) + layer.getStartTime();
     }
 
     double opacity = layer.getOpacity().getValueAtTime(effectiveTime) / 100.0;
@@ -171,6 +219,11 @@ void Renderer::compositeLayer(PixelBuffer& target, const Layer& layer, double ti
             double posY = layer.getPosition().getValueAtTime(effectiveTime);
             int offsetX = static_cast<int>(posX);
             int offsetY = static_cast<int>(posY);
+
+            if (layer.getLayerStyle().hasAnyStyle()) {
+                layer.getLayerStyle().renderStyles(precompBuffer,
+                    precompBuffer.width, precompBuffer.height);
+            }
 
             blendNormal(target, precompBuffer, offsetX, offsetY, opacity, layerBlend);
         }
@@ -197,11 +250,16 @@ void Renderer::compositeLayer(PixelBuffer& target, const Layer& layer, double ti
             }
         }
     }
-    
+
     applyEffects(target, layer, effectiveTime);
+
+    if (layer.getLayerStyle().hasAnyStyle()) {
+        layer.getLayerStyle().renderStyles(target, target.width, target.height);
+    }
 }
 
 void Renderer::applyEffects(PixelBuffer& buffer, const Layer& layer, double time) {
+    FREEEFFECT_PROFILE_SCOPE("applyEffects");
     const auto& effects = layer.getEffects();
     for (const auto& effect : effects) {
         if (effect && effect->isEnabled()) {
@@ -213,6 +271,7 @@ void Renderer::applyEffects(PixelBuffer& buffer, const Layer& layer, double time
 
 void Renderer::blendNormal(PixelBuffer& target, const PixelBuffer& source,
                            int x, int y, double opacity, BlendModeType mode) {
+    FREEEFFECT_PROFILE_SCOPE("blendNormal");
     for (int sy = 0; sy < source.height; ++sy) {
         for (int sx = 0; sx < source.width; ++sx) {
             int tx = x + sx;
@@ -229,6 +288,7 @@ void Renderer::blendNormal(PixelBuffer& target, const PixelBuffer& source,
 
 void Renderer::applyAdjustmentLayers(PixelBuffer& buffer, const Composition& comp,
                                      double time, int startLayerIndex) {
+    FREEEFFECT_PROFILE_SCOPE("applyAdjustmentLayers");
     const auto& layers = comp.getLayers();
     if (startLayerIndex < 0 || startLayerIndex >= static_cast<int>(layers.size())) return;
 
@@ -237,6 +297,11 @@ void Renderer::applyAdjustmentLayers(PixelBuffer& buffer, const Composition& com
     if (adjLayer->isTimeRemapEnabled()) {
         effectiveTime = adjLayer->remapTime(time);
     }
+
+    if (adjLayer->getTimeStretch() != 100.0) {
+        effectiveTime = (effectiveTime - adjLayer->getStartTime()) * (100.0 / adjLayer->getTimeStretch()) + adjLayer->getStartTime();
+    }
+
     double opacity = adjLayer->getOpacity().getValueAtTime(effectiveTime) / 100.0;
     if (opacity <= 0.0) return;
 
@@ -250,6 +315,10 @@ void Renderer::applyAdjustmentLayers(PixelBuffer& buffer, const Composition& com
             effect->updateParameterTracks(effectiveTime);
             effect->apply(buffer, effectiveTime);
         }
+    }
+
+    if (adjLayer->getLayerStyle().hasAnyStyle()) {
+        adjLayer->getLayerStyle().renderStyles(buffer, buffer.width, buffer.height);
     }
 
     if (opacity < 1.0) {

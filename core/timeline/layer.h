@@ -1,5 +1,7 @@
 #pragma once
 
+#include "layer_style.h"
+#include "material_options.h"
 #include "property_track.h"
 #include "transform_3d.h"
 #include "types.h"
@@ -110,6 +112,51 @@ public:
     const std::vector<LayerMarker>& getMarkers() const { return m_markers; }
     std::vector<LayerMarker>& getMarkers() { return m_markers; }
 
+    void setMotionBlurEnabled(bool enabled) { m_motionBlurEnabled = enabled; }
+    bool isMotionBlurEnabled() const { return m_motionBlurEnabled; }
+
+    void setAdjustmentLayer(bool adj) { m_adjustmentLayer = adj; }
+    bool isAdjustmentLayer() const { return m_adjustmentLayer; }
+
+    void setCollapseTransform(bool collapse) { mCollapseTransform = collapse; }
+    bool getCollapseTransform() const { return mCollapseTransform; }
+
+    void setGuideLayer(bool guide) { m_guideLayer = guide; }
+    bool isGuideLayer() const { return m_guideLayer; }
+
+    void setShy(bool shy) { m_shy = shy; }
+    bool isShy() const { return m_shy; }
+
+    void setTimeStretch(double stretch) { m_timeStretch = stretch; }
+    double getTimeStretch() const { return m_timeStretch; }
+
+    void setFrameBlending(double blend) { m_frameBlending = blend; }
+    double getFrameBlending() const { return m_frameBlending; }
+
+    void setQuality(int q) { m_quality = q; }
+    int getQuality() const { return m_quality; }
+
+    void setSamplingQuality(int q) { m_samplingQuality = q; }
+    int getSamplingQuality() const { return m_samplingQuality; }
+
+    void setAcceptsShadows(bool accepts) { m_acceptsShadows = accepts; }
+    bool getAcceptsShadows() const { return m_acceptsShadows; }
+
+    void setAcceptsLights(bool accepts) { m_acceptsLights = accepts; }
+    bool getAcceptsLights() const { return m_acceptsLights; }
+
+    void setEnvironmentLayer(bool env) { m_environmentLayer = env; }
+    bool isEnvironmentLayer() const { return m_environmentLayer; }
+
+    void setFourDLayer(bool fourD) { m_fourDLayer = fourD; }
+    bool isFourDLayer() const { return m_fourDLayer; }
+
+    LayerStyle& getLayerStyle() { return m_layerStyle; }
+    const LayerStyle& getLayerStyle() const { return m_layerStyle; }
+
+    MaterialOptions& getMaterialOptions() { return m_materialOptions; }
+    const MaterialOptions& getMaterialOptions() const { return m_materialOptions; }
+
 private:
     UUID m_id;
     std::string m_name;
@@ -143,6 +190,22 @@ private:
     std::string m_precompId;
 
     std::vector<LayerMarker> m_markers;
+
+    bool m_motionBlurEnabled = true;
+    bool m_adjustmentLayer = false;
+    bool mCollapseTransform = false;
+    bool m_guideLayer = false;
+    bool m_shy = false;
+    bool m_acceptsShadows = true;
+    bool m_acceptsLights = true;
+    bool m_environmentLayer = false;
+    bool m_fourDLayer = false;
+    double m_timeStretch = 100.0;
+    double m_frameBlending = 0.0;
+    int m_quality = 1;
+    int m_samplingQuality = 1;
+    LayerStyle m_layerStyle;
+    MaterialOptions m_materialOptions;
 };
 
 using LayerPtr = std::shared_ptr<Layer>;

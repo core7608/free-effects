@@ -10,6 +10,14 @@
 
 namespace FreeEffect {
 
+struct CompMarker {
+    double time = 0;
+    std::string name;
+    std::string comment;
+    int index = 0;
+    bool protectedRegion = false;
+};
+
 class Composition {
 public:
     Composition(const std::string& name, Resolution resolution, FrameRate frameRate, double duration);
@@ -76,6 +84,15 @@ public:
     std::shared_ptr<Composition> getPrecompById(const std::string& id) const;
     const std::vector<std::shared_ptr<Composition>>& getPrecomps() const { return m_precomps; }
 
+    // Composition markers
+    void addMarker(const CompMarker& marker);
+    void removeMarker(int index);
+    void removeMarkerByIndex(int markerIndex);
+    const std::vector<CompMarker>& getMarkers() const { return m_markers; }
+    std::vector<CompMarker>& getMarkers() { return m_markers; }
+    CompMarker* getMarkerAtTime(double time, double tolerance = 0.001);
+    CompMarker* getMarkerByIndex(int index);
+
 private:
     UUID m_id;
     std::string m_name;
@@ -97,6 +114,8 @@ private:
 
     std::weak_ptr<Composition> m_parentComposition;
     std::vector<std::shared_ptr<Composition>> m_precomps;
+
+    std::vector<CompMarker> m_markers;
 };
 
 } // namespace FreeEffect

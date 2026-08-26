@@ -1,3 +1,10 @@
+option(FREEEFFECT_ENABLE_SIMULATION "Enable simulation effects" ON)
+option(FREEEFFECT_ENABLE_PLUGIN_EFFECTS "Enable plugin effect equivalents" ON)
+option(FREEEFFECT_ENABLE_TRANSITION_EFFECTS "Enable transition effects" ON)
+option(FREEEFFECT_ENABLE_EXPRESSION_ENGINE "Enable expression engine" ON)
+option(FREEEFFECT_ENABLE_TRACKING "Enable motion tracking" ON)
+option(FREEEFFECT_ENABLE_PUPPET "Enable puppet tool" ON)
+
 # Core library - no Qt dependency
 add_library(freeeffect_core STATIC
     # Timeline data model
@@ -9,6 +16,9 @@ add_library(freeeffect_core STATIC
     timeline/property_track.cpp
     timeline/layer.h
     timeline/layer.cpp
+    timeline/layer_style.h
+    timeline/layer_style.cpp
+    timeline/material_options.h
     timeline/composition.h
     timeline/composition.cpp
     
@@ -95,6 +105,12 @@ add_library(freeeffect_core STATIC
     io/exporter.cpp
     io/project_file.h
     io/project_file.cpp
+    io/psd_importer.h
+    io/psd_importer.cpp
+    io/ai_importer.h
+    io/ai_importer.cpp
+    io/camera_data_importer.h
+    io/camera_data_importer.cpp
     
     # Effects System
     effects/effect.h
@@ -237,6 +253,10 @@ add_library(freeeffect_core STATIC
     effects/utility/time_displacement_effect.cpp
     effects/utility/posterize_time_effect.h
     effects/utility/posterize_time_effect.cpp
+    effects/utility/cineon_converter_effect.h
+    effects/utility/cineon_converter_effect.cpp
+    effects/utility/color_profile_converter_effect.h
+    effects/utility/color_profile_converter_effect.cpp
     
     # Plugin System
     plugins/plugin_interface.h
@@ -269,63 +289,8 @@ add_library(freeeffect_core STATIC
     effects/presets/preset_manager.h
     effects/presets/preset_manager.cpp
     
-    # Simulation Effects
-    effects/simulation/particle_burst_effect.h
-    effects/simulation/particle_burst_effect.cpp
-    effects/simulation/rain_effect.h
-    effects/simulation/rain_effect.cpp
-    effects/simulation/snow_effect.h
-    effects/simulation/snow_effect.cpp
-    effects/simulation/fire_effect.h
-    effects/simulation/fire_effect.cpp
-    effects/simulation/smoke_effect.h
-    effects/simulation/smoke_effect.cpp
-    effects/simulation/sparkle_effect.h
-    effects/simulation/sparkle_effect.cpp
-    effects/simulation/bubbles_effect.h
-    effects/simulation/bubbles_effect.cpp
-    effects/simulation/energy_field_effect.h
-    effects/simulation/energy_field_effect.cpp
-    effects/simulation/shatter_effect.h
-    effects/simulation/shatter_effect.cpp
-    effects/simulation/wave_effect.h
-    effects/simulation/wave_effect.cpp
-    effects/simulation/lightning_effect.h
-    effects/simulation/lightning_effect.cpp
-    effects/simulation/pixel_dissolve_effect.h
-    effects/simulation/pixel_dissolve_effect.cpp
-    effects/simulation/disintegrate_effect.h
-    effects/simulation/disintegrate_effect.cpp
-    effects/simulation/galaxy_effect.h
-    effects/simulation/galaxy_effect.cpp
-    effects/simulation/matrix_rain_effect.h
-    effects/simulation/matrix_rain_effect.cpp
-    
-    # Transition Effects
-    effects/transition/cross_dissolve_effect.h
-    effects/transition/cross_dissolve_effect.cpp
-    effects/transition/wipe_left_effect.h
-    effects/transition/wipe_left_effect.cpp
-    effects/transition/zoom_blur_transition.h
-    effects/transition/zoom_blur_transition.cpp
-    effects/transition/iris_transition.h
-    effects/transition/iris_transition.cpp
-    effects/transition/block_dissolve_effect.h
-    effects/transition/block_dissolve_effect.cpp
-    effects/transition/directional_wipe_effect.h
-    effects/transition/directional_wipe_effect.cpp
-    effects/transition/radial_wipe_effect.h
-    effects/transition/radial_wipe_effect.cpp
-    effects/transition/gradient_wipe_effect.h
-    effects/transition/gradient_wipe_effect.cpp
-    effects/transition/venetian_blinds_effect.h
-    effects/transition/venetian_blinds_effect.cpp
-    effects/transition/pixelate_transition.h
-    effects/transition/pixelate_transition.cpp
-    effects/transition/morph_transition.h
-    effects/transition/morph_transition.cpp
-    effects/transition/glitch_transition.h
-    effects/transition/glitch_transition.cpp
+    # Simulation Effects (conditional)
+    # Transition Effects (conditional)
     
     # Additional Stylize Effects
     effects/stylize/cartoon_effect.h
@@ -338,6 +303,10 @@ add_library(freeeffect_core STATIC
     effects/stylize/strobe_effect.cpp
     effects/stylize/median_effect.h
     effects/stylize/median_effect.cpp
+    effects/stylize/roughen_edges_effect.h
+    effects/stylize/roughen_edges_effect.cpp
+    effects/stylize/scatter_effect.h
+    effects/stylize/scatter_effect.cpp
     
     # Additional Distort Effects
     effects/distort/liquify_effect.h
@@ -350,6 +319,48 @@ add_library(freeeffect_core STATIC
     effects/distort/polar_coordinates_effect.cpp
     effects/distort/corner_pin_effect.h
     effects/distort/corner_pin_effect.cpp
+    effects/distort/turbulent_displace_effect.h
+    effects/distort/turbulent_displace_effect.cpp
+    effects/distort/mesh_warp_effect.h
+    effects/distort/mesh_warp_effect.cpp
+    effects/distort/lens_distortion_effect.h
+    effects/distort/lens_distortion_effect.cpp
+    effects/distort/cc_lens_effect.h
+    effects/distort/cc_lens_effect.cpp
+    
+    # Expression Controls Effects
+    effects/expression_controls/slider_control_effect.h
+    effects/expression_controls/slider_control_effect.cpp
+    effects/expression_controls/angle_control_effect.h
+    effects/expression_controls/angle_control_effect.cpp
+    effects/expression_controls/color_control_effect.h
+    effects/expression_controls/color_control_effect.cpp
+    effects/expression_controls/point_control_effect.h
+    effects/expression_controls/point_control_effect.cpp
+    effects/expression_controls/checkbox_control_effect.h
+    effects/expression_controls/checkbox_control_effect.cpp
+    effects/expression_controls/layer_control_effect.h
+    effects/expression_controls/layer_control_effect.cpp
+    effects/expression_controls/point_3d_control_effect.h
+    effects/expression_controls/point_3d_control_effect.cpp
+    
+    # Channel Effects
+    effects/channel/shift_channels_effect.h
+    effects/channel/shift_channels_effect.cpp
+    effects/channel/set_channels_effect.h
+    effects/channel/set_channels_effect.cpp
+    effects/channel/minimax_effect.h
+    effects/channel/minimax_effect.cpp
+    effects/channel/cc_composite_effect.h
+    effects/channel/cc_composite_effect.cpp
+    
+    # Noise & Grain Effects
+    effects/noise/add_grain_effect.h
+    effects/noise/add_grain_effect.cpp
+    effects/noise/remove_grain_effect.h
+    effects/noise/remove_grain_effect.cpp
+    effects/noise/dust_scratches_effect.h
+    effects/noise/dust_scratches_effect.cpp
     
     # Additional Color Effects
     effects/color/selective_color_effect.h
@@ -373,45 +384,21 @@ add_library(freeeffect_core STATIC
     effects/keying/luma_key_effect.h
     effects/keying/luma_key_effect.cpp
     
-    # Third-Party Plugin Effect Equivalents
-    effects/plugin_effect/saber_effect.h
-    effects/plugin_effect/saber_effect.cpp
-    effects/plugin_effect/optical_flare_effect.h
-    effects/plugin_effect/optical_flare_effect.cpp
-    effects/plugin_effect/plexus_effect.h
-    effects/plugin_effect/plexus_effect.cpp
-    effects/plugin_effect/shine_effect.h
-    effects/plugin_effect/shine_effect.cpp
-    effects/plugin_effect/starglow_effect.h
-    effects/plugin_effect/starglow_effect.cpp
-    effects/plugin_effect/particular_effect.h
-    effects/plugin_effect/particular_effect.cpp
-    effects/plugin_effect/form_effect.h
-    effects/plugin_effect/form_effect.cpp
-    effects/plugin_effect/mir_effect.h
-    effects/plugin_effect/mir_effect.cpp
+    # Third-Party Plugin Effect Equivalents (conditional)
     
-    # Expression Engine
-    expressions/expression_engine.h
-    expressions/expression_engine.cpp
+    # Expression Engine (conditional)
     
-    # Expression Library
-    expressions/expression_library.h
-    expressions/expression_library.cpp
+    # Expression Library (conditional)
     
-    # Motion Tracking
-    tracking/motion_tracker.h
-    tracking/motion_tracker.cpp
-    tracking/rotoscoping.h
-    tracking/rotoscoping.cpp
+    # Motion Tracking (conditional)
     
-    # Puppet Tool & Data-Driven Animation
-    animation/puppet_tool.h
-    animation/puppet_tool.cpp
+    # Puppet Tool & Data-Driven Animation (conditional)
     animation/data_driven.h
     animation/data_driven.cpp
     animation/graph_editor.h
     animation/graph_editor.cpp
+    animation/keyframe_assistant.h
+    animation/keyframe_assistant.cpp
     
     # Preferences System
     preferences/preferences.h
@@ -420,13 +407,150 @@ add_library(freeeffect_core STATIC
     # Color Management
     color/color_management.h
     color/color_management.cpp
+    
+    # Performance
+    performance/frame_cache.h
+    performance/frame_cache.cpp
+    performance/spatial_grid.h
+    performance/spatial_grid.cpp
+    performance/profiler.h
+    performance/profiler.cpp
+    performance/render_worker.h
+    performance/render_worker.cpp
 )
+
+# ── Conditional feature modules ──────────────────────────────────
+if(FREEEFFECT_ENABLE_SIMULATION)
+    target_sources(freeeffect_core PRIVATE
+        effects/simulation/particle_burst_effect.h
+        effects/simulation/particle_burst_effect.cpp
+        effects/simulation/rain_effect.h
+        effects/simulation/rain_effect.cpp
+        effects/simulation/snow_effect.h
+        effects/simulation/snow_effect.cpp
+        effects/simulation/fire_effect.h
+        effects/simulation/fire_effect.cpp
+        effects/simulation/smoke_effect.h
+        effects/simulation/smoke_effect.cpp
+        effects/simulation/sparkle_effect.h
+        effects/simulation/sparkle_effect.cpp
+        effects/simulation/bubbles_effect.h
+        effects/simulation/bubbles_effect.cpp
+        effects/simulation/energy_field_effect.h
+        effects/simulation/energy_field_effect.cpp
+        effects/simulation/shatter_effect.h
+        effects/simulation/shatter_effect.cpp
+        effects/simulation/wave_effect.h
+        effects/simulation/wave_effect.cpp
+        effects/simulation/lightning_effect.h
+        effects/simulation/lightning_effect.cpp
+        effects/simulation/pixel_dissolve_effect.h
+        effects/simulation/pixel_dissolve_effect.cpp
+        effects/simulation/disintegrate_effect.h
+        effects/simulation/disintegrate_effect.cpp
+        effects/simulation/galaxy_effect.h
+        effects/simulation/galaxy_effect.cpp
+        effects/simulation/matrix_rain_effect.h
+        effects/simulation/matrix_rain_effect.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_SIMULATION)
+endif()
+
+if(FREEEFFECT_ENABLE_PLUGIN_EFFECTS)
+    target_sources(freeeffect_core PRIVATE
+        effects/plugin_effect/saber_effect.h
+        effects/plugin_effect/saber_effect.cpp
+        effects/plugin_effect/optical_flare_effect.h
+        effects/plugin_effect/optical_flare_effect.cpp
+        effects/plugin_effect/plexus_effect.h
+        effects/plugin_effect/plexus_effect.cpp
+        effects/plugin_effect/shine_effect.h
+        effects/plugin_effect/shine_effect.cpp
+        effects/plugin_effect/starglow_effect.h
+        effects/plugin_effect/starglow_effect.cpp
+        effects/plugin_effect/particular_effect.h
+        effects/plugin_effect/particular_effect.cpp
+        effects/plugin_effect/form_effect.h
+        effects/plugin_effect/form_effect.cpp
+        effects/plugin_effect/mir_effect.h
+        effects/plugin_effect/mir_effect.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_PLUGIN_EFFECTS)
+endif()
+
+if(FREEEFFECT_ENABLE_TRANSITION_EFFECTS)
+    target_sources(freeeffect_core PRIVATE
+        effects/transition/cross_dissolve_effect.h
+        effects/transition/cross_dissolve_effect.cpp
+        effects/transition/wipe_left_effect.h
+        effects/transition/wipe_left_effect.cpp
+        effects/transition/zoom_blur_transition.h
+        effects/transition/zoom_blur_transition.cpp
+        effects/transition/iris_transition.h
+        effects/transition/iris_transition.cpp
+        effects/transition/block_dissolve_effect.h
+        effects/transition/block_dissolve_effect.cpp
+        effects/transition/directional_wipe_effect.h
+        effects/transition/directional_wipe_effect.cpp
+        effects/transition/radial_wipe_effect.h
+        effects/transition/radial_wipe_effect.cpp
+        effects/transition/gradient_wipe_effect.h
+        effects/transition/gradient_wipe_effect.cpp
+        effects/transition/venetian_blinds_effect.h
+        effects/transition/venetian_blinds_effect.cpp
+        effects/transition/pixelate_transition.h
+        effects/transition/pixelate_transition.cpp
+        effects/transition/morph_transition.h
+        effects/transition/morph_transition.cpp
+    effects/transition/glitch_transition.h
+    effects/transition/glitch_transition.cpp
+    effects/transition/card_wipe_effect.h
+    effects/transition/card_wipe_effect.cpp
+    effects/transition/linear_wipe_effect.h
+    effects/transition/linear_wipe_effect.cpp
+    effects/transition/iris_wipe_effect.h
+    effects/transition/iris_wipe_effect.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_TRANSITION_EFFECTS)
+endif()
+
+if(FREEEFFECT_ENABLE_EXPRESSION_ENGINE)
+    target_sources(freeeffect_core PRIVATE
+        expressions/expression_engine.h
+        expressions/expression_engine.cpp
+        expressions/expression_library.h
+        expressions/expression_library.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_EXPRESSION_ENGINE)
+endif()
+
+if(FREEEFFECT_ENABLE_TRACKING)
+    target_sources(freeeffect_core PRIVATE
+        tracking/motion_tracker.h
+        tracking/motion_tracker.cpp
+        tracking/rotoscoping.h
+        tracking/rotoscoping.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_TRACKING)
+endif()
+
+if(FREEEFFECT_ENABLE_PUPPET)
+    target_sources(freeeffect_core PRIVATE
+        animation/puppet_tool.h
+        animation/puppet_tool.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_PUPPET)
+endif()
 
 target_include_directories(freeeffect_core PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_BUILTIN_PLUGIN)
+target_compile_definitions(freeeffect_core PRIVATE 
+    FREEEFFECT_BUILTIN_PLUGIN
+    _USE_MATH_DEFINES
+    NOMINMAX
+)
 
 # Plugin system: link dl for dlopen/dlclose on Linux, stdc++fs for filesystem
 if(NOT WIN32)
@@ -473,6 +597,23 @@ if(PkgConfig_FOUND)
         if(SWRESAMPLE_FOUND)
             target_include_directories(freeeffect_core PRIVATE ${SWRESAMPLE_INCLUDE_DIRS})
             target_link_libraries(freeeffect_core PRIVATE ${SWRESAMPLE_LIBRARIES})
+        endif()
+    endif()
+endif()
+
+# Required: Find zlib (for PSD import compression and PNG export)
+find_package(ZLIB QUIET)
+if(ZLIB_FOUND)
+    target_link_libraries(freeeffect_core PRIVATE ZLIB::ZLIB)
+    target_compile_definitions(freeeffect_core PRIVATE HAS_ZLIB)
+else()
+    # Fallback: try pkg-config
+    if(PkgConfig_FOUND)
+        pkg_check_modules(ZLIB QUIET zlib)
+        if(ZLIB_FOUND)
+            target_include_directories(freeeffect_core PRIVATE ${ZLIB_INCLUDE_DIRS})
+            target_link_libraries(freeeffect_core PRIVATE ${ZLIB_LIBRARIES})
+            target_compile_definitions(freeeffect_core PRIVATE HAS_ZLIB)
         endif()
     endif()
 endif()

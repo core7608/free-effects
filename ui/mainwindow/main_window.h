@@ -23,6 +23,17 @@ class EffectsBrowserPanel;
 class CanvasWidget;
 class AIPanel;
 class AICommandExecutor;
+class InfoPanel;
+class AudioPanel;
+class PreviewPanel;
+class CharacterPanel;
+class ParagraphPanel;
+class BrushesPanel;
+class PaintPanel;
+class SmootherPanel;
+class MotionSketchPanel;
+class WigglerPanel;
+class PosterizeTimePanel;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -39,6 +50,9 @@ public:
     EffectControlsPanel* getEffectControlsPanel() const { return m_effectControlsPanel; }
     EffectsBrowserPanel* getEffectsBrowserPanel() const { return m_effectsBrowserPanel; }
     AICommandExecutor* getAICommandExecutor() const;
+    InfoPanel* getInfoPanel() const { return m_infoPanel; }
+    AudioPanel* getAudioPanel() const { return m_audioPanel; }
+    PreviewPanel* getPreviewPanel() const { return m_previewPanel; }
     
     void updateTitle();
     void refreshAllPanels();
@@ -115,12 +129,36 @@ private:
     EffectsBrowserPanel* m_effectsBrowserPanel = nullptr;
     AIPanel* m_aiPanel = nullptr;
     
+    InfoPanel* m_infoPanel = nullptr;
+    AudioPanel* m_audioPanel = nullptr;
+    PreviewPanel* m_previewPanel = nullptr;
+    CharacterPanel* m_characterPanel = nullptr;
+    ParagraphPanel* m_paragraphPanel = nullptr;
+    BrushesPanel* m_brushesPanel = nullptr;
+    PaintPanel* m_paintPanel = nullptr;
+    SmootherPanel* m_smootherPanel = nullptr;
+    MotionSketchPanel* m_motionSketchPanel = nullptr;
+    WigglerPanel* m_wigglerPanel = nullptr;
+    PosterizeTimePanel* m_posterizeTimePanel = nullptr;
+    
     QDockWidget* m_projectDock = nullptr;
     QDockWidget* m_compositionDock = nullptr;
     QDockWidget* m_timelineDock = nullptr;
     QDockWidget* m_effectControlsDock = nullptr;
     QDockWidget* m_effectsBrowserDock = nullptr;
     QDockWidget* m_aiDock = nullptr;
+    
+    QDockWidget* m_infoDock = nullptr;
+    QDockWidget* m_audioDock = nullptr;
+    QDockWidget* m_previewDock = nullptr;
+    QDockWidget* m_characterDock = nullptr;
+    QDockWidget* m_paragraphDock = nullptr;
+    QDockWidget* m_brushesDock = nullptr;
+    QDockWidget* m_paintDock = nullptr;
+    QDockWidget* m_smootherDock = nullptr;
+    QDockWidget* m_motionSketchDock = nullptr;
+    QDockWidget* m_wigglerDock = nullptr;
+    QDockWidget* m_posterizeTimeDock = nullptr;
     
     int m_selectedLayerIndex = -1;
 };

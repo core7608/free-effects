@@ -163,6 +163,7 @@ public:
     virtual std::string getName() const = 0;
     virtual std::string getCategory() const = 0;
     virtual std::string getSubCategory() const { return ""; }
+    virtual std::string getDescription() const { return ""; }
 
     int getOrder() const { return m_order; }
     void setOrder(int order) { m_order = order; }

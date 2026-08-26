@@ -1,5 +1,44 @@
 #include "effect_registry.h"
 
+// Expression Controls
+#include "expression_controls/slider_control_effect.h"
+#include "expression_controls/angle_control_effect.h"
+#include "expression_controls/color_control_effect.h"
+#include "expression_controls/point_control_effect.h"
+#include "expression_controls/checkbox_control_effect.h"
+#include "expression_controls/layer_control_effect.h"
+#include "expression_controls/point_3d_control_effect.h"
+
+// Channel Effects
+#include "channel/shift_channels_effect.h"
+#include "channel/set_channels_effect.h"
+#include "channel/minimax_effect.h"
+#include "channel/cc_composite_effect.h"
+
+// Noise & Grain Effects
+#include "noise/add_grain_effect.h"
+#include "noise/remove_grain_effect.h"
+#include "noise/dust_scratches_effect.h"
+
+// Distort Effects
+#include "distort/turbulent_displace_effect.h"
+#include "distort/mesh_warp_effect.h"
+#include "distort/lens_distortion_effect.h"
+#include "distort/cc_lens_effect.h"
+
+// Stylize Effects
+#include "stylize/roughen_edges_effect.h"
+#include "stylize/scatter_effect.h"
+
+// Transition Effects
+#include "transition/card_wipe_effect.h"
+#include "transition/linear_wipe_effect.h"
+#include "transition/iris_wipe_effect.h"
+
+// Utility Effects
+#include "utility/cineon_converter_effect.h"
+#include "utility/color_profile_converter_effect.h"
+
 namespace FreeEffect {
 
 EffectRegistry& EffectRegistry::instance() {

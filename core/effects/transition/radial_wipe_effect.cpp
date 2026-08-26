@@ -1,3 +1,4 @@
+#include "../../math/math_constants.h"
 #include "../effect_registry.h"
 #include "radial_wipe_effect.h"
 #include <cmath>

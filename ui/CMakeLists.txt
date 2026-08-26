@@ -51,6 +51,28 @@ set(UI_SOURCES
     ai/ai_command_executor.cpp
     panels/timeline_canvas.h
     panels/timeline_canvas.cpp
+    panels/info_panel.h
+    panels/info_panel.cpp
+    panels/audio_panel.h
+    panels/audio_panel.cpp
+    panels/preview_panel.h
+    panels/preview_panel.cpp
+    panels/character_panel.h
+    panels/character_panel.cpp
+    panels/paragraph_panel.h
+    panels/paragraph_panel.cpp
+    panels/brushes_panel.h
+    panels/brushes_panel.cpp
+    panels/paint_panel.h
+    panels/paint_panel.cpp
+    panels/smoother_panel.h
+    panels/smoother_panel.cpp
+    panels/motion_sketch_panel.h
+    panels/motion_sketch_panel.cpp
+    panels/wiggler_panel.h
+    panels/wiggler_panel.cpp
+    panels/posterize_time_panel.h
+    panels/posterize_time_panel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../resources/resources.qrc
 )
 

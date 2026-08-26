@@ -199,10 +199,18 @@ void MenuBar::createViewMenu() {
 
 void MenuBar::createWindowMenu() {
     m_windowMenu = addMenu("&Window");
-    m_windowMenu->addAction(createMenuAction("Project"));
-    m_windowMenu->addAction(createMenuAction("Composition"));
-    m_windowMenu->addAction(createMenuAction("Timeline"));
-    m_windowMenu->addAction(createMenuAction("Effect Controls"));
+    m_windowMenu->addAction(createNamedAction("actionToggleInfo", "Info"));
+    m_windowMenu->addAction(createNamedAction("actionToggleAudio", "Audio"));
+    m_windowMenu->addAction(createNamedAction("actionTogglePreview", "Preview"));
+    m_windowMenu->addAction(createNamedAction("actionToggleCharacter", "Character"));
+    m_windowMenu->addAction(createNamedAction("actionToggleParagraph", "Paragraph"));
+    m_windowMenu->addAction(createNamedAction("actionToggleBrushes", "Brushes"));
+    m_windowMenu->addAction(createNamedAction("actionTogglePaint", "Paint"));
+    m_windowMenu->addAction(createNamedAction("actionToggleSmoother", "Smoother"));
+    m_windowMenu->addAction(createNamedAction("actionToggleMotionSketch", "Motion Sketch"));
+    m_windowMenu->addAction(createNamedAction("actionToggleWiggler", "Wiggler"));
+    m_windowMenu->addAction(createNamedAction("actionTogglePosterizeTime", "Posterize Time"));
+    m_windowMenu->addSeparator();
     m_windowMenu->addAction(createNamedAction("actionToggleAI", "AI Assistant"));
     m_windowMenu->addSeparator();
     QMenu* workspaceMenu = m_windowMenu->addMenu("&Workspace");

@@ -9,6 +9,13 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
+option(FREEEFFECT_ENABLE_SIMULATION "Enable simulation effects" ON)
+option(FREEEFFECT_ENABLE_PLUGIN_EFFECTS "Enable plugin effect equivalents" ON)
+option(FREEEFFECT_ENABLE_TRANSITION_EFFECTS "Enable transition effects" ON)
+option(FREEEFFECT_ENABLE_EXPRESSION_ENGINE "Enable expression engine" ON)
+option(FREEEFFECT_ENABLE_TRACKING "Enable motion tracking" ON)
+option(FREEEFFECT_ENABLE_PUPPET "Enable puppet tool" ON)
+
 enable_testing()
 
 add_subdirectory(core)

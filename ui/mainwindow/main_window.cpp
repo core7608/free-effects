@@ -5,6 +5,17 @@
 #include "../panels/effect_controls_panel.h"
 #include "../panels/effects_browser_panel.h"
 #include "../panels/timeline_canvas.h"
+#include "../panels/info_panel.h"
+#include "../panels/audio_panel.h"
+#include "../panels/preview_panel.h"
+#include "../panels/character_panel.h"
+#include "../panels/paragraph_panel.h"
+#include "../panels/brushes_panel.h"
+#include "../panels/paint_panel.h"
+#include "../panels/smoother_panel.h"
+#include "../panels/motion_sketch_panel.h"
+#include "../panels/wiggler_panel.h"
+#include "../panels/posterize_time_panel.h"
 #include "../canvas/canvas_widget.h"
 #include "../dialogs/new_composition_dialog.h"
 #include "../dialogs/about_dialog.h"
@@ -169,6 +180,129 @@ void MainWindow::setupDockWidgets() {
     tabifyDockWidget(m_effectsBrowserDock, m_effectControlsDock);
     tabifyDockWidget(m_effectControlsDock, m_aiDock);
     m_projectDock->raise();
+    
+    // Info Panel - Right side (tabified with AI panel)
+    m_infoPanel = new InfoPanel(this);
+    m_infoDock = new QDockWidget("Info", this);
+    m_infoDock->setObjectName("InfoPanel");
+    m_infoDock->setWidget(m_infoPanel);
+    m_infoDock->setMinimumWidth(200);
+    m_infoDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_infoDock);
+    
+    // Audio Panel - Right side (tabified)
+    m_audioPanel = new AudioPanel(this);
+    m_audioDock = new QDockWidget("Audio", this);
+    m_audioDock->setObjectName("AudioPanel");
+    m_audioDock->setWidget(m_audioPanel);
+    m_audioDock->setMinimumWidth(200);
+    m_audioDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_audioDock);
+    
+    // Preview Panel - Right side (tabified)
+    m_previewPanel = new PreviewPanel(this);
+    m_previewDock = new QDockWidget("Preview", this);
+    m_previewDock->setObjectName("PreviewPanel");
+    m_previewDock->setWidget(m_previewPanel);
+    m_previewDock->setMinimumWidth(250);
+    m_previewDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_previewDock);
+    
+    // Character Panel - Right side (tabified)
+    m_characterPanel = new CharacterPanel(this);
+    m_characterDock = new QDockWidget("Character", this);
+    m_characterDock->setObjectName("CharacterPanel");
+    m_characterDock->setWidget(m_characterPanel);
+    m_characterDock->setMinimumWidth(220);
+    m_characterDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_characterDock);
+    
+    // Paragraph Panel - Right side (tabified)
+    m_paragraphPanel = new ParagraphPanel(this);
+    m_paragraphDock = new QDockWidget("Paragraph", this);
+    m_paragraphDock->setObjectName("ParagraphPanel");
+    m_paragraphDock->setWidget(m_paragraphPanel);
+    m_paragraphDock->setMinimumWidth(220);
+    m_paragraphDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_paragraphDock);
+    
+    // Brushes Panel - Right side (tabified)
+    m_brushesPanel = new BrushesPanel(this);
+    m_brushesDock = new QDockWidget("Brushes", this);
+    m_brushesDock->setObjectName("BrushesPanel");
+    m_brushesDock->setWidget(m_brushesPanel);
+    m_brushesDock->setMinimumWidth(220);
+    m_brushesDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_brushesDock);
+    
+    // Paint Panel - Right side (tabified)
+    m_paintPanel = new PaintPanel(this);
+    m_paintDock = new QDockWidget("Paint", this);
+    m_paintDock->setObjectName("PaintPanel");
+    m_paintDock->setWidget(m_paintPanel);
+    m_paintDock->setMinimumWidth(200);
+    m_paintDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_paintDock);
+    
+    // Smoother Panel - Right side (tabified)
+    m_smootherPanel = new SmootherPanel(this);
+    m_smootherDock = new QDockWidget("Smoother", this);
+    m_smootherDock->setObjectName("SmootherPanel");
+    m_smootherDock->setWidget(m_smootherPanel);
+    m_smootherDock->setMinimumWidth(220);
+    m_smootherDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_smootherDock);
+    
+    // Motion Sketch Panel - Right side (tabified)
+    m_motionSketchPanel = new MotionSketchPanel(this);
+    m_motionSketchDock = new QDockWidget("Motion Sketch", this);
+    m_motionSketchDock->setObjectName("MotionSketchPanel");
+    m_motionSketchDock->setWidget(m_motionSketchPanel);
+    m_motionSketchDock->setMinimumWidth(220);
+    m_motionSketchDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_motionSketchDock);
+    
+    // Wiggler Panel - Right side (tabified)
+    m_wigglerPanel = new WigglerPanel(this);
+    m_wigglerDock = new QDockWidget("Wiggler", this);
+    m_wigglerDock->setObjectName("WigglerPanel");
+    m_wigglerDock->setWidget(m_wigglerPanel);
+    m_wigglerDock->setMinimumWidth(220);
+    m_wigglerDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_wigglerDock);
+    
+    // Posterize Time Panel - Right side (tabified)
+    m_posterizeTimePanel = new PosterizeTimePanel(this);
+    m_posterizeTimeDock = new QDockWidget("Posterize Time", this);
+    m_posterizeTimeDock->setObjectName("PosterizeTimePanel");
+    m_posterizeTimeDock->setWidget(m_posterizeTimePanel);
+    m_posterizeTimeDock->setMinimumWidth(220);
+    m_posterizeTimeDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_posterizeTimeDock);
+    
+    // Tabify all right-side panels together
+    tabifyDockWidget(m_aiDock, m_infoDock);
+    tabifyDockWidget(m_infoDock, m_audioDock);
+    tabifyDockWidget(m_audioDock, m_previewDock);
+    tabifyDockWidget(m_previewDock, m_characterDock);
+    tabifyDockWidget(m_characterDock, m_paragraphDock);
+    tabifyDockWidget(m_paragraphDock, m_brushesDock);
+    tabifyDockWidget(m_brushesDock, m_paintDock);
+    tabifyDockWidget(m_paintDock, m_smootherDock);
+    tabifyDockWidget(m_smootherDock, m_motionSketchDock);
+    tabifyDockWidget(m_motionSketchDock, m_wigglerDock);
+    tabifyDockWidget(m_wigglerDock, m_posterizeTimeDock);
+    
+    // Hide most panels by default - only show Info and Character
+    m_audioDock->hide();
+    m_previewDock->hide();
+    m_paragraphDock->hide();
+    m_brushesDock->hide();
+    m_paintDock->hide();
+    m_smootherDock->hide();
+    m_motionSketchDock->hide();
+    m_wigglerDock->hide();
+    m_posterizeTimeDock->hide();
 }
 
 void MainWindow::setupStatusBar() {
@@ -258,6 +392,33 @@ void MainWindow::connectSignals() {
                     }
                 }
             }
+        });
+    }
+    
+    // Connect Info panel mouse tracking
+    if (m_infoPanel) {
+        connect(m_infoPanel, &InfoPanel::positionChanged, this, [this](int x, int y) {
+            statusBar()->showMessage(QString("Cursor: %1, %2").arg(x).arg(y), 1000);
+        });
+    }
+    
+    // Connect Preview panel controls
+    if (m_previewPanel) {
+        connect(m_previewPanel, &PreviewPanel::playClicked, this, [this]() {
+            statusBar()->showMessage("Playing", 1000);
+        });
+        connect(m_previewPanel, &PreviewPanel::pauseClicked, this, [this]() {
+            statusBar()->showMessage("Paused", 1000);
+        });
+        connect(m_previewPanel, &PreviewPanel::stopClicked, this, [this]() {
+            statusBar()->showMessage("Stopped", 1000);
+        });
+    }
+    
+    // Connect Audio panel
+    if (m_audioPanel) {
+        connect(m_audioPanel, &AudioPanel::volumeChanged, this, [this](double vol) {
+            statusBar()->showMessage(QString("Volume: %1%").arg(static_cast<int>(vol * 100)), 1000);
         });
     }
 }
@@ -357,6 +518,41 @@ void MainWindow::connectMenuActions() {
     connectAction("actionAbout", &MainWindow::onShowAbout);
     connectAction("actionAISettings", &MainWindow::onShowAISettings);
     connectAction("actionToggleAI", &MainWindow::onToggleAIPanel);
+    
+    // Window panel toggles
+    connectAction("actionToggleInfo", [this]() {
+        if (m_infoDock) { m_infoDock->isVisible() ? m_infoDock->hide() : (m_infoDock->show(), m_infoDock->raise()); }
+    });
+    connectAction("actionToggleAudio", [this]() {
+        if (m_audioDock) { m_audioDock->isVisible() ? m_audioDock->hide() : (m_audioDock->show(), m_audioDock->raise()); }
+    });
+    connectAction("actionTogglePreview", [this]() {
+        if (m_previewDock) { m_previewDock->isVisible() ? m_previewDock->hide() : (m_previewDock->show(), m_previewDock->raise()); }
+    });
+    connectAction("actionToggleCharacter", [this]() {
+        if (m_characterDock) { m_characterDock->isVisible() ? m_characterDock->hide() : (m_characterDock->show(), m_characterDock->raise()); }
+    });
+    connectAction("actionToggleParagraph", [this]() {
+        if (m_paragraphDock) { m_paragraphDock->isVisible() ? m_paragraphDock->hide() : (m_paragraphDock->show(), m_paragraphDock->raise()); }
+    });
+    connectAction("actionToggleBrushes", [this]() {
+        if (m_brushesDock) { m_brushesDock->isVisible() ? m_brushesDock->hide() : (m_brushesDock->show(), m_brushesDock->raise()); }
+    });
+    connectAction("actionTogglePaint", [this]() {
+        if (m_paintDock) { m_paintDock->isVisible() ? m_paintDock->hide() : (m_paintDock->show(), m_paintDock->raise()); }
+    });
+    connectAction("actionToggleSmoother", [this]() {
+        if (m_smootherDock) { m_smootherDock->isVisible() ? m_smootherDock->hide() : (m_smootherDock->show(), m_smootherDock->raise()); }
+    });
+    connectAction("actionToggleMotionSketch", [this]() {
+        if (m_motionSketchDock) { m_motionSketchDock->isVisible() ? m_motionSketchDock->hide() : (m_motionSketchDock->show(), m_motionSketchDock->raise()); }
+    });
+    connectAction("actionToggleWiggler", [this]() {
+        if (m_wigglerDock) { m_wigglerDock->isVisible() ? m_wigglerDock->hide() : (m_wigglerDock->show(), m_wigglerDock->raise()); }
+    });
+    connectAction("actionTogglePosterizeTime", [this]() {
+        if (m_posterizeTimeDock) { m_posterizeTimeDock->isVisible() ? m_posterizeTimeDock->hide() : (m_posterizeTimeDock->show(), m_posterizeTimeDock->raise()); }
+    });
     
     // Effect menu - connect all dynamically created effect actions
     if (m_menuBar && m_menuBar->getEffectMenu()) {

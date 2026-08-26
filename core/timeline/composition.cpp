@@ -109,4 +109,47 @@ std::shared_ptr<Composition> Composition::getPrecompById(const std::string& id) 
     return nullptr;
 }
 
+void Composition::addMarker(const CompMarker& marker) {
+    m_markers.push_back(marker);
+    // Auto-assign index if not set
+    if (m_markers.back().index == 0) {
+        m_markers.back().index = static_cast<int>(m_markers.size());
+    }
+    // Sort by time
+    std::sort(m_markers.begin(), m_markers.end(),
+              [](const CompMarker& a, const CompMarker& b) {
+                  return a.time < b.time;
+              });
+}
+
+void Composition::removeMarker(int index) {
+    auto it = std::remove_if(m_markers.begin(), m_markers.end(),
+        [index](const CompMarker& m) { return m.index == index; });
+    m_markers.erase(it, m_markers.end());
+}
+
+void Composition::removeMarkerByIndex(int markerIndex) {
+    if (markerIndex >= 0 && markerIndex < static_cast<int>(m_markers.size())) {
+        m_markers.erase(m_markers.begin() + markerIndex);
+    }
+}
+
+CompMarker* Composition::getMarkerAtTime(double time, double tolerance) {
+    for (auto& m : m_markers) {
+        if (std::abs(m.time - time) <= tolerance) {
+            return &m;
+        }
+    }
+    return nullptr;
+}
+
+CompMarker* Composition::getMarkerByIndex(int index) {
+    for (auto& m : m_markers) {
+        if (m.index == index) {
+            return &m;
+        }
+    }
+    return nullptr;
+}
+
 } // namespace FreeEffect
