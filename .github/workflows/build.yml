@@ -41,21 +41,34 @@ jobs:
       - name: Install dependencies (macOS)
         if: runner.os == 'macOS'
         run: |
-          brew install cmake qt@6 pkg-config nlohmann-json ffmpeg
+          brew install cmake pkg-config nlohmann-json ffmpeg qt@6
 
-      - name: Install dependencies (Windows)
+      - name: Setup Qt6 (Windows)
+        if: runner.os == 'Windows'
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.7.0'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+          setup-python: 'false'
+
+      - name: Install CMake (Windows)
         if: runner.os == 'Windows'
         run: |
           choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-          choco install qt6
 
       - name: Configure (full build)
         id: cmake_full
         shell: bash
         run: |
+          EXTRA_FLAGS=""
+          if [ "${{ runner.os }}" == "macOS" ]; then
+            EXTRA_FLAGS="-DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt@6;/opt/homebrew/opt/ffmpeg"
+          fi
           cmake -B build \
             -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_PREFIX_PATH="${{ runner.os == 'macOS' && '/opt/homebrew/opt/qt@6' || '' }}" \
+            $EXTRA_FLAGS \
             -DFREEEFFECT_ENABLE_SIMULATION=ON \
             -DFREEEFFECT_ENABLE_PLUGIN_EFFECTS=ON \
             -DFREEEFFECT_ENABLE_TRANSITION_EFFECTS=ON \
@@ -73,8 +86,13 @@ jobs:
         shell: bash
         run: |
           rm -rf build
+          EXTRA_FLAGS=""
+          if [ "${{ runner.os }}" == "macOS" ]; then
+            EXTRA_FLAGS="-DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt@6;/opt/homebrew/opt/ffmpeg"
+          fi
           cmake -B build \
             -DCMAKE_BUILD_TYPE=Release \
+            $EXTRA_FLAGS \
             -DFREEEFFECT_ENABLE_SIMULATION=OFF \
             -DFREEEFFECT_ENABLE_PLUGIN_EFFECTS=OFF \
             -DFREEEFFECT_ENABLE_TRANSITION_EFFECTS=OFF \
@@ -111,6 +129,7 @@ jobs:
         with:
           name: FreeEffect-${{ matrix.artifact }}
           path: build/*.deb build/*.rpm build/*.dmg build/*.exe 2>/dev/null || true
+          if-no-files-found: warn
 
   release:
     needs: build

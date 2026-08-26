@@ -913,13 +913,13 @@ if(PkgConfig_FOUND)
     pkg_check_modules(SWRESAMPLE QUIET libswresample)
     
     if(AVFORMAT_FOUND AND AVCODEC_FOUND AND AVUTIL_FOUND AND SWSCALE_FOUND)
-        target_include_directories(freeeffect_core PRIVATE
+        target_include_directories(freeeffect_core PUBLIC
             ${AVFORMAT_INCLUDE_DIRS}
             ${AVCODEC_INCLUDE_DIRS}
             ${AVUTIL_INCLUDE_DIRS}
             ${SWSCALE_INCLUDE_DIRS}
         )
-        target_link_libraries(freeeffect_core PRIVATE
+        target_link_libraries(freeeffect_core PUBLIC
             ${AVFORMAT_LIBRARIES}
             ${AVCODEC_LIBRARIES}
             ${AVUTIL_LIBRARIES}
@@ -928,8 +928,8 @@ if(PkgConfig_FOUND)
         target_compile_definitions(freeeffect_core PRIVATE HAS_FFMPEG)
         
         if(SWRESAMPLE_FOUND)
-            target_include_directories(freeeffect_core PRIVATE ${SWRESAMPLE_INCLUDE_DIRS})
-            target_link_libraries(freeeffect_core PRIVATE ${SWRESAMPLE_LIBRARIES})
+            target_include_directories(freeeffect_core PUBLIC ${SWRESAMPLE_INCLUDE_DIRS})
+            target_link_libraries(freeeffect_core PUBLIC ${SWRESAMPLE_LIBRARIES})
         endif()
     endif()
 endif()

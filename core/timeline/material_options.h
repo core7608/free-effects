@@ -1,6 +1,7 @@
 #pragma once
 
 #include "types.h"
+#include <algorithm>
 #include <cmath>
 
 namespace FreeEffect {
