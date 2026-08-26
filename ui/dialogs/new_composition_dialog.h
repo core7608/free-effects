@@ -21,6 +21,12 @@ public:
     int getHeight() const;
     double getFrameRate() const;
     double getDuration() const;
+    
+    void setCompositionName(const QString& name);
+    void setWidth(int w);
+    void setHeight(int h);
+    void setFrameRate(double fps);
+    void setDuration(double dur);
 
 private slots:
     void onPresetChanged(int index);

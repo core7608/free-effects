@@ -119,4 +119,10 @@ int NewCompositionDialog::getHeight() const { return m_heightSpin->value(); }
 double NewCompositionDialog::getFrameRate() const { return m_frameRateSpin->value(); }
 double NewCompositionDialog::getDuration() const { return m_durationSpin->value(); }
 
+void NewCompositionDialog::setCompositionName(const QString& name) { m_nameEdit->setText(name); }
+void NewCompositionDialog::setWidth(int w) { m_widthSpin->setValue(w); }
+void NewCompositionDialog::setHeight(int h) { m_heightSpin->setValue(h); }
+void NewCompositionDialog::setFrameRate(double fps) { m_frameRateSpin->setValue(fps); }
+void NewCompositionDialog::setDuration(double dur) { m_durationSpin->setValue(dur); }
+
 } // namespace FreeEffect

@@ -1,0 +1,844 @@
+,
+  {
+    "name": "YouTube Shorts",
+    "description": "Vertical 9:16 format for YouTube Shorts",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 540.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR SHORT",
+        "font_family": "Impact",
+        "font_size": 72.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Subscribe Button",
+        "type": "shape",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 540.0,
+        "position_y": 1500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Subscribe Text",
+        "type": "text",
+        "start_time": 1.2,
+        "duration": 3.3,
+        "position_x": 540.0,
+        "position_y": 1500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SUBSCRIBE",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.2, "value": 0.0, "interpolation": 2},
+            {"time": 1.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Instagram Reel",
+    "description": "Instagram Reels template with engagement prompts",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.0,
+    "background_b": 0.2,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 540.0,
+        "position_y": 850.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR REEL",
+        "font_family": "Helvetica Neue",
+        "font_size": 64.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Like Button",
+        "type": "shape",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 540.0,
+        "position_y": 1600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.2,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.7, "value": 120.0, "interpolation": 3},
+            {"time": 1.9, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.7, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Follow Text",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 540.0,
+        "position_y": 1700.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Follow for more",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.8,
+        "text_color_g": 0.8,
+        "text_color_b": 0.85,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 2.0, "value": 0.0, "interpolation": 2},
+            {"time": 2.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Twitch Offline",
+    "description": "Twitch offline screen with schedule",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.06,
+    "background_b": 0.15,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Purple Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.5,
+        "color_g": 0.0,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "screen"
+      },
+      {
+        "name": "Offline Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "OFFLINE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Schedule Text",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 550.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Back Monday at 8PM EST",
+        "font_family": "Arial",
+        "font_size": 32.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.5,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 2.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Discord Banner",
+    "description": "Discord server announcement banner",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.12,
+    "background_g": 0.14,
+    "background_b": 0.18,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Blurple Accent",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 1000.0,
+        "scale_x": 100.0,
+        "scale_y": 20.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.47,
+        "color_g": 0.49,
+        "color_b": 0.95,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Server Name",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 450.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR SERVER",
+        "font_family": "Whitney",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Join Text",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 550.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Join us!",
+        "font_family": "Arial",
+        "font_size": 36.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.75,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 2.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "GitHub Profile",
+    "description": "GitHub profile README banner",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1280,
+    "height": 640,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Green Accent",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 10.0,
+        "position_y": 320.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.36,
+        "color_g": 0.85,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Username",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 640.0,
+        "position_y": 250.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "@username",
+        "font_family": "Courier New",
+        "font_size": 48.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bio",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 640.0,
+        "position_y": 330.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Full-stack developer | Open source contributor",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Spotify Canvas",
+    "description": "Spotify Canvas vertical format with music info",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.15,
+    "background_b": 0.05,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Green Glow",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 540.0,
+        "position_y": 960.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.1,
+        "color_g": 0.9,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "screen"
+      },
+      {
+        "name": "Track Title",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 540.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "TRACK NAME",
+        "font_family": "Montserrat",
+        "font_size": 48.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Artist Name",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 540.0,
+        "position_y": 960.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Artist Name",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 0.8,
+        "text_color_g": 1.0,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Snapchat Spotlight",
+    "description": "Snapchat Spotlight vertical template",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 1.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Yellow Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 540.0,
+        "position_y": 960.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 20.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "multiply"
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 540.0,
+        "position_y": 850.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR\nSPOTLIGHT",
+        "font_family": "Avenir Next",
+        "font_size": 72.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Swipe Text",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 540.0,
+        "position_y": 1700.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Swipe up",
+        "font_family": "Avenir Next",
+        "font_size": 24.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 2.0, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "LinkedIn Video",
+    "description": "LinkedIn professional video intro",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.08,
+    "background_b": 0.15,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Blue Bar",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 100.0,
+        "scale_x": 100.0,
+        "scale_y": 20.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.4,
+        "color_b": 0.7,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Name",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 450.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR NAME",
+        "font_family": "Georgia",
+        "font_size": 72.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Role",
+        "type": "text",
+        "start_time": 1.2,
+        "duration": 3.3,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Job Title at Company",
+        "font_family": "Arial",
+        "font_size": 32.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.6,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.2, "value": 0.0, "interpolation": 2},
+            {"time": 1.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pinterest Pin",
+    "description": "Pinterest tall pin template (1000x1500)",
+    "category": "Social Media",
+    "duration": 1.0,
+    "width": 1000,
+    "height": 1500,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.92,
+    "background_b": 0.88,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Image Area",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 500.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.85,
+        "color_g": 0.8,
+        "color_b": 0.75,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 500.0,
+        "position_y": 1100.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "YOUR PIN TITLE HERE",
+        "font_family": "Georgia",
+        "font_size": 48.0,
+        "text_color_r": 0.15,
+        "text_color_g": 0.12,
+        "text_color_b": 0.1,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Description",
+        "type": "text",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 500.0,
+        "position_y": 1250.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 60.0,
+        "text": "Short description of your pin content",
+        "font_family": "Arial",
+        "font_size": 20.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Zoom Virtual Background",
+    "description": "Zoom virtual background overlay",
+    "category": "Social Media",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.08,
+    "background_g": 0.12,
+    "background_b": 0.2,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Gradient BG",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 150.0,
+        "scale_y": 150.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.1,
+        "color_g": 0.15,
+        "color_b": 0.25,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Logo",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Plate",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Your Name",
+        "font_family": "Helvetica Neue",
+        "font_size": 36.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  }
+]

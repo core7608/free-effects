@@ -60,4 +60,53 @@ void Composition::moveLayer(int fromIndex, int toIndex) {
     m_layers.insert(m_layers.begin() + toIndex, layer);
 }
 
+void Composition::addLight(std::shared_ptr<Light> light) {
+    if (light) {
+        m_lights.push_back(std::move(light));
+    }
+}
+
+void Composition::removeLight(const UUID& id) {
+    m_lights.erase(
+        std::remove_if(m_lights.begin(), m_lights.end(),
+            [&id](const std::shared_ptr<Light>& l) { return l->getId() == id; }),
+        m_lights.end());
+}
+
+void Composition::setWorkArea(double start, double end) {
+    m_workAreaStart = start;
+    m_workAreaEnd = end;
+}
+
+double Composition::getWorkAreaDuration() const {
+    return m_workAreaEnd - m_workAreaStart;
+}
+
+bool Composition::isInWorkArea(double time) const {
+    return time >= m_workAreaStart && time <= m_workAreaEnd;
+}
+
+void Composition::setParentComposition(const std::shared_ptr<Composition>& parent) {
+    m_parentComposition = parent;
+}
+
+std::shared_ptr<Composition> Composition::getParentComposition() const {
+    return m_parentComposition.lock();
+}
+
+void Composition::addPrecomp(std::shared_ptr<Composition> comp) {
+    if (comp) {
+        m_precomps.push_back(std::move(comp));
+    }
+}
+
+std::shared_ptr<Composition> Composition::getPrecompById(const std::string& id) const {
+    for (const auto& comp : m_precomps) {
+        if (comp && comp->getId() == id) {
+            return comp;
+        }
+    }
+    return nullptr;
+}
+
 } // namespace FreeEffect

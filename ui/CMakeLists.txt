@@ -21,6 +21,8 @@ set(UI_SOURCES
     panels/timeline_panel.cpp
     panels/effect_controls_panel.h
     panels/effect_controls_panel.cpp
+    panels/effects_browser_panel.h
+    panels/effects_browser_panel.cpp
     canvas/canvas_widget.h
     canvas/canvas_widget.cpp
     dialogs/new_composition_dialog.h

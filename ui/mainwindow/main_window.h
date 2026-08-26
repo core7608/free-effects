@@ -19,6 +19,7 @@ class ProjectPanel;
 class CompositionPanel;
 class TimelinePanel;
 class EffectControlsPanel;
+class EffectsBrowserPanel;
 class CanvasWidget;
 class AIPanel;
 class AICommandExecutor;
@@ -36,6 +37,7 @@ public:
     TimelinePanel* getTimelinePanel() const { return m_timelinePanel; }
     ProjectPanel* getProjectPanel() const { return m_projectPanel; }
     EffectControlsPanel* getEffectControlsPanel() const { return m_effectControlsPanel; }
+    EffectsBrowserPanel* getEffectsBrowserPanel() const { return m_effectsBrowserPanel; }
     AICommandExecutor* getAICommandExecutor() const;
     
     void updateTitle();
@@ -110,12 +112,14 @@ private:
     CompositionPanel* m_compositionPanel = nullptr;
     TimelinePanel* m_timelinePanel = nullptr;
     EffectControlsPanel* m_effectControlsPanel = nullptr;
+    EffectsBrowserPanel* m_effectsBrowserPanel = nullptr;
     AIPanel* m_aiPanel = nullptr;
     
     QDockWidget* m_projectDock = nullptr;
     QDockWidget* m_compositionDock = nullptr;
     QDockWidget* m_timelineDock = nullptr;
     QDockWidget* m_effectControlsDock = nullptr;
+    QDockWidget* m_effectsBrowserDock = nullptr;
     QDockWidget* m_aiDock = nullptr;
     
     int m_selectedLayerIndex = -1;

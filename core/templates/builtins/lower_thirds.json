@@ -1,0 +1,2335 @@
+[
+  {
+    "name": "News Style Lower Third",
+    "description": "Classic news broadcast lower third with name and title",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Background Bar",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 360.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.15,
+        "color_b": 0.5,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 380.0,
+        "position_y": 858.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "JOHN SMITH",
+        "font_family": "Arial",
+        "font_size": 36.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 380.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Senior Correspondent",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.85,
+        "text_color_g": 0.85,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Accent Stripe",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 352.0,
+        "position_y": 870.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Modern Minimal Lower Third",
+    "description": "Clean minimal lower third with sliding panels",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Name Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": -300.0,
+        "position_y": 855.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.15,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.2, "value": -300.0, "interpolation": 3},
+            {"time": 0.7, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Background",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": -400.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.18,
+        "color_g": 0.18,
+        "color_b": 0.22,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.4, "value": -400.0, "interpolation": 3},
+            {"time": 0.9, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 852.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ALEX JOHNSON",
+        "font_family": "Montserrat",
+        "font_size": 32.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 896.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Product Designer",
+        "font_family": "Montserrat",
+        "font_size": 20.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.7,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Dot Accent",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 160.0,
+        "position_y": 855.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Rounded Bars Lower Third",
+    "description": "Friendly rounded bar lower third with color accent",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Rounded Background",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 400.0,
+        "position_y": 880.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.15,
+        "color_g": 0.15,
+        "color_b": 0.2,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Color Accent",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 170.0,
+        "position_y": 880.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.95,
+        "color_g": 0.3,
+        "color_b": 0.5,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 240.0,
+        "position_y": 868.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SARAH PARK",
+        "font_family": "Nunito",
+        "font_size": 30.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Role Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 240.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Creative Director",
+        "font_family": "Nunito",
+        "font_size": 18.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.75,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Split Info Lower Third",
+    "description": "Split panel lower third with two info sections",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Left Panel",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 300.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Right Panel",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 700.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.16,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.4, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 300.0,
+        "position_y": 860.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "DR. MARIA CHEN",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Role Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 700.0,
+        "position_y": 860.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Chief Technology Officer",
+        "font_family": "Arial",
+        "font_size": 18.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.7,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Animated Lines Lower Third",
+    "description": "Lower third with animated line accents",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Top Line",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 960.0,
+        "position_y": 840.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 870.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "JAMES WILSON",
+        "font_family": "Montserrat",
+        "font_size": 34.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bottom Line",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 960.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 80.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.4, "value": 0.0, "interpolation": 3},
+            {"time": 0.9, "value": 60.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Subtitle Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 960.0,
+        "position_y": 920.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "VP of Engineering | TechCorp",
+        "font_family": "Montserrat",
+        "font_size": 16.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Social Handle Lower Third",
+    "description": "Lower third displaying social media handle",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Icon Background",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 170.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.15,
+        "color_g": 0.5,
+        "color_b": 0.95,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Handle Background",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 550.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.14,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.4, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Handle Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 380.0,
+        "position_y": 895.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "@yourhandle",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Platform Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 380.0,
+        "position_y": 925.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Follow me on Instagram",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Corporate Lower Third",
+    "description": "Professional corporate lower third with logo area",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Dark Bar",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 960.0,
+        "position_y": 920.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.08,
+        "color_g": 0.08,
+        "color_b": 0.12,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Accent Bar",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 960.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.4,
+        "color_b": 0.7,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 200.0,
+        "position_y": 895.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ROBERT TAYLOR",
+        "font_family": "Arial",
+        "font_size": 32.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 200.0,
+        "position_y": 935.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Chief Executive Officer",
+        "font_family": "Arial",
+        "font_size": 18.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.7,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Company Logo Area",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 1700.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.5,
+        "color_b": 0.7,
+        "color_a": 0.5,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 50.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Broadcast Lower Third",
+    "description": "TV broadcast style lower third with ticker",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Main Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 400.0,
+        "position_y": 860.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.0,
+        "color_g": 0.1,
+        "color_b": 0.35,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Red Stripe",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 100.0,
+        "position_y": 860.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.1,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "LIVE Badge",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 100.0,
+        "position_y": 860.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "LIVE",
+        "font_family": "Arial",
+        "font_size": 20.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Blink",
+            "parameters": {
+              "frequency": 1.0,
+              "on_ratio": 0.7
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 845.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "EMILY DAVIS",
+        "font_family": "Arial",
+        "font_size": 30.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Location Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 880.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Washington, D.C.",
+        "font_family": "Arial",
+        "font_size": 18.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.8,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Podcast Lower Third",
+    "description": "Lower third for podcast with episode info",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Podcast Background",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 960.0,
+        "position_y": 920.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.15,
+        "color_g": 0.08,
+        "color_b": 0.25,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Microphone Icon",
+        "type": "shape",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 150.0,
+        "position_y": 920.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.8,
+        "color_g": 0.3,
+        "color_b": 0.5,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Guest Name",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 220.0,
+        "position_y": 908.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GUEST: SARAH MITCHELL",
+        "font_family": "Montserrat",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Episode Info",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 220.0,
+        "position_y": 940.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "EP. 47 | The Future of AI",
+        "font_family": "Montserrat",
+        "font_size": 16.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.5,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gaming Lower Third",
+    "description": "Esports gaming style lower third with neon accents",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Neon Background",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 350.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.08,
+        "color_g": 0.08,
+        "color_b": 0.12,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Neon Border",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 350.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 1.0,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "Glow",
+            "parameters": {
+              "intensity": 2.0,
+              "radius": 10.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Gamertag",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 180.0,
+        "position_y": 890.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "NINJA_FURY",
+        "font_family": "Impact",
+        "font_size": 34.0,
+        "text_color_r": 0.0,
+        "text_color_g": 1.0,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Game Title",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 180.0,
+        "position_y": 925.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Ranked Match | Diamond Tier",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.8,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Vlog Lower Third",
+    "description": "Casual vlog style lower third with personality",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Brush Stroke BG",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 400.0,
+        "position_y": 880.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.85,
+        "color_b": 0.0,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 200.0,
+        "position_y": 868.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": -1.5,
+        "opacity": 0.0,
+        "text": "MIKE ADVENTURES",
+        "font_family": "Permanent Marker",
+        "font_size": 36.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.12,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Subtitle Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 908.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Day 42 of the Road Trip",
+        "font_family": "Caveat",
+        "font_size": 22.0,
+        "text_color_r": 0.2,
+        "text_color_g": 0.2,
+        "text_color_b": 0.25,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Heart Icon",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 150.0,
+        "position_y": 885.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 120.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Documentary Lower Third",
+    "description": "Documentary style lower third with date/location",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Thin Line Top",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 960.0,
+        "position_y": 850.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 60.0,
+        "color_r": 0.9,
+        "color_g": 0.9,
+        "color_b": 0.95,
+        "color_a": 0.6,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 50.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 880.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PROFESSOR ANNA KOVAL",
+        "font_family": "Georgia",
+        "font_size": 30.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 915.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Marine Biologist, Ocean Institute",
+        "font_family": "Georgia",
+        "font_size": 18.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.75,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Location Text",
+        "type": "text",
+        "start_time": 0.9,
+        "duration": 4.6,
+        "position_x": 200.0,
+        "position_y": 945.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Pacific Ocean, 200 miles offshore",
+        "font_family": "Georgia",
+        "font_size": 14.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.9, "value": 0.0, "interpolation": 2},
+            {"time": 1.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Interview Name Lower Third",
+    "description": "Classic interviewee identification lower third",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Background Slide",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": -400.0,
+        "position_y": 880.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.15,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.2, "value": -400.0, "interpolation": 3},
+            {"time": 0.6, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 870.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "MICHAEL TORRES",
+        "font_family": "Helvetica Neue",
+        "font_size": 32.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 905.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Former CIA Analyst",
+        "font_family": "Helvetica Neue",
+        "font_size": 20.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.75,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Location Tag Lower Third",
+    "description": "Map-style location identification tag",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Pin Icon",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 170.0,
+        "position_y": 870.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.4, "value": 130.0, "interpolation": 3},
+            {"time": 0.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Location Background",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 500.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.13,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Location Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 250.0,
+        "position_y": 862.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "TOKYO, JAPAN",
+        "font_family": "Arial",
+        "font_size": 30.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Coordinates Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 250.0,
+        "position_y": 895.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "35.6762° N, 139.6503° E",
+        "font_family": "Courier New",
+        "font_size": 14.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.6,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Timestamp Lower Third",
+    "description": "Timecode or datestamp style lower third",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Timestamp Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 250.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 85.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 0.85,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Date Text",
+        "type": "text",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 150.0,
+        "position_y": 890.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "JANUARY 15, 2026",
+        "font_family": "Courier New",
+        "font_size": 22.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Timecode Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 150.0,
+        "position_y": 918.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "00:14:32:08",
+        "font_family": "Courier New",
+        "font_size": 16.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.8,
+        "text_color_b": 0.6,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 872.0,
+              "start_time": 0.6,
+              "end_time": 5.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Episode Counter Lower Third",
+    "description": "Episode counter with animated number",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Counter Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 250.0,
+        "position_y": 880.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.18,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Episode Number",
+        "type": "text",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 140.0,
+        "position_y": 868.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "#24",
+        "font_family": "Impact",
+        "font_size": 42.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Show Name",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 240.0,
+        "position_y": 868.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "THE DAILY SHOW",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Episode Title",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 240.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "The one where everything changes",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Speaker Card Lower Third",
+    "description": "Speaker identification card for conferences",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Card Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 960.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.08,
+        "color_g": 0.08,
+        "color_b": 0.1,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Photo Circle",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 200.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Speaker Name",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 300.0,
+        "position_y": 888.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "DR. LISA WANG",
+        "font_family": "Helvetica Neue",
+        "font_size": 30.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Talk Title",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 300.0,
+        "position_y": 920.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "\"Building the Future of Computing\"",
+        "font_family": "Helvetica Neue",
+        "font_size": 16.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.6,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Guest Card Lower Third",
+    "description": "Guest interviewee card with affiliation",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Guest Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 350.0,
+        "position_y": 880.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.15,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Guest Badge",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 130.0,
+        "position_y": 865.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.6,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Guest Label",
+        "type": "text",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 130.0,
+        "position_y": 862.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GUEST",
+        "font_family": "Arial",
+        "font_size": 12.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.1,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Guest Name",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 868.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PATRICIA NAKAMURA",
+        "font_family": "Helvetica Neue",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Affiliation",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CEO, FutureTech Labs",
+        "font_family": "Helvetica Neue",
+        "font_size": 18.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Channel ID Lower Third",
+    "description": "Channel identification with branding",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Channel BG",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 300.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.15,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Channel Icon",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 140.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.5, "value": 110.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Channel Name",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 890.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "TECH DAILY",
+        "font_family": "Montserrat",
+        "font_size": 28.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Tagline",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 920.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Your daily dose of tech news",
+        "font_family": "Montserrat",
+        "font_size": 14.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.6,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Subscribe Reminder Lower Third",
+    "description": "Animated subscribe reminder with bell icon",
+    "category": "Lower Thirds",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Subscribe BG",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 350.0,
+        "position_y": 900.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.9,
+        "color_g": 0.15,
+        "color_b": 0.15,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bell Icon",
+        "type": "shape",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 150.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.4, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.6, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 15.0, "interpolation": 3},
+            {"time": 0.8, "value": -15.0, "interpolation": 3},
+            {"time": 0.9, "value": 10.0, "interpolation": 3},
+            {"time": 1.0, "value": 0.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Subscribe Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 200.0,
+        "position_y": 895.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SUBSCRIBE",
+        "font_family": "Arial",
+        "font_size": 32.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bell Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 200.0,
+        "position_y": 925.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Hit the bell for notifications!",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.7,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  }
+]

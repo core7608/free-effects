@@ -1,0 +1,2770 @@
+[
+  {
+    "name": "Quick Flash Opener",
+    "description": "Rapid flash montage opener for energetic intros",
+    "category": "Openers",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Flash 1",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 0.1,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Flash 2",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 0.05,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Flash 3",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 0.05,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Flash 4",
+        "type": "solid",
+        "start_time": 0.6,
+        "duration": 0.05,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.8,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 120.0,
+        "scale_y": 120.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 1.0,
+              "value": 120.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.3,
+              "value": 95.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Smooth Fade Opener",
+    "description": "Elegant smooth fade-in opener with layers",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Background Image",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 110.0,
+        "scale_y": 110.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 60.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 50.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ELEGANT",
+        "font_family": "Helvetica Neue",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 2.0,
+        "position_x": 960.0,
+        "position_y": 570.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Smooth Fade Opener",
+        "font_family": "Helvetica Neue",
+        "font_size": 28.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Energetic Opener",
+    "description": "Fast-paced energetic opener with dynamic motion",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.2,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Color Flash 1",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 0.15,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Color Flash 2",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 0.15,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.8,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Color Flash 3",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 0.15,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.5,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Energy Shape",
+        "type": "shape",
+        "start_time": 0.6,
+        "duration": 3.9,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 500.0,
+        "scale_y": 500.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.3,
+        "color_b": 0.2,
+        "color_a": 0.15,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.0,
+              "value": 500.0,
+              "interpolation": 3
+            }
+          ],
+          "Rotation": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 1
+            },
+            {
+              "time": 5.0,
+              "value": 180.0,
+              "interpolation": 1
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.8,
+              "value": 15.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ENERGETIC\nOPENER",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 1.0,
+              "value": 200.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.3,
+              "value": 90.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Minimal Opener",
+    "description": "Clean minimal opener with simple typography",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 1.0,
+    "background_b": 1.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "MINIMAL",
+        "font_family": "Helvetica Neue",
+        "font_weight": "300",
+        "font_size": 72.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.12,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 1.0,
+              "value": 530.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.8,
+              "value": 520.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Divider Line",
+        "type": "solid",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 555.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.12,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 590.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Simple & Clean",
+        "font_family": "Helvetica Neue",
+        "font_size": 20.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.4,
+        "text_color_b": 0.42,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Photo Grid Opener",
+    "description": "Grid of photos assembling into view",
+    "category": "Openers",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.07,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Grid Cell 1",
+        "type": "image",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 480.0,
+        "position_y": 270.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.2,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grid Cell 2",
+        "type": "image",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": 960.0,
+        "position_y": 270.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.8,
+        "color_g": 0.3,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.4,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.7,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grid Cell 3",
+        "type": "image",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 1440.0,
+        "position_y": 270.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.9,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grid Cell 4",
+        "type": "image",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 480.0,
+        "position_y": 810.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.6,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grid Cell 5",
+        "type": "image",
+        "start_time": 1.0,
+        "duration": 4.5,
+        "position_x": 960.0,
+        "position_y": 810.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.6,
+        "color_g": 0.3,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Grid Cell 6",
+        "type": "image",
+        "start_time": 1.2,
+        "duration": 4.3,
+        "position_x": 1440.0,
+        "position_y": 810.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 0.7,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.2,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Overlay",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR\nTITLE",
+        "font_family": "Impact",
+        "font_size": 96.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Text Reveal Opener",
+    "description": "Dramatic text reveal from behind mask",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Mask Background",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.02,
+        "color_g": 0.02,
+        "color_b": 0.04,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Text Line 1",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "REVEAL",
+        "font_family": "Bebas Neue",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TextMaskReveal",
+            "parameters": {
+              "direction": 1.0,
+              "feather": 0.0,
+              "start_time": 0.5,
+              "end_time": 1.5
+            }
+          }
+        ]
+      },
+      {
+        "name": "Text Line 2",
+        "type": "text",
+        "start_time": 1.2,
+        "duration": 3.3,
+        "position_x": 960.0,
+        "position_y": 580.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "YOUR TEXT",
+        "font_family": "Bebas Neue",
+        "font_size": 60.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TextMaskReveal",
+            "parameters": {
+              "direction": 0.0,
+              "feather": 0.0,
+              "start_time": 1.2,
+              "end_time": 2.2
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cinematic Bars Opener",
+    "description": "Letterbox bars opening to reveal content",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Top Bar",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": -50.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": -50.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": -200.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Bottom Bar",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 1130.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": 1130.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": 1280.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Background Scene",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CINEMATIC\nOPENER",
+        "font_family": "Bebas Neue",
+        "font_size": 96.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Glitch Opener",
+    "description": "Digital glitch style opener with distortion",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.01,
+    "background_g": 0.01,
+    "background_b": 0.02,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Static Background",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 20.0,
+        "color_r": 0.5,
+        "color_g": 0.5,
+        "color_b": 0.5,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Noise",
+            "parameters": {
+              "amount": 0.3,
+              "scale": 100.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Glitch Lines",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "difference",
+        "effects": [
+          {
+            "effect_name": "Glitch",
+            "parameters": {
+              "intensity": 0.6,
+              "frequency": 8.0,
+              "block_size": 12.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.1,
+              "value": 40.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 30.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.7,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 3.7,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GLITCH\nOPENER",
+        "font_family": "Impact",
+        "font_size": 110.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Glitch",
+            "parameters": {
+              "intensity": 0.4,
+              "frequency": 4.0,
+              "block_size": 8.0,
+              "color_shift": 0.8
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Scanline Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "overlay",
+        "effects": [
+          {
+            "effect_name": "Scanlines",
+            "parameters": {
+              "line_count": 1080.0,
+              "opacity": 0.05
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zoom Through Opener",
+    "description": "Dramatic zoom through layers of content",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Layer 1",
+        "type": "image",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.3,
+        "color_b": 0.6,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.0,
+              "value": 100.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": 500.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.0,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.2,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Layer 2",
+        "type": "image",
+        "start_time": 1.5,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.6,
+        "color_g": 0.2,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            },
+            {
+              "time": 3.0,
+              "value": 500.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.7,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.7,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Final Layer",
+        "type": "image",
+        "start_time": 3.0,
+        "duration": 2.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.15,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.3,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 3.5,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 130.0,
+        "scale_y": 130.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ZOOM THROUGH",
+        "font_family": "Impact",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 3.5,
+              "value": 130.0,
+              "interpolation": 3
+            },
+            {
+              "time": 3.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 3.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.6,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Split Screen Opener",
+    "description": "Split screen panels appearing sequentially",
+    "category": "Openers",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Panel Top-Left",
+        "type": "image",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 480.0,
+        "position_y": 270.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel Top-Right",
+        "type": "image",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 1440.0,
+        "position_y": 270.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.8,
+        "color_g": 0.3,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.9,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel Bottom-Left",
+        "type": "image",
+        "start_time": 0.9,
+        "duration": 4.6,
+        "position_x": 480.0,
+        "position_y": 810.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.9,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.2,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel Bottom-Right",
+        "type": "image",
+        "start_time": 1.2,
+        "duration": 4.3,
+        "position_x": 1440.0,
+        "position_y": 810.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.6,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 1.2,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Overlay",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SPLIT SCREEN",
+        "font_family": "Bebas Neue",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Divider H",
+        "type": "solid",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Divider V",
+        "type": "solid",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 90.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Dramatic Reveal",
+    "description": "Slow dramatic reveal with darkness to light",
+    "category": "Openers",
+    "duration": 8.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Darkness",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.0,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "DRAMATIC\nREVEAL",
+        "font_family": "Bebas Neue",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 2.5,
+              "value": 490.0,
+              "interpolation": 3
+            },
+            {
+              "time": 3.5,
+              "value": 500.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Year",
+        "type": "text",
+        "start_time": 4.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "2026",
+        "font_family": "Helvetica Neue",
+        "font_size": 28.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 4.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 4.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Particles Reveal",
+    "description": "Particles converge to reveal title",
+    "category": "Openers",
+    "duration": 7.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Particle System",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 5.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.5,
+        "color_g": 0.7,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "ParticleConverge",
+            "parameters": {
+              "particle_count": 250.0,
+              "start_spread": 800.0,
+              "end_spread": 0.0,
+              "lifetime": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 3.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PARTICLES",
+        "font_family": "Helvetica Neue",
+        "font_size": 90.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 4.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Reveal your story",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.6,
+        "text_color_b": 0.8,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 4.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 4.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Light Streaks",
+    "description": "Light streaks sweeping across frame",
+    "category": "Openers",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Streak 1",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 2.0,
+        "position_x": -400.0,
+        "position_y": 300.0,
+        "scale_x": 500.0,
+        "scale_y": 3.0,
+        "rotation": 15.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 0.8,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.3,
+              "value": -400.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.3,
+              "value": 2320.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 80.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 80.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.3,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Streak 2",
+        "type": "solid",
+        "start_time": 0.8,
+        "duration": 2.0,
+        "position_x": 2320.0,
+        "position_y": 700.0,
+        "scale_x": 500.0,
+        "scale_y": 2.0,
+        "rotation": -10.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.8,
+              "value": 2320.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.8,
+              "value": -400.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 60.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.6,
+              "value": 60.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.8,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "LIGHT STREAKS",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Title Build",
+    "description": "Words building up to form title",
+    "category": "Openers",
+    "duration": 7.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Word 1",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "THE",
+        "font_family": "Helvetica Neue",
+        "font_size": 48.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Word 2",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ULTIMATE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Word 3",
+        "type": "text",
+        "start_time": 3.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "EXPERIENCE",
+        "font_family": "Bebas Neue",
+        "font_size": 64.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.5,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sequence Reveal",
+    "description": "Clips shown in rapid sequence",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Clip 1",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Clip 2",
+        "type": "video",
+        "start_time": 0.5,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Clip 3",
+        "type": "video",
+        "start_time": 1.0,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Clip 4",
+        "type": "video",
+        "start_time": 1.5,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SEQUENCE",
+        "font_family": "Impact",
+        "font_size": 110.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Smooth Pan",
+    "description": "Smooth camera pan across scene",
+    "category": "Openers",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.08,
+    "background_b": 0.12,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Background Scene",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 1440.0,
+        "position_y": 540.0,
+        "scale_x": 150.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.12,
+        "color_g": 0.15,
+        "color_b": 0.22,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": 1440.0,
+              "interpolation": 3
+            },
+            {
+              "time": 6.0,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SMOOTH PAN",
+        "font_family": "Helvetica Neue",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Split Reveal",
+    "description": "Split screen revealing title from both sides",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Left Panel",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": -480.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.1,
+        "color_g": 0.1,
+        "color_b": 0.15,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": -480.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Right Panel",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 2400.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.08,
+        "color_g": 0.08,
+        "color_b": 0.12,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": 2400.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 1440.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SPLIT REVEAL",
+        "font_family": "Bebas Neue",
+        "font_size": 90.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Multi-Panel Reveal",
+    "description": "Multiple panels assembling into final image",
+    "category": "Openers",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.03,
+    "background_g": 0.03,
+    "background_b": 0.05,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Panel 1",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 5.5,
+        "position_x": -240.0,
+        "position_y": -135.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": -240.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel 2",
+        "type": "video",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 2160.0,
+        "position_y": -135.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.2,
+              "value": 2160.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.0,
+              "value": 1440.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel 3",
+        "type": "video",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": -240.0,
+        "position_y": 1215.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.4,
+              "value": -240.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.2,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Panel 4",
+        "type": "video",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 2160.0,
+        "position_y": 1215.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.6,
+              "value": 2160.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.4,
+              "value": 1440.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "MULTI-PANEL",
+        "font_family": "Helvetica Neue",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Count Up",
+    "description": "Number count up revealing title",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.07,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Counter",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0",
+        "font_family": "Helvetica Neue",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 100.0,
+              "duration": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Percent Sign",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 2.5,
+        "position_x": 1080.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "%",
+        "font_family": "Helvetica Neue",
+        "font_size": 60.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 3.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "COMPLETE",
+        "font_family": "Bebas Neue",
+        "font_size": 48.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.7,
+        "text_color_b": 0.4,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Progress Reveal",
+    "description": "Progress bar loading then title reveal",
+    "category": "Openers",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Progress Bar BG",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 40.0,
+        "scale_y": 2.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Progress Bar Fill",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 2.5,
+        "position_x": 576.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 2.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 2.8,
+        "duration": 1.7,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PROGRESS",
+        "font_family": "Impact",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.2,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

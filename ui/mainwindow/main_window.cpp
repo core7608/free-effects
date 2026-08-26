@@ -3,6 +3,7 @@
 #include "../panels/composition_panel.h"
 #include "../panels/timeline_panel.h"
 #include "../panels/effect_controls_panel.h"
+#include "../panels/effects_browser_panel.h"
 #include "../panels/timeline_canvas.h"
 #include "../canvas/canvas_widget.h"
 #include "../dialogs/new_composition_dialog.h"
@@ -15,6 +16,9 @@
 #include "../ai/ai_settings_dialog.h"
 #include "../../core/io/importer.h"
 #include "../../core/io/project_file.h"
+#include "../../core/effects/effect_registry.h"
+#include "../../core/templates/essential_graphics.h"
+#include "../../core/preferences/preferences.h"
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QStatusBar>
@@ -133,6 +137,15 @@ void MainWindow::setupDockWidgets() {
     m_effectControlsDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
     addDockWidget(Qt::RightDockWidgetArea, m_effectControlsDock);
     
+    // Effects Browser Panel - Left side (tabified with Project panel)
+    m_effectsBrowserPanel = new EffectsBrowserPanel(this);
+    m_effectsBrowserDock = new QDockWidget("Effects", this);
+    m_effectsBrowserDock->setObjectName("EffectsBrowserPanel");
+    m_effectsBrowserDock->setWidget(m_effectsBrowserPanel);
+    m_effectsBrowserDock->setMinimumWidth(220);
+    m_effectsBrowserDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::LeftDockWidgetArea, m_effectsBrowserDock);
+    
     // Timeline Panel - Bottom
     m_timelinePanel = new TimelinePanel(this);
     m_timelineDock = new QDockWidget("Timeline: (none)", this);
@@ -152,7 +165,8 @@ void MainWindow::setupDockWidgets() {
     addDockWidget(Qt::RightDockWidgetArea, m_aiDock);
     
     // Tabify Project and Effect Controls (like AE)
-    tabifyDockWidget(m_projectDock, m_effectControlsDock);
+    tabifyDockWidget(m_projectDock, m_effectsBrowserDock);
+    tabifyDockWidget(m_effectsBrowserDock, m_effectControlsDock);
     tabifyDockWidget(m_effectControlsDock, m_aiDock);
     m_projectDock->raise();
 }
@@ -163,11 +177,10 @@ void MainWindow::setupStatusBar() {
 }
 
 void MainWindow::applyAELayout() {
-    // Resize to match typical AE layout
     resize(1600, 900);
     
-    // Set minimum sizes for panels
     if (m_projectDock) m_projectDock->setMinimumWidth(220);
+    if (m_effectsBrowserDock) m_effectsBrowserDock->setMinimumWidth(220);
     if (m_effectControlsDock) m_effectControlsDock->setMinimumWidth(220);
     if (m_compositionDock) m_compositionDock->setMinimumHeight(300);
     if (m_timelineDock) m_timelineDock->setMinimumHeight(200);
@@ -214,6 +227,39 @@ void MainWindow::connectSignals() {
             }
         });
     }
+    
+    // Connect effects browser panel
+    if (m_effectsBrowserPanel) {
+        connect(m_effectsBrowserPanel, &EffectsBrowserPanel::effectRequested, 
+                this, [this](const QString& effectName) {
+            if (m_selectedLayerIndex < 0) {
+                statusBar()->showMessage("No layer selected to apply effect", 3000);
+                return;
+            }
+            
+            if (m_compositionPanel && m_compositionPanel->getComposition()) {
+                auto layers = m_compositionPanel->getComposition()->getLayers();
+                if (m_selectedLayerIndex < static_cast<int>(layers.size())) {
+                    auto layer = layers[m_selectedLayerIndex];
+                    auto& registry = EffectRegistry::instance();
+                    if (registry.hasEffect(effectName.toStdString())) {
+                        auto effect = registry.create(effectName.toStdString());
+                        if (effect) {
+                            layer->addEffect(std::shared_ptr<Effect>(std::move(effect)));
+                            if (m_effectControlsPanel) {
+                                m_effectControlsPanel->refreshControls();
+                            }
+                            statusBar()->showMessage(
+                                QString("Applied effect: %1 to %2")
+                                    .arg(effectName)
+                                    .arg(QString::fromStdString(layer->getName())), 
+                                3000);
+                        }
+                    }
+                }
+            }
+        });
+    }
 }
 
 void MainWindow::connectMenuActions() {
@@ -238,6 +284,49 @@ void MainWindow::connectMenuActions() {
     connectAction("actionImport", &MainWindow::onImportFile);
     connectAction("actionNewComposition", &MainWindow::onNewComposition);
     connectAction("actionAddToRenderQueue", &MainWindow::onAddToRenderQueue);
+    
+    // Composition menu
+    connectAction("actionCompSettings", [this]() {
+        if (!m_compositionPanel || !m_compositionPanel->getComposition()) return;
+        auto comp = m_compositionPanel->getComposition();
+        NewCompositionDialog dialog(this);
+        dialog.setWindowTitle("Composition Settings");
+        dialog.setCompositionName(QString::fromStdString(comp->getName()));
+        dialog.setWidth(comp->getResolution().width);
+        dialog.setHeight(comp->getResolution().height);
+        dialog.setFrameRate(comp->getFrameRate().fps);
+        dialog.setDuration(comp->getDuration());
+        if (dialog.exec() == QDialog::Accepted) {
+            comp->setName(dialog.getCompositionName().toStdString());
+            comp->setResolution({dialog.getWidth(), dialog.getHeight()});
+            comp->setFrameRate({dialog.getFrameRate()});
+            comp->setDuration(dialog.getDuration());
+            m_project->setModified(true);
+            updateTitle();
+            refreshAllPanels();
+            m_compositionDock->setWindowTitle(
+                QString("Composition: %1").arg(dialog.getCompositionName()));
+            m_timelineDock->setWindowTitle(
+                QString("Timeline: %1").arg(dialog.getCompositionName()));
+        }
+    });
+    connectAction("actionEssentialGraphics", [this]() {
+        if (!m_compositionPanel || !m_compositionPanel->getComposition()) {
+            statusBar()->showMessage("No composition open", 3000);
+            return;
+        }
+        EssentialGraphics eg;
+        eg.setCompName(m_compositionPanel->getComposition()->getName());
+        QString file = QFileDialog::getSaveFileName(this, "Export Essential Graphics Template",
+            QString(), "FreeEffect Templates (*.femgt);;All Files (*)");
+        if (!file.isEmpty()) {
+            if (eg.exportMotionGraphicTemplate(file.toStdString())) {
+                statusBar()->showMessage("Exported essential graphics template", 3000);
+            } else {
+                QMessageBox::warning(this, "Export Error", "Could not export template.");
+            }
+        }
+    });
     
     // Edit menu
     connectAction("actionUndo", &MainWindow::onUndo);
@@ -268,6 +357,19 @@ void MainWindow::connectMenuActions() {
     connectAction("actionAbout", &MainWindow::onShowAbout);
     connectAction("actionAISettings", &MainWindow::onShowAISettings);
     connectAction("actionToggleAI", &MainWindow::onToggleAIPanel);
+    
+    // Effect menu - connect all dynamically created effect actions
+    if (m_menuBar && m_menuBar->getEffectMenu()) {
+        QList<QAction*> effectActions = m_menuBar->getEffectMenu()->findChildren<QAction*>();
+        for (QAction* action : effectActions) {
+            QString effectName = action->text();
+            connect(action, &QAction::triggered, this, [this, effectName]() {
+                if (m_effectControlsPanel) {
+                    m_effectControlsPanel->addEffectToSelectedLayer(effectName);
+                }
+            });
+        }
+    }
 }
 
 void MainWindow::setupKeyboardShortcuts() {

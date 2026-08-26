@@ -1,5 +1,6 @@
 #pragma once
 
+#include "keyframe_interpolation.h"
 #include "types.h"
 #include <variant>
 #include <vector>
@@ -23,6 +24,10 @@ public:
     double getInHandle() const { return m_inHandle; }
     double getOutHandle() const { return m_outHandle; }
     
+    KeyframeInterpolation& getInterpolationData() { return m_interpolationData; }
+    const KeyframeInterpolation& getInterpolationData() const { return m_interpolationData; }
+    void setInterpolationData(const KeyframeInterpolation& data) { m_interpolationData = data; }
+
     double interpolate(const Keyframe& next, double time) const;
 
 private:
@@ -31,6 +36,7 @@ private:
     InterpolationType m_interpolation;
     double m_inHandle = 0.0;
     double m_outHandle = 0.0;
+    KeyframeInterpolation m_interpolationData;
 };
 
 using KeyframeList = std::vector<Keyframe>;

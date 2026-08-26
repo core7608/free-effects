@@ -1,6 +1,8 @@
 #pragma once
 
+#include "../math/matrix4.h"
 #include "../timeline/composition.h"
+#include "blend_modes.h"
 #include <cstdint>
 #include <memory>
 #include <vector>
@@ -41,14 +43,29 @@ public:
     
     void setResolution(int width, int height) { m_renderWidth = width; m_renderHeight = height; }
 
+    void setBlendMode(BlendModeType mode) { m_currentBlendMode = mode; }
+    BlendModeType getBlendMode() const { return m_currentBlendMode; }
+
+    void setCameraMatrices(const float view[16], const float projection[16]);
+    void setUse3D(bool use) { m_use3D = use; }
+    bool getUse3D() const { return m_use3D; }
+
 private:
     void clearBuffer(PixelBuffer& buffer, Color bgColor);
     void compositeLayer(PixelBuffer& target, const Layer& layer, double time, const Composition& comp);
-    void blendNormal(PixelBuffer& target, const PixelBuffer& source, int x, int y, double opacity);
-    
+    void applyEffects(PixelBuffer& buffer, const Layer& layer, double time);
+    void blendNormal(PixelBuffer& target, const PixelBuffer& source, int x, int y, double opacity, BlendModeType mode);
+    void applyAdjustmentLayers(PixelBuffer& buffer, const Composition& comp, double time, int startLayerIndex);
+    Mat4 computeWorldTransform(const Layer& layer, const Composition& comp);
+
     int m_quality = 100;
     int m_renderWidth = 1920;
     int m_renderHeight = 1080;
+
+    BlendModeType m_currentBlendMode = BlendModeType::Normal;
+    bool m_use3D = false;
+    float m_viewMatrix[16] = {};
+    float m_projectionMatrix[16] = {};
 };
 
 } // namespace FreeEffect

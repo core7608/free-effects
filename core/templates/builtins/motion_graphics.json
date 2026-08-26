@@ -1,0 +1,3349 @@
+[
+  {
+    "name": "Loading Spinner",
+    "description": "Circular loading spinner animation",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.1,
+    "background_b": 0.12,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Spinner Ring",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "StrokeReveal",
+            "parameters": {
+              "stroke_width": 6.0,
+              "arc_length": 0.75,
+              "offset_start": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.0, "value": 0.0, "interpolation": 1},
+            {"time": 4.0, "value": 1080.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Loading Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 640.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Loading...",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Progress Bar",
+    "description": "Linear progress bar filling animation",
+    "category": "Motion Graphics",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.08,
+    "background_g": 0.08,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Bar Background",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Bar Fill",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 460.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.7,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 4.5, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Percentage Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0%",
+        "font_family": "Arial",
+        "font_size": 36.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 100.0,
+              "start_time": 0.3,
+              "end_time": 4.5
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Count Up Number",
+    "description": "Animated number counting up from zero",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Number",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0",
+        "font_family": "Helvetica Neue",
+        "font_size": 160.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 9999.0,
+              "start_time": 0.3,
+              "end_time": 3.5
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Label",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 2.7,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SUBSCRIBERS",
+        "font_family": "Arial",
+        "font_size": 24.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Data Visualization Bar Chart",
+    "description": "Animated bar chart growing from baseline",
+    "category": "Motion Graphics",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Baseline",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 780.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 40.0,
+        "color_r": 0.4,
+        "color_g": 0.4,
+        "color_b": 0.45,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Bar 1",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 460.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.5, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bar 2",
+        "type": "solid",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 660.0,
+        "position_y": 420.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.8, "value": 0.0, "interpolation": 3},
+            {"time": 1.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bar 3",
+        "type": "solid",
+        "start_time": 1.1,
+        "duration": 4.4,
+        "position_x": 860.0,
+        "position_y": 580.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.4,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.1, "value": 0.0, "interpolation": 3},
+            {"time": 2.1, "value": 60.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bar 4",
+        "type": "solid",
+        "start_time": 1.4,
+        "duration": 4.1,
+        "position_x": 1060.0,
+        "position_y": 380.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.8,
+        "color_g": 0.6,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.4, "value": 0.0, "interpolation": 3},
+            {"time": 2.4, "value": 90.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Bar 5",
+        "type": "solid",
+        "start_time": 1.7,
+        "duration": 3.8,
+        "position_x": 1260.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.6,
+        "color_g": 0.3,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.7, "value": 0.0, "interpolation": 3},
+            {"time": 2.7, "value": 70.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pie Chart Animation",
+    "description": "Animated pie chart with segments appearing",
+    "category": "Motion Graphics",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Pie Chart",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 800.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "PieChart",
+            "parameters": {
+              "segments": 4.0,
+              "start_angle": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.3, "value": -90.0, "interpolation": 3},
+            {"time": 1.5, "value": 0.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Legend Item 1",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 1200.0,
+        "position_y": 380.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Category A - 35%",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.5,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Legend Item 2",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 1200.0,
+        "position_y": 430.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Category B - 25%",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.7,
+        "text_color_b": 0.4,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 2.0, "value": 0.0, "interpolation": 2},
+            {"time": 2.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Legend Item 3",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 2.0,
+        "position_x": 1200.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Category C - 20%",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.4,
+        "text_color_b": 0.3,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 2.5, "value": 0.0, "interpolation": 2},
+            {"time": 2.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Legend Item 4",
+        "type": "text",
+        "start_time": 3.0,
+        "duration": 1.5,
+        "position_x": 1200.0,
+        "position_y": 530.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Category D - 20%",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.8,
+        "text_color_g": 0.6,
+        "text_color_b": 0.2,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 3.0, "value": 0.0, "interpolation": 2},
+            {"time": 3.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Circle Burst",
+    "description": "Expanding circle burst particles from center",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Circle 1",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 2.3,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.2, "value": 100.0, "interpolation": 2},
+            {"time": 0.8, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Circle 2",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.5,
+        "color_g": 0.8,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.9, "value": 250.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 100.0, "interpolation": 2},
+            {"time": 0.9, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Circle 3",
+        "type": "shape",
+        "start_time": 0.4,
+        "duration": 2.1,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.3,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.4, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 200.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.4, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Geometric Pattern",
+    "description": "Animated geometric shapes forming a pattern",
+    "category": "Motion Graphics",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Shape 1",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": 400.0,
+        "position_y": 300.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 45.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.9,
+        "color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.2, "value": 45.0, "interpolation": 3},
+            {"time": 6.0, "value": 135.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Shape 2",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 700.0,
+        "position_y": 500.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.4,
+        "color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.5, "value": 0.0, "interpolation": 1},
+            {"time": 6.0, "value": 90.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Shape 3",
+        "type": "shape",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 1200.0,
+        "position_y": 350.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 30.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.8,
+        "color_b": 0.5,
+        "color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.8, "value": 0.0, "interpolation": 3},
+            {"time": 1.4, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.8, "value": 30.0, "interpolation": 3},
+            {"time": 6.0, "value": -60.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Shape 4",
+        "type": "shape",
+        "start_time": 1.1,
+        "duration": 4.4,
+        "position_x": 1500.0,
+        "position_y": 600.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.6,
+        "color_b": 0.1,
+        "color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.1, "value": 0.0, "interpolation": 3},
+            {"time": 1.7, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 1.1, "value": 0.0, "interpolation": 1},
+            {"time": 6.0, "value": 180.0, "interpolation": 1}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waveform Audio Visualizer",
+    "description": "Animated audio waveform visualization bars",
+    "category": "Motion Graphics",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Waveform Bars",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 4.3,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "AudioSpectrum",
+            "parameters": {
+              "bar_count": 64.0,
+              "bar_width": 4.0,
+              "bar_spacing": 2.0,
+              "max_height": 200.0,
+              "smoothing": 0.8
+            }
+          }
+        ]
+      },
+      {
+        "name": "Mirror Bars",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 4.3,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": -100.0,
+        "rotation": 0.0,
+        "opacity": 50.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 0.5,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "AudioSpectrum",
+            "parameters": {
+              "bar_count": 64.0,
+              "bar_width": 4.0,
+              "bar_spacing": 2.0,
+              "max_height": 150.0,
+              "smoothing": 0.8
+            }
+          }
+        ]
+      },
+      {
+        "name": "Center Line",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Logo Reveal",
+    "description": "Logo reveal animation with scale and glow",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Glow Background",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 0.3,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.2, "value": 400.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 40.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Logo Placeholder",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": -30.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 110.0, "interpolation": 3},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.5, "value": -30.0, "interpolation": 3},
+            {"time": 1.0, "value": 0.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Tagline",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 2.0,
+        "position_x": 960.0,
+        "position_y": 650.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Your Tagline Here",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 2.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Particle Explosion",
+    "description": "Burst of particles from center point",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Particle System",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.6,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "ParticleExplosion",
+            "parameters": {
+              "particle_count": 100.0,
+              "speed": 500.0,
+              "gravity": 200.0,
+              "lifetime": 2.0,
+              "size_min": 2.0,
+              "size_max": 8.0,
+              "color_start_r": 1.0,
+              "color_start_g": 0.8,
+              "color_start_b": 0.3,
+              "color_end_r": 1.0,
+              "color_end_g": 0.2,
+              "color_end_b": 0.1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Flash",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.9,
+        "color_b": 0.7,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.35, "value": 80.0, "interpolation": 2},
+            {"time": 0.8, "value": 0.0, "interpolation": 2}
+          ],
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 300.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Kinetic Typography",
+    "description": "Animated text with kinetic motion effects",
+    "category": "Motion Graphics",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Word 1",
+        "type": "text",
+        "start_time": 0.2,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 350.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CREATE",
+        "font_family": "Impact",
+        "font_size": 96.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 200.0, "interpolation": 3},
+            {"time": 0.5, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.2, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Word 2",
+        "type": "text",
+        "start_time": 1.2,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 470.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "MOTION",
+        "font_family": "Impact",
+        "font_size": 96.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.2, "value": 200.0, "interpolation": 3},
+            {"time": 1.5, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 1.2, "value": 0.0, "interpolation": 2},
+            {"time": 1.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Word 3",
+        "type": "text",
+        "start_time": 2.2,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 590.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GRAPHICS",
+        "font_family": "Impact",
+        "font_size": 96.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.3,
+        "text_color_b": 0.4,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 2.2, "value": 200.0, "interpolation": 3},
+            {"time": 2.5, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 2.2, "value": 0.0, "interpolation": 2},
+            {"time": 2.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Combined Text",
+        "type": "text",
+        "start_time": 3.5,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CREATE MOTION GRAPHICS",
+        "font_family": "Helvetica Neue",
+        "font_size": 32.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.75,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 3.5, "value": 0.0, "interpolation": 2},
+            {"time": 4.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Infographic Number Counter",
+    "description": "Animated infographic with counting numbers and labels",
+    "category": "Motion Graphics",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.96,
+    "background_b": 0.98,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Stat 1 Number",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 320.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0",
+        "font_family": "Helvetica Neue",
+        "font_size": 72.0,
+        "text_color_r": 0.2,
+        "text_color_g": 0.4,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 2500.0,
+              "start_time": 0.3,
+              "end_time": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Stat 1 Label",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 320.0,
+        "position_y": 470.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PROJECTS COMPLETED",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.4,
+        "text_color_b": 0.45,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Stat 2 Number",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 960.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0",
+        "font_family": "Helvetica Neue",
+        "font_size": 72.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.7,
+        "text_color_b": 0.4,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 150.0,
+              "start_time": 0.8,
+              "end_time": 2.5
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Stat 2 Label",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 4.5,
+        "position_x": 960.0,
+        "position_y": 470.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "HAPPY CLIENTS",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.4,
+        "text_color_b": 0.45,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Stat 3 Number",
+        "type": "text",
+        "start_time": 1.3,
+        "duration": 4.2,
+        "position_x": 1600.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "0",
+        "font_family": "Helvetica Neue",
+        "font_size": 72.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.3,
+        "text_color_b": 0.3,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "CountUp",
+            "parameters": {
+              "start_value": 0.0,
+              "end_value": 99.0,
+              "start_time": 1.3,
+              "end_time": 3.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.3, "value": 0.0, "interpolation": 2},
+            {"time": 1.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Stat 3 Label",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 1600.0,
+        "position_y": 470.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "5-STAR REVIEWS",
+        "font_family": "Arial",
+        "font_size": 16.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.4,
+        "text_color_b": 0.45,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Timeline Animation",
+    "description": "Horizontal timeline with animated milestones",
+    "category": "Motion Graphics",
+    "duration": 8.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.96,
+    "background_g": 0.96,
+    "background_b": 0.98,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Timeline Line",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 7.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 30.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 2.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 1",
+        "type": "shape",
+        "start_time": 1.0,
+        "duration": 6.5,
+        "position_x": 300.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.5,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 1 Text",
+        "type": "text",
+        "start_time": 1.3,
+        "duration": 6.2,
+        "position_x": 300.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Step 1\nStarted",
+        "font_family": "Helvetica Neue",
+        "font_size": 18.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.3, "value": 0.0, "interpolation": 2},
+            {"time": 1.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 2",
+        "type": "shape",
+        "start_time": 2.5,
+        "duration": 5.0,
+        "position_x": 720.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.7,
+        "color_b": 0.4,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 2.5, "value": 0.0, "interpolation": 3},
+            {"time": 2.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 2 Text",
+        "type": "text",
+        "start_time": 2.8,
+        "duration": 4.7,
+        "position_x": 720.0,
+        "position_y": 460.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Step 2\nProgress",
+        "font_family": "Helvetica Neue",
+        "font_size": 18.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 2.8, "value": 0.0, "interpolation": 2},
+            {"time": 3.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 3",
+        "type": "shape",
+        "start_time": 4.0,
+        "duration": 3.5,
+        "position_x": 1140.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.5,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 4.0, "value": 0.0, "interpolation": 3},
+            {"time": 4.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 3 Text",
+        "type": "text",
+        "start_time": 4.3,
+        "duration": 3.2,
+        "position_x": 1140.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Step 3\nAlmost Done",
+        "font_family": "Helvetica Neue",
+        "font_size": 18.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 4.3, "value": 0.0, "interpolation": 2},
+            {"time": 4.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 4",
+        "type": "shape",
+        "start_time": 5.5,
+        "duration": 2.0,
+        "position_x": 1560.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 5.5, "value": 0.0, "interpolation": 3},
+            {"time": 5.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Milestone 4 Text",
+        "type": "text",
+        "start_time": 5.8,
+        "duration": 1.7,
+        "position_x": 1560.0,
+        "position_y": 460.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Step 4\nComplete!",
+        "font_family": "Helvetica Neue",
+        "font_size": 18.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 5.8, "value": 0.0, "interpolation": 2},
+            {"time": 6.1, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Map Pin Drop",
+    "description": "Animated map pin dropping with bounce",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.9,
+    "background_g": 0.92,
+    "background_b": 0.95,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Map Background",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.88,
+        "color_g": 0.9,
+        "color_b": 0.93,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Shadow",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 0.2,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 20.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Map Pin",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 400.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": 200.0, "interpolation": 3},
+            {"time": 0.6, "value": 520.0, "interpolation": 3},
+            {"time": 0.7, "value": 540.0, "interpolation": 3},
+            {"time": 0.8, "value": 535.0, "interpolation": 3},
+            {"time": 0.9, "value": 540.0, "interpolation": 3}
+          ],
+          "Scale": [
+            {"time": 0.3, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 120.0, "interpolation": 3},
+            {"time": 0.7, "value": 95.0, "interpolation": 3},
+            {"time": 0.8, "value": 105.0, "interpolation": 3},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Location Label",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 470.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Your Location",
+        "font_family": "Arial",
+        "font_size": 20.0,
+        "text_color_r": 0.2,
+        "text_color_g": 0.2,
+        "text_color_b": 0.25,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.3, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Notification Popup",
+    "description": "Animated notification popup sliding in",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.12,
+    "background_g": 0.12,
+    "background_b": 0.15,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Popup Background",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 1160.0,
+        "position_y": 100.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.18,
+        "color_g": 0.18,
+        "color_b": 0.22,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": -100.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Notification Icon",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 1000.0,
+        "position_y": 100.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 2.9,
+        "position_x": 1100.0,
+        "position_y": 85.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "New Message",
+        "font_family": "Arial",
+        "font_size": 18.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Body Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 2.7,
+        "position_x": 1100.0,
+        "position_y": 115.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "You have a new notification!",
+        "font_family": "Arial",
+        "font_size": 14.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Speech Bubble",
+    "description": "Animated speech bubble pop-in",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Bubble",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.5, "value": 110.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bubble Tail",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 900.0,
+        "position_y": 550.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 1.9,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Hello!",
+        "font_family": "Helvetica Neue",
+        "font_size": 36.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.15,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Animated Arrow",
+    "description": "Animated arrow pointing right",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Arrow Shaft",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 900.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.25,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Arrow Head",
+        "type": "shape",
+        "start_time": 0.6,
+        "duration": 1.9,
+        "position_x": 1100.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.25,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.6, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 120.0, "interpolation": 3},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Confetti Burst",
+    "description": "Colorful confetti particles bursting",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.1,
+    "background_b": 0.15,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Confetti Particles",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.5,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "ParticleBurst",
+            "parameters": {
+              "particle_count": 150.0,
+              "speed": 500.0,
+              "gravity": 200.0,
+              "lifetime": 2.0,
+              "spread": 360.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Celebration Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 1.7,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CELEBRATE!",
+        "font_family": "Impact",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.8, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 110.0, "interpolation": 3},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.8, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Star Burst",
+    "description": "Stars radiating outward from center",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Star 1",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.9,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 150.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.3, "value": 0.0, "interpolation": 1},
+            {"time": 2.5, "value": 360.0, "interpolation": 1}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2},
+            {"time": 2.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Star 2",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 2.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 45.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.5,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 120.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.5, "value": 45.0, "interpolation": 1},
+            {"time": 2.5, "value": -315.0, "interpolation": 1}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 80.0, "interpolation": 2},
+            {"time": 2.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Heart Pulse",
+    "description": "Heart icon pulsing",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Heart",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.15,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.5, "value": 120.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3},
+            {"time": 0.9, "value": 115.0, "interpolation": 3},
+            {"time": 1.0, "value": 100.0, "interpolation": 3},
+            {"time": 1.3, "value": 115.0, "interpolation": 3},
+            {"time": 1.4, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Like Count",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 650.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "1",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.4,
+        "text_color_b": 0.5,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 1.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.7, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Waveform Equalizer",
+    "description": "Audio waveform equalizer bars",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Equalizer Bars",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "AudioSpectrum",
+            "parameters": {
+              "bar_count": 32.0,
+              "max_height": 300.0,
+              "bar_width": 20.0,
+              "gap": 6.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Signal Bars",
+    "description": "Cell signal strength bars animating up",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Bar 1",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 900.0,
+        "position_y": 580.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.5, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bar 2",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 2.0,
+        "position_x": 930.0,
+        "position_y": 560.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bar 3",
+        "type": "solid",
+        "start_time": 0.7,
+        "duration": 1.8,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.7, "value": 0.0, "interpolation": 3},
+            {"time": 0.9, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.7, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bar 4",
+        "type": "solid",
+        "start_time": 0.9,
+        "duration": 1.6,
+        "position_x": 990.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.7,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.9, "value": 0.0, "interpolation": 3},
+            {"time": 1.1, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.9, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Loading Dots",
+    "description": "Three dots loading animation",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Dot 1",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 900.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 80.0, "interpolation": 3},
+            {"time": 0.3, "value": 120.0, "interpolation": 3},
+            {"time": 0.6, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Dot 2",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 80.0, "interpolation": 3},
+            {"time": 0.5, "value": 120.0, "interpolation": 3},
+            {"time": 0.8, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Dot 3",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 1020.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.3,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 80.0, "interpolation": 3},
+            {"time": 0.7, "value": 120.0, "interpolation": 3},
+            {"time": 1.0, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Spinner Ring",
+    "description": "Circular spinner ring loading",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Ring",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "ArcWipe",
+            "parameters": {
+              "start_angle": 0.0,
+              "end_angle": 270.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.0, "value": 0.0, "interpolation": 1},
+            {"time": 3.0, "value": 1080.0, "interpolation": 1}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Orbit",
+    "description": "Object orbiting around center",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.03,
+    "background_g": 0.03,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Center Object",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Orbiting Object",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 4.0,
+        "position_x": 1260.0,
+        "position_y": 540.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.5,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 1260.0, "interpolation": 1},
+            {"time": 4.0, "value": 1260.0, "interpolation": 1}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pulse Ring",
+    "description": "Expanding concentric pulse rings",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Pulse 1",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 60.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Pulse 2",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 0.0, "interpolation": 3},
+            {"time": 1.5, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 60.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Pulse 3",
+        "type": "shape",
+        "start_time": 1.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.0, "value": 0.0, "interpolation": 3},
+            {"time": 2.0, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 1.0, "value": 60.0, "interpolation": 2},
+            {"time": 2.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ripple",
+    "description": "Water ripple expanding circles",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.1,
+    "background_b": 0.2,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Ripple 1",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.6,
+        "color_b": 0.9,
+        "color_a": 0.4,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 2.0, "value": 400.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 40.0, "interpolation": 2},
+            {"time": 2.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Ripple 2",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.6,
+        "color_b": 0.9,
+        "color_a": 0.4,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 2.3, "value": 400.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 40.0, "interpolation": 2},
+            {"time": 2.3, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bounce Ball",
+    "description": "Ball bouncing animation",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Ball",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 200.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": 200.0, "interpolation": 1},
+            {"time": 0.6, "value": 700.0, "interpolation": 1},
+            {"time": 0.7, "value": 500.0, "interpolation": 1},
+            {"time": 0.9, "value": 700.0, "interpolation": 1},
+            {"time": 1.0, "value": 600.0, "interpolation": 1},
+            {"time": 1.1, "value": 700.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Shadow",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 720.0,
+        "scale_x": 80.0,
+        "scale_y": 20.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 0.15,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 15.0, "interpolation": 2}
+          ],
+          "Scale": [
+            {"time": 0.3, "value": 40.0, "interpolation": 3},
+            {"time": 0.6, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pendulum",
+    "description": "Pendulum swinging motion",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Pendulum",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 200.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": -30.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 0.8,
+        "color_b": 0.2,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.0, "value": -30.0, "interpolation": 1},
+            {"time": 0.5, "value": 30.0, "interpolation": 1},
+            {"time": 1.0, "value": -25.0, "interpolation": 1},
+            {"time": 1.5, "value": 25.0, "interpolation": 1},
+            {"time": 2.0, "value": -20.0, "interpolation": 1},
+            {"time": 2.5, "value": 20.0, "interpolation": 1},
+            {"time": 3.0, "value": -15.0, "interpolation": 1},
+            {"time": 3.5, "value": 15.0, "interpolation": 1}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "DNA Helix",
+    "description": "Double helix DNA rotating animation",
+    "category": "Motion Graphics",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.04,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Helix Strand 1",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 0.8,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "HelixWave",
+            "parameters": {
+              "amplitude": 100.0,
+              "frequency": 4.0,
+              "speed": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Helix Strand 2",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.4,
+        "color_b": 0.5,
+        "color_a": 0.8,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "HelixWave",
+            "parameters": {
+              "amplitude": 100.0,
+              "frequency": 4.0,
+              "speed": 2.0,
+              "phase_offset": 180.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 80.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gear Rotation",
+    "description": "Interlocking gears rotating",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.08,
+    "background_g": 0.08,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Gear 1",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 900.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.4,
+        "color_b": 0.5,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.3, "value": 0.0, "interpolation": 1},
+            {"time": 3.5, "value": 360.0, "interpolation": 1}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Gear 2",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 1060.0,
+        "position_y": 580.0,
+        "scale_x": 70.0,
+        "scale_y": 70.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.5,
+        "color_g": 0.4,
+        "color_b": 0.3,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.5, "value": 0.0, "interpolation": 1},
+            {"time": 3.5, "value": -514.0, "interpolation": 1}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Rocket Launch",
+    "description": "Rocket launching upward with flame",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Rocket Body",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 2.2,
+        "position_x": 960.0,
+        "position_y": 800.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.9,
+        "color_b": 0.95,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": 800.0, "interpolation": 3},
+            {"time": 1.5, "value": -200.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Flame",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 850.0,
+        "scale_x": 30.0,
+        "scale_y": 80.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.5,
+        "color_b": 0.0,
+        "color_a": 0.9,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": 850.0, "interpolation": 3},
+            {"time": 1.5, "value": -150.0, "interpolation": 3}
+          ],
+          "Scale": [
+            {"time": 0.3, "value": 30.0, "interpolation": 3},
+            {"time": 0.6, "value": 50.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 90.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Flame Flicker",
+    "description": "Animated flame/candle flicker",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Flame",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.6,
+        "color_b": 0.1,
+        "color_a": 0.9,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "TurbulentDisplace",
+            "parameters": {
+              "amount": 15.0,
+              "scale": 20.0,
+              "complexity": 3.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.3, "value": 0.0, "interpolation": 3},
+            {"time": 0.6, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 90.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Glow",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 300.0,
+        "scale_y": 300.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.4,
+        "color_b": 0.0,
+        "color_a": 0.15,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 15.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Water Drop",
+    "description": "Water drop falling and splashing",
+    "category": "Motion Graphics",
+    "duration": 3.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.1,
+    "background_b": 0.2,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Drop",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 200.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 1.0,
+        "color_a": 0.8,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 0.3, "value": 200.0, "interpolation": 3},
+            {"time": 1.0, "value": 700.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 80.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Splash Ring",
+        "type": "shape",
+        "start_time": 1.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 700.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 1.0,
+        "color_a": 0.6,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Scale": [
+            {"time": 1.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.5, "value": 200.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 1.0, "value": 60.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bubble Float",
+    "description": "Bubbles floating upward",
+    "category": "Motion Graphics",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.06,
+    "background_b": 0.15,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Bubble 1",
+        "type": "shape",
+        "start_time": 0.0,
+        "duration": 3.5,
+        "position_x": 800.0,
+        "position_y": 1100.0,
+        "scale_x": 60.0,
+        "scale_y": 60.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.7,
+        "color_b": 1.0,
+        "color_a": 0.3,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 1100.0, "interpolation": 3},
+            {"time": 3.5, "value": -100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 30.0, "interpolation": 2},
+            {"time": 3.0, "value": 30.0, "interpolation": 2},
+            {"time": 3.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bubble 2",
+        "type": "shape",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 1100.0,
+        "position_y": 1100.0,
+        "scale_x": 40.0,
+        "scale_y": 40.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.5,
+        "color_g": 0.8,
+        "color_b": 1.0,
+        "color_a": 0.25,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 0.5, "value": 1100.0, "interpolation": 3},
+            {"time": 3.5, "value": -50.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 25.0, "interpolation": 2},
+            {"time": 3.0, "value": 25.0, "interpolation": 2},
+            {"time": 3.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Bubble 3",
+        "type": "shape",
+        "start_time": 1.0,
+        "duration": 2.5,
+        "position_x": 950.0,
+        "position_y": 1100.0,
+        "scale_x": 80.0,
+        "scale_y": 80.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 0.2,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {"time": 1.0, "value": 1100.0, "interpolation": 3},
+            {"time": 3.5, "value": -150.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 1.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 20.0, "interpolation": 2},
+            {"time": 3.0, "value": 20.0, "interpolation": 2},
+            {"time": 3.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  }
+]

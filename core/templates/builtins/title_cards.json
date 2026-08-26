@@ -1,0 +1,3554 @@
+[
+  {
+    "name": "Clean Title",
+    "description": "Modern minimal title card with clean typography on solid background",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR TITLE HERE",
+        "font_family": "Helvetica Neue",
+        "font_size": 72.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle Text",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Your subtitle goes here",
+        "font_family": "Helvetica Neue",
+        "font_size": 28.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Accent Line",
+        "type": "shape",
+        "start_time": 0.8,
+        "duration": 3.7,
+        "position_x": 960.0,
+        "position_y": 555.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.3,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Cinematic Title",
+    "description": "Dramatic cinematic title reveal with letterbox bars and glow",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Top Letterbox",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 60.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Bottom Letterbox",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 1020.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 120.0,
+        "scale_y": 120.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CINEMATIC TITLE",
+        "font_family": "Bebas Neue",
+        "font_size": 96.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.2,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Scale": [
+            {
+              "time": 1.5,
+              "value": 120.0,
+              "interpolation": 3
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Glow Layer",
+        "type": "solid",
+        "start_time": 1.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 60.0,
+        "scale_y": 10.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.8,
+        "color_a": 0.5,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 40.0,
+              "interpolation": 3
+            },
+            {
+              "time": 5.0,
+              "value": 40.0,
+              "interpolation": 2
+            },
+            {
+              "time": 5.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Year Text",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "2026",
+        "font_family": "Helvetica Neue",
+        "font_size": 36.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.7,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 70.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Lower Third",
+    "description": "News-style lower third with name and title bar",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Background Bar",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 360.0,
+        "position_y": 870.0,
+        "scale_x": 0.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.2,
+        "color_b": 0.6,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 4.9,
+        "position_x": 380.0,
+        "position_y": 858.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "JOHN SMITH",
+        "font_family": "Arial",
+        "font_size": 36.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.9,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 380.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Senior Correspondent",
+        "font_family": "Arial",
+        "font_size": 22.0,
+        "text_color_r": 0.85,
+        "text_color_g": 0.85,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Accent Stripe",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 352.0,
+        "position_y": 870.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.9,
+        "color_g": 0.2,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Lower Third Modern",
+    "description": "Modern sliding lower third with rounded elements",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 0.0,
+    "layers": [
+      {
+        "name": "Name Background",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 5.3,
+        "position_x": -200.0,
+        "position_y": 855.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 95.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.15,
+        "color_a": 0.95,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.2,
+              "value": -200.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.7,
+              "value": 960.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Background",
+        "type": "solid",
+        "start_time": 0.4,
+        "duration": 5.1,
+        "position_x": -300.0,
+        "position_y": 900.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 90.0,
+        "color_r": 0.18,
+        "color_g": 0.18,
+        "color_b": 0.22,
+        "color_a": 0.9,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.4,
+              "value": -300.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.9,
+              "value": 960.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Name Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 300.0,
+        "position_y": 852.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ALEX JOHNSON",
+        "font_family": "Montserrat",
+        "font_size": 32.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.9,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.7,
+        "duration": 4.8,
+        "position_x": 300.0,
+        "position_y": 896.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Product Designer",
+        "font_family": "Montserrat",
+        "font_size": 20.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.7,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.7,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Dot Accent",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 260.0,
+        "position_y": 855.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.4,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      }
+    ]
+  },
+  {
+    "name": "Split Title",
+    "description": "Split layout with text on left and image area on right",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.1,
+    "background_g": 0.1,
+    "background_b": 0.12,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Image Placeholder",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 1440.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.2,
+        "color_g": 0.2,
+        "color_b": 0.25,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 480.0,
+        "position_y": 460.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR TITLE",
+        "font_family": "Helvetica Neue",
+        "font_size": 64.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 0.5,
+              "value": 460.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.0,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Description Text",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 4.5,
+        "position_x": 480.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Add your description text here to provide additional context.",
+        "font_family": "Helvetica Neue",
+        "font_size": 20.0,
+        "text_color_r": 0.65,
+        "text_color_g": 0.65,
+        "text_color_b": 0.7,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Vertical Divider",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 5.2,
+        "position_x": 880.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.4,
+        "color_g": 0.5,
+        "color_b": 0.9,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.8,
+              "value": 80.0,
+              "interpolation": 3
+            }
+          ],
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Zoom Title",
+    "description": "Title that scales up from nothing for dramatic reveal",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.03,
+    "background_g": 0.03,
+    "background_b": 0.05,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "ZOOM IN",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.9,
+              "value": 105.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.1,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtext",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 640.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SUBTITLE TEXT",
+        "font_family": "Arial",
+        "font_size": 28.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fade Title",
+    "description": "Simple cross dissolve title with gentle fade",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.08,
+    "background_g": 0.08,
+    "background_b": 0.1,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "FADE TITLE",
+        "font_family": "Georgia",
+        "font_size": 80.0,
+        "text_color_r": 0.95,
+        "text_color_g": 0.95,
+        "text_color_b": 0.97,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.2,
+              "value": 100.0,
+              "interpolation": 3
+            },
+            {
+              "time": 3.8,
+              "value": 100.0,
+              "interpolation": 2
+            },
+            {
+              "time": 4.8,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 610.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "A gentle introduction",
+        "font_family": "Georgia",
+        "font_size": 24.0,
+        "text_color_r": 0.55,
+        "text_color_g": 0.55,
+        "text_color_b": 0.6,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.8,
+              "value": 80.0,
+              "interpolation": 3
+            },
+            {
+              "time": 3.5,
+              "value": 80.0,
+              "interpolation": 2
+            },
+            {
+              "time": 4.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Typewriter Title",
+    "description": "Character by character reveal like a typewriter",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "TYPEWRITER",
+        "font_family": "Courier New",
+        "font_size": 72.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.95,
+        "text_color_b": 0.85,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TypewriterReveal",
+            "parameters": {
+              "start_time": 0.5,
+              "chars_per_second": 8.0,
+              "cursor_blink": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cursor",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.5,
+        "position_x": 1300.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "|",
+        "font_family": "Courier New",
+        "font_size": 72.0,
+        "text_color_r": 0.9,
+        "text_color_g": 0.95,
+        "text_color_b": 0.85,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Blink",
+            "parameters": {
+              "frequency": 2.0,
+              "on_ratio": 0.5
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glitch Title",
+    "description": "Digital distortion glitch effect title reveal",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GLITCH",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Glitch",
+            "parameters": {
+              "intensity": 0.8,
+              "frequency": 6.0,
+              "block_size": 8.0,
+              "color_shift": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.7,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "RGB Split Left",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 955.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GLITCH",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 1.0,
+        "text_color_g": 0.0,
+        "text_color_b": 0.0,
+        "text_color_a": 0.5,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 50.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "RGB Split Right",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 965.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GLITCH",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.0,
+        "text_color_b": 1.0,
+        "text_color_a": 0.5,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 50.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Scanlines",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "overlay",
+        "effects": [
+          {
+            "effect_name": "Scanlines",
+            "parameters": {
+              "line_count": 1080.0,
+              "opacity": 0.08
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Handwritten Title",
+    "description": "Stroke reveal effect simulating handwriting",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.93,
+    "background_b": 0.88,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Paper Texture",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 15.0,
+        "color_r": 0.7,
+        "color_g": 0.65,
+        "color_b": 0.6,
+        "color_a": 1.0,
+        "blend_mode": "multiply",
+        "effects": [
+          {
+            "effect_name": "Noise",
+            "parameters": {
+              "amount": 0.15,
+              "scale": 80.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Handwritten Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": -2.0,
+        "opacity": 100.0,
+        "text": "Handwritten",
+        "font_family": "Caveat",
+        "font_size": 88.0,
+        "text_color_r": 0.15,
+        "text_color_g": 0.12,
+        "text_color_b": 0.1,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "StrokeReveal",
+            "parameters": {
+              "start_time": 0.8,
+              "end_time": 3.5,
+              "stroke_width": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 3.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "a personal touch",
+        "font_family": "Caveat",
+        "font_size": 32.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.35,
+        "text_color_b": 0.3,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 3.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Split Screen Title",
+    "description": "Title with split screen layout left and right panels",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Left Panel",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 480.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.12,
+        "color_g": 0.12,
+        "color_b": 0.18,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Right Panel",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 1440.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.08,
+        "color_g": 0.08,
+        "color_b": 0.12,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Left Title",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 5.0,
+        "position_x": 480.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "YOUR",
+        "font_family": "Bebas Neue",
+        "font_size": 80.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 0.5,
+              "value": 460.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.0,
+              "value": 480.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Right Title",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 4.7,
+        "position_x": 1440.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "TITLE",
+        "font_family": "Bebas Neue",
+        "font_size": 80.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 0.8,
+              "value": 560.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.3,
+              "value": 540.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Kinetic Typography",
+    "description": "Dynamic moving text with bold weight contrast",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.92,
+    "background_g": 0.25,
+    "background_b": 0.2,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Big Word",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 420.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "KINETIC",
+        "font_family": "Impact",
+        "font_size": 160.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Position": [
+            {
+              "time": 0.3,
+              "value": 380.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.6,
+              "value": 420.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Small Text",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 3.9,
+        "position_x": 960.0,
+        "position_y": 560.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "TYPOGRAPHY",
+        "font_family": "Helvetica Neue",
+        "font_size": 40.0,
+        "text_color_r": 1.0,
+        "text_color_g": 0.9,
+        "text_color_b": 0.85,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Neon Glow Title",
+    "description": "Neon sign glowing text on dark background",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Neon Glow",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 300.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 0.8,
+        "color_b": 1.0,
+        "color_a": 0.4,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 40.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 30.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.5,
+              "value": 40.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Neon Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "NEON GLOW",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.9,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "Glow",
+            "parameters": {
+              "intensity": 2.0,
+              "radius": 12.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Tagline",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "glow in the dark",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.4,
+        "text_color_g": 0.4,
+        "text_color_b": 0.45,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Outline Reveal Title",
+    "description": "Title with outline stroke revealing to fill",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.06,
+    "background_g": 0.06,
+    "background_b": 0.09,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Outline",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "OUTLINE",
+        "font_family": "Bebas Neue",
+        "font_size": 120.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 0.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "StrokeReveal",
+            "parameters": {
+              "start_time": 0.3,
+              "end_time": 2.0,
+              "stroke_width": 2.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Title Fill",
+        "type": "text",
+        "start_time": 2.0,
+        "duration": 2.5,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "OUTLINE",
+        "font_family": "Bebas Neue",
+        "font_size": 120.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 2.5,
+        "duration": 2.0,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "from stroke to fill",
+        "font_family": "Helvetica Neue",
+        "font_size": 22.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 2.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 3.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shadow Drop Title",
+    "description": "Bold title with dramatic drop shadow",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Shadow",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 970.0,
+        "position_y": 530.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SHADOW",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.0,
+        "text_color_b": 0.0,
+        "text_color_a": 0.12,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "SHADOW",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.12,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gradient Title",
+    "description": "Title with gradient color overlay",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.08,
+    "background_g": 0.08,
+    "background_b": 0.12,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Gradient Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 60.0,
+        "color_r": 0.4,
+        "color_g": 0.0,
+        "color_b": 0.8,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "GradientRamp",
+            "parameters": {
+              "start_x": 0.0,
+              "start_y": 0.0,
+              "end_x": 1.0,
+              "end_y": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 500.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GRADIENT",
+        "font_family": "Helvetica Neue",
+        "font_size": 110.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 1.2,
+        "duration": 3.3,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "color transitions",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.2,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.7,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Cinematic Bars Title",
+    "description": "Title with animated letterbox bars",
+    "category": "Title Cards",
+    "duration": 6.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Top Bar",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": -90.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": -90.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 60.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Bottom Bar",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 6.0,
+        "position_x": 960.0,
+        "position_y": 1170.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.0,
+              "value": 1170.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 1020.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 4.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CINEMATIC",
+        "font_family": "Bebas Neue",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Year",
+        "type": "text",
+        "start_time": 1.8,
+        "duration": 3.7,
+        "position_x": 960.0,
+        "position_y": 620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "2026",
+        "font_family": "Helvetica Neue",
+        "font_size": 32.0,
+        "text_color_r": 0.6,
+        "text_color_g": 0.6,
+        "text_color_b": 0.65,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Minimal Fade Title",
+    "description": "Clean minimal fade with thin typography",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 1.0,
+    "background_b": 1.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 520.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "Minimal",
+        "font_family": "Helvetica Neue",
+        "font_size": 72.0,
+        "text_color_r": 0.15,
+        "text_color_g": 0.15,
+        "text_color_b": 0.18,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "clean and simple",
+        "font_family": "Helvetica Neue",
+        "font_size": 20.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.53,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pop Art Title",
+    "description": "Bold pop art style with bright colors and halftone",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 0.95,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Halftone Pattern",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 5.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 15.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "multiply",
+        "effects": [
+          {
+            "effect_name": "Halftone",
+            "parameters": {
+              "dot_size": 6.0,
+              "angle": 45.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "POP",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 460.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": -5.0,
+        "opacity": 0.0,
+        "text": "POP!",
+        "font_family": "Impact",
+        "font_size": 160.0,
+        "text_color_r": 0.95,
+        "text_color_g": 0.2,
+        "text_color_b": 0.2,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.5,
+              "value": 120.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.7,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.4,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "ART",
+        "type": "text",
+        "start_time": 0.6,
+        "duration": 3.9,
+        "position_x": 960.0,
+        "position_y": 600.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 3.0,
+        "opacity": 0.0,
+        "text": "ART",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.4,
+        "text_color_b": 0.9,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 120.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.6,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.7,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "3D Extrude Title",
+    "description": "Title with 3D extruded depth effect",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.07,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Extrude Layer 5",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 976.0,
+        "position_y": 556.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "3D TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.15,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Extrude Layer 4",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 974.0,
+        "position_y": 554.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "3D TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.15,
+        "text_color_g": 0.15,
+        "text_color_b": 0.2,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Extrude Layer 3",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 972.0,
+        "position_y": 552.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "3D TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.2,
+        "text_color_g": 0.2,
+        "text_color_b": 0.25,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Extrude Layer 2",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 970.0,
+        "position_y": 550.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "text": "3D TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.25,
+        "text_color_g": 0.25,
+        "text_color_b": 0.3,
+        "text_color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Front Face",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "3D TITLE",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Warp Distort Title",
+    "description": "Title with wavy warp distortion effect",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.03,
+    "background_g": 0.03,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Warp Title",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "WARP",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TurbulentDisplace",
+            "parameters": {
+              "amount": 30.0,
+              "scale": 50.0,
+              "complexity": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 640.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "fluid motion",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Chromatic Split Title",
+    "description": "Title with chromatic aberration RGB split",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.03,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Red Channel",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 956.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CHROMATIC",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 0.0,
+        "text_color_b": 0.0,
+        "text_color_a": 0.7,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 70.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Green Channel",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CHROMATIC",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 0.0,
+        "text_color_g": 1.0,
+        "text_color_b": 0.0,
+        "text_color_a": 0.7,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 70.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Blue Channel",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 964.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CHROMATIC",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 0.0,
+        "text_color_g": 0.0,
+        "text_color_b": 1.0,
+        "text_color_a": 0.7,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 70.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Main Title",
+        "type": "text",
+        "start_time": 1.0,
+        "duration": 3.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "CHROMATIC",
+        "font_family": "Impact",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.0,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Particle Reveal Title",
+    "description": "Title revealed through particle scatter",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Particle Field",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.5,
+        "color_g": 0.7,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "ParticleScatter",
+            "parameters": {
+              "particle_count": 300.0,
+              "scatter_radius": 600.0,
+              "lifetime": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "PARTICLES",
+        "font_family": "Helvetica Neue",
+        "font_size": 90.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Light Sweep Title",
+    "description": "Title with sweeping light beam effect",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.05,
+    "background_g": 0.05,
+    "background_b": 0.08,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "LIGHT SWEEP",
+        "font_family": "Bebas Neue",
+        "font_size": 100.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Light Beam",
+        "type": "solid",
+        "start_time": 0.8,
+        "duration": 2.0,
+        "position_x": -200.0,
+        "position_y": 540.0,
+        "scale_x": 20.0,
+        "scale_y": 400.0,
+        "rotation": 15.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.95,
+        "color_b": 0.8,
+        "color_a": 0.7,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Position": [
+            {
+              "time": 0.8,
+              "value": -200.0,
+              "interpolation": 3
+            },
+            {
+              "time": 1.8,
+              "value": 2120.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 70.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.6,
+              "value": 70.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.8,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Liquid Distort Title",
+    "description": "Title with liquid distortion ripple",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.03,
+    "background_g": 0.06,
+    "background_b": 0.12,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Liquid Title",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "LIQUID",
+        "font_family": "Impact",
+        "font_size": 140.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.6,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TurbulentDisplace",
+            "parameters": {
+              "amount": 40.0,
+              "scale": 30.0,
+              "complexity": 4.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Ripple BG",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 4.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.2,
+        "color_g": 0.4,
+        "color_b": 0.8,
+        "color_a": 0.2,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "Ripple",
+            "parameters": {
+              "center_x": 0.5,
+              "center_y": 0.5,
+              "amplitude": 20.0,
+              "frequency": 3.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 20.0,
+              "interpolation": 2
+            },
+            {
+              "time": 4.0,
+              "value": 0.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Geometric Reveal Title",
+    "description": "Geometric shapes reveal title text",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.95,
+    "background_b": 0.97,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Triangle 1",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 4.3,
+        "position_x": 700.0,
+        "position_y": 400.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 30.0,
+        "opacity": 0.0,
+        "color_r": 0.9,
+        "color_g": 0.25,
+        "color_b": 0.2,
+        "color_a": 0.8,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.2,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.2,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.5,
+              "value": 80.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Circle",
+        "type": "shape",
+        "start_time": 0.4,
+        "duration": 4.1,
+        "position_x": 1200.0,
+        "position_y": 650.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 0.5,
+        "color_b": 0.9,
+        "color_a": 0.7,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.4,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.4,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.7,
+              "value": 70.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 3.7,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "GEOMETRIC",
+        "font_family": "Helvetica Neue",
+        "font_size": 80.0,
+        "text_color_r": 0.1,
+        "text_color_g": 0.1,
+        "text_color_b": 0.12,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.3,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Stamp Effect Title",
+    "description": "Title slams down like a rubber stamp",
+    "category": "Title Cards",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.95,
+    "background_g": 0.93,
+    "background_b": 0.88,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Stamp Border",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": -8.0,
+        "opacity": 0.0,
+        "color_r": 0.8,
+        "color_g": 0.1,
+        "color_b": 0.1,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 200.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.4,
+              "value": 95.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.35,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Stamp Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 3.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": -8.0,
+        "opacity": 0.0,
+        "text": "APPROVED",
+        "font_family": "Impact",
+        "font_size": 90.0,
+        "text_color_r": 0.8,
+        "text_color_g": 0.1,
+        "text_color_b": 0.1,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 200.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.4,
+              "value": 95.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.35,
+              "value": 100.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Blur Reveal Title",
+    "description": "Title reveals from blur to sharp focus",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.04,
+    "background_g": 0.04,
+    "background_b": 0.06,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Title Text",
+        "type": "text",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "FOCUS",
+        "font_family": "Helvetica Neue",
+        "font_size": 120.0,
+        "text_color_r": 1.0,
+        "text_color_g": 1.0,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "blur_radius": 20.0,
+              "repeat_edge": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Subtitle",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 640.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "into clarity",
+        "font_family": "Helvetica Neue",
+        "font_size": 24.0,
+        "text_color_r": 0.5,
+        "text_color_g": 0.5,
+        "text_color_b": 0.55,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wedding Title",
+    "description": "Elegant wedding invitation title",
+    "category": "Title Cards",
+    "duration": 5.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.98,
+    "background_g": 0.96,
+    "background_b": 0.94,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Ornament Top",
+        "type": "shape",
+        "start_time": 0.3,
+        "duration": 4.2,
+        "position_x": 960.0,
+        "position_y": 300.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.7,
+        "color_g": 0.55,
+        "color_b": 0.35,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 3
+            },
+            {
+              "time": 0.8,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ],
+          "Opacity": [
+            {
+              "time": 0.3,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 0.6,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.8,
+        "duration": 3.7,
+        "position_x": 960.0,
+        "position_y": 480.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "WEDDING",
+        "font_family": "Playfair Display",
+        "font_size": 80.0,
+        "text_color_r": 0.7,
+        "text_color_g": 0.55,
+        "text_color_b": 0.35,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.8,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.5,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      },
+      {
+        "name": "Names",
+        "type": "text",
+        "start_time": 1.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 570.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "John & Jane",
+        "font_family": "Playfair Display",
+        "font_size": 40.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.3,
+        "text_color_b": 0.32,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 1.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 2.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Neon Glow Title",
+    "description": "Neon sign glowing title effect",
+    "category": "Title Cards",
+    "duration": 4.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.02,
+    "background_g": 0.02,
+    "background_b": 0.04,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Glow",
+        "type": "solid",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 120.0,
+        "scale_y": 120.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.0,
+        "color_g": 0.5,
+        "color_b": 1.0,
+        "color_a": 0.3,
+        "blend_mode": "screen",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "amount": 40.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 30.0,
+              "interpolation": 2
+            }
+          ]
+        }
+      },
+      {
+        "name": "Title",
+        "type": "text",
+        "start_time": 0.5,
+        "duration": 3.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "text": "NEON",
+        "font_family": "Impact",
+        "font_size": 120.0,
+        "text_color_r": 0.3,
+        "text_color_g": 0.7,
+        "text_color_b": 1.0,
+        "text_color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {
+              "time": 0.5,
+              "value": 0.0,
+              "interpolation": 2
+            },
+            {
+              "time": 1.0,
+              "value": 100.0,
+              "interpolation": 3
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 #include "menu_bar.h"
 #include "../mainwindow/main_window.h"
+#include "../../core/effects/effect_registry.h"
 #include <QFileDialog>
 #include <QMessageBox>
 
@@ -110,8 +111,11 @@ void MenuBar::createCompositionMenu() {
     m_compositionMenu->addAction(createNamedActionWithShortcut("actionCompSettings", "Composition &Settings...", ShortcutAction::CompositionSettings));
     m_compositionMenu->addSeparator();
     m_compositionMenu->addAction(createMenuAction("Trim Composition to Work Area"));
+    m_compositionMenu->addAction(createMenuAction("Crop Composition to Region of Interest"));
     m_compositionMenu->addSeparator();
     m_compositionMenu->addAction(createNamedActionWithShortcut("actionAddToRenderQueue", "Add to &Render Queue", ShortcutAction::AddToRenderQueue));
+    m_compositionMenu->addSeparator();
+    m_compositionMenu->addAction(createNamedAction("actionEssentialGraphics", "Essential Graphics..."));
 }
 
 void MenuBar::createLayerMenu() {
@@ -146,7 +150,23 @@ void MenuBar::createLayerMenu() {
 
 void MenuBar::createEffectMenu() {
     m_effectMenu = addMenu("&Effect");
-    m_effectMenu->setEnabled(false);
+    
+    // Populate from EffectRegistry
+    auto& registry = EffectRegistry::instance();
+    auto categories = registry.getCategories();
+    
+    for (const auto& cat : categories) {
+        QMenu* catMenu = m_effectMenu->addMenu(QString::fromStdString(cat));
+        auto effects = registry.getEffectNamesInCategory(cat);
+        for (const auto& effName : effects) {
+            QAction* action = catMenu->addAction(QString::fromStdString(effName));
+            action->setObjectName("effect_" + QString::fromStdString(effName));
+        }
+    }
+    
+    if (categories.empty()) {
+        m_effectMenu->setEnabled(false);
+    }
 }
 
 void MenuBar::createAnimationMenu() {
@@ -155,7 +175,15 @@ void MenuBar::createAnimationMenu() {
     m_animationMenu->addAction(createMenuAction("Toggle &Hold Keyframe"));
     m_animationMenu->addAction(createMenuAction("Keyframe &Interpolation..."));
     m_animationMenu->addSeparator();
+    m_animationMenu->addAction(createMenuAction("Graph &Editor"));
+    m_animationMenu->addAction(createMenuAction("&Value Graph"));
+    m_animationMenu->addAction(createMenuAction("Sp&eed Graph"));
+    m_animationMenu->addSeparator();
     m_animationMenu->addAction(createMenuActionWithShortcut("Reveal &Animated Properties", ShortcutAction::RevealAllAnimated));
+    m_animationMenu->addSeparator();
+    QMenu* responsiveMenu = m_animationMenu->addMenu("Responsive Design");
+    responsiveMenu->addAction(createMenuAction("Time"));
+    responsiveMenu->addAction(createMenuAction("Position Pins..."));
 }
 
 void MenuBar::createViewMenu() {

@@ -1,0 +1,2678 @@
+[
+  {
+    "name": "Cross Dissolve",
+    "description": "Classic cross dissolve transition between two clips",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 1.0, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Dip to Black",
+    "description": "Fade to black then fade up to next clip",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.75, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Black Solid",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.75,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.75, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Dip to White",
+    "description": "Fade to white then fade up to next clip",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 1.0,
+    "background_b": 1.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.75, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "White Solid",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.75,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.75, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Film Burn",
+    "description": "Warm film burn light leak transition",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.75, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Burn Overlay",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 150.0,
+        "scale_y": 150.0,
+        "rotation": 15.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.6,
+        "color_b": 0.1,
+        "color_a": 0.9,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.3, "value": 80.0, "interpolation": 2},
+            {"time": 0.75, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 80.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ],
+          "Scale": [
+            {"time": 0.0, "value": 100.0, "interpolation": 3},
+            {"time": 0.75, "value": 200.0, "interpolation": 3},
+            {"time": 1.5, "value": 300.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.75, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Glitch Transition",
+    "description": "Digital glitch distortion transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 0.0, "interpolation": 2}
+          ]
+        },
+        "effects": [
+          {
+            "effect_name": "Glitch",
+            "parameters": {
+              "intensity": 0.0,
+              "frequency": 12.0,
+              "block_size": 16.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "Glitch Overlay",
+        "type": "solid",
+        "start_time": 0.3,
+        "duration": 0.4,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "difference",
+        "effects": [
+          {
+            "effect_name": "Noise",
+            "parameters": {
+              "amount": 0.5,
+              "scale": 200.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.3, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 60.0, "interpolation": 2},
+            {"time": 0.6, "value": 60.0, "interpolation": 2},
+            {"time": 0.7, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Zoom In Transition",
+    "description": "Scale up transition zooming into next clip",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 100.0, "interpolation": 3},
+            {"time": 0.6, "value": 250.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.6,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 50.0,
+        "scale_y": 50.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.6, "value": 50.0, "interpolation": 3},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Zoom Out Transition",
+    "description": "Scale down transition revealing next clip",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 100.0, "interpolation": 3},
+            {"time": 0.6, "value": 30.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.6,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.6, "value": 200.0, "interpolation": 3},
+            {"time": 1.2, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Slide Left",
+    "description": "Outgoing slides left revealing incoming from right",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 960.0, "interpolation": 3},
+            {"time": 1.0, "value": -960.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 2880.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 2880.0, "interpolation": 3},
+            {"time": 1.0, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Slide Right",
+    "description": "Outgoing slides right revealing incoming from left",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 960.0, "interpolation": 3},
+            {"time": 1.0, "value": 2880.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": -960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": -960.0, "interpolation": 3},
+            {"time": 1.0, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Slide Up",
+    "description": "Outgoing slides up revealing incoming from bottom",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 540.0, "interpolation": 3},
+            {"time": 1.0, "value": -540.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 1620.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 1620.0, "interpolation": 3},
+            {"time": 1.0, "value": 540.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Slide Down",
+    "description": "Outgoing slides down revealing incoming from top",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 540.0, "interpolation": 3},
+            {"time": 1.0, "value": 1620.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": -540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": -540.0, "interpolation": 3},
+            {"time": 1.0, "value": 540.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wipe Left",
+    "description": "Linear wipe revealing incoming from the right",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LinearWipe",
+            "parameters": {
+              "angle": 90.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wipe Right",
+    "description": "Linear wipe revealing incoming from the left",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LinearWipe",
+            "parameters": {
+              "angle": -90.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wipe Up",
+    "description": "Linear wipe revealing incoming from the bottom",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LinearWipe",
+            "parameters": {
+              "angle": 0.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wipe Down",
+    "description": "Linear wipe revealing incoming from the top",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LinearWipe",
+            "parameters": {
+              "angle": 180.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Radial Wipe",
+    "description": "Clock-style radial wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "RadialWipe",
+            "parameters": {
+              "start_angle": 0.0,
+              "end_angle": 360.0,
+              "feather": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Box Wipe",
+    "description": "Rectangular box wipe expanding from center",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "BoxWipe",
+            "parameters": {
+              "center_x": 0.5,
+              "center_y": 0.5,
+              "feather": 4.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Blur Transition",
+    "description": "Blur out then blur in transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "blur_radius": 0.0,
+              "repeat_edge": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.6,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "blur_radius": 30.0,
+              "repeat_edge": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Noise Transition",
+    "description": "Static noise overlay transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Noise Overlay",
+        "type": "solid",
+        "start_time": 0.2,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.5,
+        "color_g": 0.5,
+        "color_b": 0.5,
+        "color_a": 1.0,
+        "blend_mode": "overlay",
+        "effects": [
+          {
+            "effect_name": "Noise",
+            "parameters": {
+              "amount": 0.8,
+              "scale": 100.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.2, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2},
+            {"time": 0.8, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pixelate Transition",
+    "description": "Pixelation mosaic transition effect",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Pixelate",
+            "parameters": {
+              "cell_size": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.6,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Pixelate",
+            "parameters": {
+              "cell_size": 40.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.6, "value": 0.0, "interpolation": 2},
+            {"time": 0.8, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Film Burn Cool",
+    "description": "Cool blue film burn light leak transition",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.75, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Cool Burn",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 150.0,
+        "scale_y": 150.0,
+        "rotation": -10.0,
+        "opacity": 0.0,
+        "color_r": 0.1,
+        "color_g": 0.4,
+        "color_b": 1.0,
+        "color_a": 0.9,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.3, "value": 80.0, "interpolation": 2},
+            {"time": 0.75, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 80.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.75, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Light Leak",
+    "description": "Bright light leak washing over the frame",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Light Leak",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 200.0,
+        "scale_y": 200.0,
+        "rotation": 20.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 0.9,
+        "color_b": 0.6,
+        "color_a": 0.9,
+        "blend_mode": "screen",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.2, "value": 60.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 60.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ],
+          "Rotation": [
+            {"time": 0.0, "value": 20.0, "interpolation": 1},
+            {"time": 1.2, "value": 35.0, "interpolation": 1}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Glitch Digital",
+    "description": "Heavy digital glitch with scan lines",
+    "category": "Transitions",
+    "duration": 0.8,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "Glitch",
+            "parameters": {
+              "intensity": 0.0,
+              "frequency": 15.0,
+              "block_size": 20.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.4, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Scan Lines",
+        "type": "solid",
+        "start_time": 0.15,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 1.0,
+        "color_g": 1.0,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "difference",
+        "effects": [
+          {
+            "effect_name": "Scanlines",
+            "parameters": {
+              "line_count": 200.0,
+              "opacity": 0.3
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.15, "value": 0.0, "interpolation": 2},
+            {"time": 0.25, "value": 60.0, "interpolation": 2},
+            {"time": 0.55, "value": 60.0, "interpolation": 2},
+            {"time": 0.65, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Zoom Blur Transition",
+    "description": "Zoom with motion blur streaks",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "RadialBlur",
+            "parameters": {
+              "amount": 0.0,
+              "center_x": 0.5,
+              "center_y": 0.5
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 100.0, "interpolation": 3},
+            {"time": 0.5, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.4, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.5,
+        "duration": 0.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 30.0,
+        "scale_y": 30.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "RadialBlur",
+            "parameters": {
+              "amount": 15.0,
+              "center_x": 0.5,
+              "center_y": 0.5
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.5, "value": 30.0, "interpolation": 3},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.5, "value": 0.0, "interpolation": 2},
+            {"time": 0.7, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pinwheel Transition",
+    "description": "Pinwheel rotation wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "RadialWipe",
+            "parameters": {
+              "start_angle": 0.0,
+              "end_angle": 360.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Rotation": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.2, "value": 720.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Clock Wipe Reverse",
+    "description": "Counter-clockwise radial wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "RadialWipe",
+            "parameters": {
+              "start_angle": 360.0,
+              "end_angle": 0.0,
+              "feather": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Diamond Wipe",
+    "description": "Diamond shape expanding wipe transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 45.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "BoxWipe",
+            "parameters": {
+              "center_x": 0.5,
+              "center_y": 0.5,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 200.0, "interpolation": 3},
+            {"time": 1.0, "value": 0.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Heart Wipe",
+    "description": "Heart shape wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "ShapeWipe",
+            "parameters": {
+              "shape": "heart",
+              "feather": 4.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.2, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Star Wipe",
+    "description": "Star shape wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "ShapeWipe",
+            "parameters": {
+              "shape": "star",
+              "feather": 2.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.2, "value": 300.0, "interpolation": 3}
+          ],
+          "Rotation": [
+            {"time": 0.0, "value": 0.0, "interpolation": 1},
+            {"time": 1.2, "value": 72.0, "interpolation": 1}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Triangle Wipe",
+    "description": "Triangle shape wipe transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "ShapeWipe",
+            "parameters": {
+              "shape": "triangle",
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 0.0, "interpolation": 3},
+            {"time": 1.0, "value": 300.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.8, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Spiral Wipe",
+    "description": "Spiral rotation wipe transition",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "SpiralWipe",
+            "parameters": {
+              "turns": 3.0,
+              "feather": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Cross Zoom",
+    "description": "Simultaneous zoom in and out cross transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 100.0, "interpolation": 3},
+            {"time": 0.5, "value": 180.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.5, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 180.0,
+        "scale_y": 180.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.0, "value": 180.0, "interpolation": 3},
+            {"time": 1.0, "value": 100.0, "interpolation": 3}
+          ],
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Push Left",
+    "description": "Both clips push left together",
+    "category": "Transitions",
+    "duration": 0.8,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 960.0, "interpolation": 3},
+            {"time": 0.8, "value": -960.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": 2880.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 2880.0, "interpolation": 3},
+            {"time": 0.8, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Push Right",
+    "description": "Both clips push right together",
+    "category": "Transitions",
+    "duration": 0.8,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": 960.0, "interpolation": 3},
+            {"time": 0.8, "value": 2880.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.8,
+        "position_x": -960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Position": [
+            {"time": 0.0, "value": -960.0, "interpolation": 3},
+            {"time": 0.8, "value": 960.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pull Focus",
+    "description": "Depth of field pull focus transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "blur_radius": 0.0,
+              "repeat_edge": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "GaussianBlur",
+            "parameters": {
+              "blur_radius": 20.0,
+              "repeat_edge": 1.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.6, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Luma Fade",
+    "description": "Luminance based fade transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LumaKey",
+            "parameters": {
+              "threshold": 0.0,
+              "tolerance": 0.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Color Flash",
+    "description": "Quick color flash between clips",
+    "category": "Transitions",
+    "duration": 0.6,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Color Flash",
+        "type": "solid",
+        "start_time": 0.15,
+        "duration": 0.3,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "color_r": 0.3,
+        "color_g": 0.6,
+        "color_b": 1.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.15, "value": 0.0, "interpolation": 2},
+            {"time": 0.2, "value": 100.0, "interpolation": 2},
+            {"time": 0.35, "value": 100.0, "interpolation": 2},
+            {"time": 0.45, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.6,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 0.0, "interpolation": 2},
+            {"time": 0.3, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fade Through Black",
+    "description": "Smooth fade to black and back",
+    "category": "Transitions",
+    "duration": 1.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 0.75, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      },
+      {
+        "name": "Black Solid",
+        "type": "solid",
+        "start_time": 0.0,
+        "duration": 1.5,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.75,
+        "duration": 0.75,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 0.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.75, "value": 0.0, "interpolation": 2},
+            {"time": 1.5, "value": 100.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Paper Tear",
+    "description": "Torn paper edge wipe transition",
+    "category": "Transitions",
+    "duration": 1.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.0,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "LinearWipe",
+            "parameters": {
+              "angle": 90.0,
+              "feather": 20.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.0, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Brush Stroke Reveal",
+    "description": "Paint brush stroke wipe transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 0.0,
+    "background_g": 0.0,
+    "background_b": 0.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Outgoing Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "BrushWipe",
+            "parameters": {
+              "direction": "horizontal",
+              "feather": 10.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Opacity": [
+            {"time": 0.0, "value": 100.0, "interpolation": 2},
+            {"time": 1.2, "value": 0.0, "interpolation": 2}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ink Splash",
+    "description": "Ink splash reveal transition",
+    "category": "Transitions",
+    "duration": 1.2,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "background_r": 1.0,
+    "background_g": 1.0,
+    "background_b": 1.0,
+    "background_a": 1.0,
+    "layers": [
+      {
+        "name": "Incoming Clip",
+        "type": "video",
+        "start_time": 0.0,
+        "duration": 1.2,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 100.0,
+        "scale_y": 100.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "blend_mode": "normal"
+      },
+      {
+        "name": "Ink Blob 1",
+        "type": "shape",
+        "start_time": 0.1,
+        "duration": 1.1,
+        "position_x": 960.0,
+        "position_y": 540.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 0.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "effects": [
+          {
+            "effect_name": "TurbulentDisplace",
+            "parameters": {
+              "amount": 30.0,
+              "scale": 40.0,
+              "complexity": 3.0
+            }
+          }
+        ],
+        "keyframes": {
+          "Scale": [
+            {"time": 0.1, "value": 0.0, "interpolation": 3},
+            {"time": 0.8, "value": 500.0, "interpolation": 3}
+          ]
+        }
+      },
+      {
+        "name": "Ink Blob 2",
+        "type": "shape",
+        "start_time": 0.2,
+        "duration": 1.0,
+        "position_x": 800.0,
+        "position_y": 400.0,
+        "scale_x": 0.0,
+        "scale_y": 0.0,
+        "rotation": 45.0,
+        "opacity": 100.0,
+        "color_r": 0.0,
+        "color_g": 0.0,
+        "color_b": 0.0,
+        "color_a": 1.0,
+        "blend_mode": "normal",
+        "keyframes": {
+          "Scale": [
+            {"time": 0.2, "value": 0.0, "interpolation": 3},
+            {"time": 0.7, "value": 400.0, "interpolation": 3}
+          ]
+        }
+      }
+    ]
+  }
+]

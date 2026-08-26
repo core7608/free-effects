@@ -14,6 +14,10 @@ class MenuBar : public QMenuBar {
 public:
     explicit MenuBar(MainWindow* parent);
     ~MenuBar() override = default;
+    
+    QMenu* getEffectMenu() const { return m_effectMenu; }
+    QMenu* getAnimationMenu() const { return m_animationMenu; }
+    QMenu* getCompositionMenu() const { return m_compositionMenu; }
 
 private:
     void createFileMenu();

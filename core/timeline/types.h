@@ -1,6 +1,7 @@
 #pragma once
 
 #include <chrono>
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
 #include <random>
@@ -53,14 +54,39 @@ enum class LayerType {
     Solid,
     Adjustment,
     Camera,
-    Light
+    Light,
+    Precomp
 };
 
 enum class BlendMode {
     Normal,
     Add,
     Multiply,
-    Screen
+    Screen,
+    Darken,
+    Lighten,
+    Overlay,
+    SoftLight,
+    HardLight,
+    ColorBurn,
+    ColorDodge,
+    LinearBurn,
+    LinearDodge,
+    VividLight,
+    LinearLight,
+    PinLight,
+    HardMix,
+    Difference,
+    Exclusion,
+    Subtract,
+    Divide,
+    Hue,
+    Saturation,
+    Color,
+    Luminosity,
+    Dissolve,
+    DarkerColor,
+    LighterColor
 };
 
 enum class InterpolationType {
@@ -69,7 +95,9 @@ enum class InterpolationType {
     EaseOut,
     EaseInOut,
     Bezier,
-    Hold
+    Hold,
+    ContinuousBezier,
+    AutoBezier
 };
 
 enum class AssetStatus {
@@ -94,6 +122,36 @@ struct Vec3 {
     double x = 0.0;
     double y = 0.0;
     double z = 0.0;
+
+    Vec3() = default;
+    Vec3(double x, double y, double z) : x(x), y(y), z(z) {}
+
+    Vec3 operator+(const Vec3& rhs) const { return {x + rhs.x, y + rhs.y, z + rhs.z}; }
+    Vec3 operator-(const Vec3& rhs) const { return {x - rhs.x, y - rhs.y, z - rhs.z}; }
+    Vec3 operator*(double s) const { return {x * s, y * s, z * s}; }
+    Vec3 operator*(const Vec3& rhs) const { return {x * rhs.x, y * rhs.y, z * rhs.z}; }
+
+    Vec3& operator+=(const Vec3& rhs) { x += rhs.x; y += rhs.y; z += rhs.z; return *this; }
+    Vec3& operator-=(const Vec3& rhs) { x -= rhs.x; y -= rhs.y; z -= rhs.z; return *this; }
+    Vec3& operator*=(double s) { x *= s; y *= s; z *= s; return *this; }
+
+    Vec3 operator-() const { return {-x, -y, -z}; }
+
+    double dot(const Vec3& rhs) const { return x * rhs.x + y * rhs.y + z * rhs.z; }
+
+    Vec3 cross(const Vec3& rhs) const {
+        return {y * rhs.z - z * rhs.y,
+                z * rhs.x - x * rhs.z,
+                x * rhs.y - y * rhs.x};
+    }
+
+    double length() const { return std::sqrt(x * x + y * y + z * z); }
+
+    Vec3 normalized() const {
+        double len = length();
+        if (len < 1e-12) return {0.0, 0.0, 0.0};
+        return *this * (1.0 / len);
+    }
 };
 
 } // namespace FreeEffect
