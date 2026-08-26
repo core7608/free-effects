@@ -4,6 +4,7 @@ option(FREEEFFECT_ENABLE_TRANSITION_EFFECTS "Enable transition effects" ON)
 option(FREEEFFECT_ENABLE_EXPRESSION_ENGINE "Enable expression engine" ON)
 option(FREEEFFECT_ENABLE_TRACKING "Enable motion tracking" ON)
 option(FREEEFFECT_ENABLE_PUPPET "Enable puppet tool" ON)
+option(FREEEFFECT_ENABLE_GPU "Enable GPU-accelerated rendering" OFF)
 
 # Core library - no Qt dependency
 add_library(freeeffect_core STATIC
@@ -41,9 +42,17 @@ add_library(freeeffect_core STATIC
     # Shape Layer
     timeline/shape_layer.h
     timeline/shape_layer.cpp
+    timeline/shape_operations.h
+    timeline/shape_operations.cpp
     
     # Text Animation
     timeline/text_animator.h
+    timeline/text_features.h
+    timeline/text_features.cpp
+    
+    # Keyframe Operations
+    timeline/keyframe_operations.h
+    timeline/keyframe_operations.cpp
     
     # Responsive Design
     timeline/responsive_design.h
@@ -68,6 +77,41 @@ add_library(freeeffect_core STATIC
     commands/remove_keyframe_command.cpp
     commands/set_property_command.h
     commands/set_property_command.cpp
+    commands/layer_operations.h
+    commands/layer_operations.cpp
+    commands/precompose_command.h
+    commands/precompose_command.cpp
+    commands/split_layer_command.h
+    commands/split_layer_command.cpp
+    commands/freeze_frame_command.h
+    commands/freeze_frame_command.cpp
+    commands/time_reverse_command.h
+    commands/time_reverse_command.cpp
+    commands/auto_trace_command.h
+    commands/auto_trace_command.cpp
+    commands/create_shapes_from_text.h
+    commands/create_shapes_from_text.cpp
+    commands/create_masks_from_text.h
+    commands/create_masks_from_text.cpp
+    
+    # Tools
+    tools/tool_interface.h
+    tools/pen_tool.h
+    tools/pen_tool.cpp
+    tools/shape_tools.h
+    tools/shape_tools.cpp
+    tools/freehand_tool.h
+    tools/freehand_tool.cpp
+    tools/selection_tool.h
+    tools/selection_tool.cpp
+    tools/brush_tools.h
+    tools/brush_tools.cpp
+    tools/camera_tools.h
+    tools/camera_tools.cpp
+    tools/puppet_tools.h
+    tools/puppet_tools.cpp
+    tools/transform_tools.h
+    tools/transform_tools.cpp
     
     # Asset management
     project/asset_reference.h
@@ -76,6 +120,16 @@ add_library(freeeffect_core STATIC
     project/project_state.cpp
     project/missing_footage_handler.h
     project/missing_footage_handler.cpp
+    project/auto_save.h
+    project/auto_save.cpp
+    project/project_manager.h
+    project/project_manager.cpp
+    project/footage_interpreter.h
+    project/footage_interpreter.cpp
+    project/solids_library.h
+    project/solids_library.cpp
+    project/project_manager_ext.h
+    project/project_manager_ext.cpp
     
     # Rendering
     rendering/renderer.h
@@ -91,10 +145,14 @@ add_library(freeeffect_core STATIC
     rendering/scene_renderer.h
     rendering/scene_renderer.cpp
     rendering/material.h
+    rendering/c4d_renderer.h
+    rendering/c4d_renderer.cpp
     
     # Audio
     audio/audio_decoder.h
     audio/audio_decoder.cpp
+    audio/audio_effects.h
+    audio/audio_effects.cpp
     audio/waveform_generator.h
     audio/waveform_generator.cpp
     
@@ -111,6 +169,32 @@ add_library(freeeffect_core STATIC
     io/ai_importer.cpp
     io/camera_data_importer.h
     io/camera_data_importer.cpp
+    io/obj_importer.h
+    io/obj_importer.cpp
+    io/fbx_importer.h
+    io/fbx_importer.cpp
+    io/c4d_importer.h
+    io/c4d_importer.cpp
+    io/exr_importer.h
+    io/exr_importer.cpp
+    io/hdr_importer.h
+    io/hdr_importer.cpp
+    io/dpx_importer.h
+    io/dpx_importer.cpp
+    io/tga_importer.h
+    io/tga_importer.cpp
+    io/pdf_importer.h
+    io/pdf_importer.cpp
+    io/camera_raw_importer.h
+    io/camera_raw_importer.cpp
+    io/prores_exporter.h
+    io/prores_exporter.cpp
+    io/dnxhd_exporter.h
+    io/dnxhd_exporter.cpp
+    io/mxf_exporter.h
+    io/mxf_exporter.cpp
+    io/image_sequence_exporter.h
+    io/image_sequence_exporter.cpp
     
     # Effects System
     effects/effect.h
@@ -133,6 +217,26 @@ add_library(freeeffect_core STATIC
     effects/blur/sharpen_effect.cpp
     effects/blur/unsharp_mask_effect.h
     effects/blur/unsharp_mask_effect.cpp
+    effects/blur/camera_lens_blur_effect.h
+    effects/blur/camera_lens_blur_effect.cpp
+    effects/blur/fast_box_blur_effect.h
+    effects/blur/fast_box_blur_effect.cpp
+    effects/blur/smart_blur_effect.h
+    effects/blur/smart_blur_effect.cpp
+    effects/blur/bilateral_blur_effect.h
+    effects/blur/bilateral_blur_effect.cpp
+    effects/blur/compound_blur_effect.h
+    effects/blur/compound_blur_effect.cpp
+    effects/blur/cc_cross_blur_effect.h
+    effects/blur/cc_cross_blur_effect.cpp
+    effects/blur/cc_radial_blur_effect.h
+    effects/blur/cc_radial_blur_effect.cpp
+    effects/blur/cc_vector_blur_effect.h
+    effects/blur/cc_vector_blur_effect.cpp
+    effects/blur/channel_blur_effect.h
+    effects/blur/channel_blur_effect.cpp
+    effects/blur/depth_of_field_effect.h
+    effects/blur/depth_of_field_effect.cpp
     
     # Color Correction Effects
     effects/color/levels_effect.h
@@ -171,6 +275,24 @@ add_library(freeeffect_core STATIC
     effects/distort/ripple_effect.cpp
     effects/distort/magnify_effect.h
     effects/distort/magnify_effect.cpp
+    effects/distort/displacement_map_effect.h
+    effects/distort/displacement_map_effect.cpp
+    effects/distort/warp_stabilizer_effect.h
+    effects/distort/warp_stabilizer_effect.cpp
+    effects/distort/warp_effect.h
+    effects/distort/warp_effect.cpp
+    effects/distort/offset_effect.h
+    effects/distort/offset_effect.cpp
+    effects/distort/cc_bend_it_effect.h
+    effects/distort/cc_bend_it_effect.cpp
+    effects/distort/cc_bender_effect.h
+    effects/distort/cc_bender_effect.cpp
+    effects/distort/cc_power_pin_effect.h
+    effects/distort/cc_power_pin_effect.cpp
+    effects/distort/cc_slant_effect.h
+    effects/distort/cc_slant_effect.cpp
+    effects/distort/cc_tiler_effect.h
+    effects/distort/cc_tiler_effect.cpp
     
     # Generate Effects
     effects/generate/fill_effect.h
@@ -193,6 +315,30 @@ add_library(freeeffect_core STATIC
     effects/generate/cell_pattern_effect.cpp
     effects/generate/audio_spectrum_effect.h
     effects/generate/audio_spectrum_effect.cpp
+    effects/generate/beam_effect.h
+    effects/generate/beam_effect.cpp
+    effects/generate/cc_light_burst_effect.h
+    effects/generate/cc_light_burst_effect.cpp
+    effects/generate/cc_light_sweep_effect.h
+    effects/generate/cc_light_sweep_effect.cpp
+    effects/generate/echo_space_effect.h
+    effects/generate/echo_space_effect.cpp
+    effects/generate/vegas_effect.h
+    effects/generate/vegas_effect.cpp
+    effects/generate/circle_effect.h
+    effects/generate/circle_effect.cpp
+    effects/generate/scribble_effect.h
+    effects/generate/scribble_effect.cpp
+    effects/generate/paint_bucket_effect.h
+    effects/generate/paint_bucket_effect.cpp
+    effects/generate/fractal_effect.h
+    effects/generate/fractal_effect.cpp
+    effects/generate/cc_snow_effect.h
+    effects/generate/cc_snow_effect.cpp
+    effects/generate/cc_threads_effect.h
+    effects/generate/cc_threads_effect.cpp
+    effects/generate/hoop_effect.h
+    effects/generate/hoop_effect.cpp
     
     # Stylize Effects
     effects/stylize/glow_effect.h
@@ -225,6 +371,34 @@ add_library(freeeffect_core STATIC
     effects/stylize/mosaic_effect.cpp
     effects/stylize/motion_tile_effect.h
     effects/stylize/motion_tile_effect.cpp
+    effects/stylize/cc_kaleida_effect.h
+    effects/stylize/cc_kaleida_effect.cpp
+    effects/stylize/cc_prism_effect.h
+    effects/stylize/cc_prism_effect.cpp
+    effects/stylize/cc_block_load_effect.h
+    effects/stylize/cc_block_load_effect.cpp
+    effects/stylize/cc_burn_film_effect.h
+    effects/stylize/cc_burn_film_effect.cpp
+    effects/stylize/cc_hex_tile_effect.h
+    effects/stylize/cc_hex_tile_effect.cpp
+    effects/stylize/cc_mr_smoothie_effect.h
+    effects/stylize/cc_mr_smoothie_effect.cpp
+    effects/stylize/cc_toner_effect.h
+    effects/stylize/cc_toner_effect.cpp
+    effects/stylize/oil_paint_effect.h
+    effects/stylize/oil_paint_effect.cpp
+    effects/stylize/color_halftone_effect.h
+    effects/stylize/color_halftone_effect.cpp
+    effects/stylize/texturize_effect.h
+    effects/stylize/texturize_effect.cpp
+    effects/stylize/wind_effect.h
+    effects/stylize/wind_effect.cpp
+    effects/stylize/cc_glass_stretch_effect.h
+    effects/stylize/cc_glass_stretch_effect.cpp
+    effects/stylize/cc_sparkle_effect.h
+    effects/stylize/cc_sparkle_effect.cpp
+    effects/stylize/cc_snowflake_effect.h
+    effects/stylize/cc_snowflake_effect.cpp
     
     # Keying Effects
     effects/keying/color_key_effect.h
@@ -235,6 +409,24 @@ add_library(freeeffect_core STATIC
     effects/keying/color_range_effect.cpp
     effects/keying/difference_matte_effect.h
     effects/keying/difference_matte_effect.cpp
+    effects/keying/keylight_effect.h
+    effects/keying/keylight_effect.cpp
+    effects/keying/advanced_spill_suppressor_effect.h
+    effects/keying/advanced_spill_suppressor_effect.cpp
+    effects/keying/refine_hard_matte_effect.h
+    effects/keying/refine_hard_matte_effect.cpp
+    effects/keying/refine_soft_matte_effect.h
+    effects/keying/refine_soft_matte_effect.cpp
+    effects/keying/key_cleaner_effect.h
+    effects/keying/key_cleaner_effect.cpp
+    effects/keying/simple_choker_effect.h
+    effects/keying/simple_choker_effect.cpp
+    effects/keying/inner_outer_key_effect.h
+    effects/keying/inner_outer_key_effect.cpp
+    effects/keying/spill_suppressor_effect.h
+    effects/keying/spill_suppressor_effect.cpp
+    effects/keying/extract_effect.h
+    effects/keying/extract_effect.cpp
     
     # Perspective Effects
     effects/perspective/cc_cylinder_effect.h
@@ -243,6 +435,12 @@ add_library(freeeffect_core STATIC
     effects/perspective/bevel_edges_effect.cpp
     effects/perspective/perspective_drop_shadow_effect.h
     effects/perspective/perspective_drop_shadow_effect.cpp
+    effects/perspective/basic_3d_effect.h
+    effects/perspective/basic_3d_effect.cpp
+    effects/perspective/cc_sphere_effect.h
+    effects/perspective/cc_sphere_effect.cpp
+    effects/perspective/depth_of_field_persp_effect.h
+    effects/perspective/depth_of_field_persp_effect.cpp
     
     # Utility Effects
     effects/utility/transform_effect.h
@@ -257,6 +455,14 @@ add_library(freeeffect_core STATIC
     effects/utility/cineon_converter_effect.cpp
     effects/utility/color_profile_converter_effect.h
     effects/utility/color_profile_converter_effect.cpp
+    effects/utility/cc_calculator_effect.h
+    effects/utility/cc_calculator_effect.cpp
+    effects/utility/expand_effect.h
+    effects/utility/expand_effect.cpp
+    effects/utility/pro_amp_effect.h
+    effects/utility/pro_amp_effect.cpp
+    effects/utility/reduce_interlace_flicker_effect.h
+    effects/utility/reduce_interlace_flicker_effect.cpp
     
     # Plugin System
     plugins/plugin_interface.h
@@ -353,6 +559,24 @@ add_library(freeeffect_core STATIC
     effects/channel/minimax_effect.cpp
     effects/channel/cc_composite_effect.h
     effects/channel/cc_composite_effect.cpp
+    effects/channel/invert_effect.h
+    effects/channel/invert_effect.cpp
+    effects/channel/arithmetic_effect.h
+    effects/channel/arithmetic_effect.cpp
+    effects/channel/blend_effect.h
+    effects/channel/blend_effect.cpp
+    effects/channel/channel_combiner_effect.h
+    effects/channel/channel_combiner_effect.cpp
+    effects/channel/maximum_effect.h
+    effects/channel/maximum_effect.cpp
+    effects/channel/minimum_effect.h
+    effects/channel/minimum_effect.cpp
+    effects/channel/remove_color_matting_effect.h
+    effects/channel/remove_color_matting_effect.cpp
+    effects/channel/set_matte_effect.h
+    effects/channel/set_matte_effect.cpp
+    effects/channel/solid_composite_effect.h
+    effects/channel/solid_composite_effect.cpp
     
     # Noise & Grain Effects
     effects/noise/add_grain_effect.h
@@ -361,6 +585,16 @@ add_library(freeeffect_core STATIC
     effects/noise/remove_grain_effect.cpp
     effects/noise/dust_scratches_effect.h
     effects/noise/dust_scratches_effect.cpp
+    effects/noise/noise_hls_effect.h
+    effects/noise/noise_hls_effect.cpp
+    effects/noise/noise_hls_auto_effect.h
+    effects/noise/noise_hls_auto_effect.cpp
+    effects/noise/turbulent_noise_effect.h
+    effects/noise/turbulent_noise_effect.cpp
+    effects/noise/match_grain_effect.h
+    effects/noise/match_grain_effect.cpp
+    effects/noise/median_noise_effect.h
+    effects/noise/median_noise_effect.cpp
     
     # Additional Color Effects
     effects/color/selective_color_effect.h
@@ -369,6 +603,40 @@ add_library(freeeffect_core STATIC
     effects/color/shadow_highlight_effect.cpp
     effects/color/channel_mixer_effect.h
     effects/color/channel_mixer_effect.cpp
+    effects/color/lumetri_color_effect.h
+    effects/color/lumetri_color_effect.cpp
+    effects/color/color_wheels_effect.h
+    effects/color/color_wheels_effect.cpp
+    effects/color/color_balance_hls_effect.h
+    effects/color/color_balance_hls_effect.cpp
+    effects/color/color_stabilizer_effect.h
+    effects/color/color_stabilizer_effect.cpp
+    effects/color/change_color_effect.h
+    effects/color/change_color_effect.cpp
+    effects/color/change_to_color_effect.h
+    effects/color/change_to_color_effect.cpp
+    effects/color/color_balance_rgb_effect.h
+    effects/color/color_balance_rgb_effect.cpp
+    effects/color/equalize_effect.h
+    effects/color/equalize_effect.cpp
+    effects/color/flicker_removal_effect.h
+    effects/color/flicker_removal_effect.cpp
+    effects/color/gamma_pedestal_gain_effect.h
+    effects/color/gamma_pedestal_gain_effect.cpp
+    effects/color/leave_color_effect.h
+    effects/color/leave_color_effect.cpp
+    effects/color/lut_buddy_effect.h
+    effects/color/lut_buddy_effect.cpp
+    effects/color/reduce_noise_effect.h
+    effects/color/reduce_noise_effect.cpp
+    effects/color/white_balance_effect.h
+    effects/color/white_balance_effect.cpp
+    effects/color/saturation_effect.h
+    effects/color/saturation_effect.cpp
+    effects/color/vignette_effect.h
+    effects/color/vignette_effect.cpp
+    effects/color/gradient_map_effect.h
+    effects/color/gradient_map_effect.cpp
     
     # Additional Generate Effects
     effects/generate/advanced_lightning_effect.h
@@ -383,6 +651,24 @@ add_library(freeeffect_core STATIC
     # Additional Keying Effects
     effects/keying/luma_key_effect.h
     effects/keying/luma_key_effect.cpp
+    
+    # 3D Channel Effects
+    effects/three_d_channel/channel_extract_effect.h
+    effects/three_d_channel/channel_extract_effect.cpp
+    effects/three_d_channel/depth_matte_effect.h
+    effects/three_d_channel/depth_matte_effect.cpp
+    effects/three_d_channel/fog_3d_effect.h
+    effects/three_d_channel/fog_3d_effect.cpp
+    effects/three_d_channel/id_matte_effect.h
+    effects/three_d_channel/id_matte_effect.cpp
+    effects/three_d_channel/normality_effect.h
+    effects/three_d_channel/normality_effect.cpp
+    
+    # Paint Effects
+    effects/paint/paint_effect.h
+    effects/paint/paint_effect.cpp
+    effects/paint/vector_paint_effect.h
+    effects/paint/vector_paint_effect.cpp
     
     # Third-Party Plugin Effect Equivalents (conditional)
     
@@ -411,15 +697,40 @@ add_library(freeeffect_core STATIC
     # Performance
     performance/frame_cache.h
     performance/frame_cache.cpp
+    performance/disk_cache.h
+    performance/disk_cache.cpp
     performance/spatial_grid.h
     performance/spatial_grid.cpp
     performance/profiler.h
     performance/profiler.cpp
     performance/render_worker.h
     performance/render_worker.cpp
+
+    # Collaboration & Team Features
+    collaboration/team_project.h
+    collaboration/team_project.cpp
+    collaboration/asset_library.h
+    collaboration/asset_library.cpp
 )
 
 # ── Conditional feature modules ──────────────────────────────────
+option(FREEEFFECT_ENABLE_SCRIPTING "Enable ExtendScript engine" ON)
+if(FREEEFFECT_ENABLE_SCRIPTING)
+    target_sources(freeeffect_core PRIVATE
+        scripting/extend_script_engine.h
+        scripting/extend_script_engine.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_SCRIPTING)
+endif()
+
+if(FREEEFFECT_ENABLE_GPU)
+    target_sources(freeeffect_core PRIVATE
+        rendering/gpu_renderer.h
+        rendering/gpu_renderer.cpp
+    )
+    target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_GPU)
+endif()
+
 if(FREEEFFECT_ENABLE_SIMULATION)
     target_sources(freeeffect_core PRIVATE
         effects/simulation/particle_burst_effect.h
@@ -452,6 +763,16 @@ if(FREEEFFECT_ENABLE_SIMULATION)
         effects/simulation/galaxy_effect.cpp
         effects/simulation/matrix_rain_effect.h
         effects/simulation/matrix_rain_effect.cpp
+        effects/simulation/cc_ball_action_effect.h
+        effects/simulation/cc_ball_action_effect.cpp
+        effects/simulation/cc_pixel_polly_effect.h
+        effects/simulation/cc_pixel_polly_effect.cpp
+        effects/simulation/card_dance_effect.h
+        effects/simulation/card_dance_effect.cpp
+        effects/simulation/caustics_effect.h
+        effects/simulation/caustics_effect.cpp
+        effects/simulation/particle_playground_effect.h
+        effects/simulation/particle_playground_effect.cpp
     )
     target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_SIMULATION)
 endif()
@@ -510,6 +831,16 @@ if(FREEEFFECT_ENABLE_TRANSITION_EFFECTS)
     effects/transition/linear_wipe_effect.cpp
     effects/transition/iris_wipe_effect.h
     effects/transition/iris_wipe_effect.cpp
+    effects/transition/cc_glass_wipe_effect.h
+    effects/transition/cc_glass_wipe_effect.cpp
+    effects/transition/cc_jaws_effect.h
+    effects/transition/cc_jaws_effect.cpp
+    effects/transition/cc_light_wipe_effect.h
+    effects/transition/cc_light_wipe_effect.cpp
+    effects/transition/cc_scale_wipe_effect.h
+    effects/transition/cc_scale_wipe_effect.cpp
+    effects/transition/cc_wedge_wipe_effect.h
+    effects/transition/cc_wedge_wipe_effect.cpp
     )
     target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_TRANSITION_EFFECTS)
 endif()
@@ -530,6 +861,8 @@ if(FREEEFFECT_ENABLE_TRACKING)
         tracking/motion_tracker.cpp
         tracking/rotoscoping.h
         tracking/rotoscoping.cpp
+        tracking/camera_tracker.h
+        tracking/camera_tracker.cpp
     )
     target_compile_definitions(freeeffect_core PRIVATE FREEEFFECT_ENABLE_TRACKING)
 endif()

@@ -16,6 +16,14 @@
 #include "../panels/motion_sketch_panel.h"
 #include "../panels/wiggler_panel.h"
 #include "../panels/posterize_time_panel.h"
+#include "../panels/align_panel.h"
+#include "../panels/tracker_panel.h"
+#include "../panels/content_aware_fill_panel.h"
+#include "../panels/roto_brush_panel.h"
+#include "../panels/planar_editor_panel.h"
+#include "../panels/data_driven_panel.h"
+#include "../panels/essential_graphics_panel.h"
+#include "../panels/libraries_panel.h"
 #include "../canvas/canvas_widget.h"
 #include "../dialogs/new_composition_dialog.h"
 #include "../dialogs/about_dialog.h"
@@ -280,6 +288,78 @@ void MainWindow::setupDockWidgets() {
     m_posterizeTimeDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
     addDockWidget(Qt::RightDockWidgetArea, m_posterizeTimeDock);
     
+    // Align & Distribute Panel
+    m_alignPanel = new AlignPanel(this);
+    m_alignDock = new QDockWidget("Align", this);
+    m_alignDock->setObjectName("AlignPanel");
+    m_alignDock->setWidget(m_alignPanel);
+    m_alignDock->setMinimumWidth(220);
+    m_alignDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_alignDock);
+    
+    // Tracker Panel
+    m_trackerPanel = new TrackerPanel(this);
+    m_trackerDock = new QDockWidget("Tracker", this);
+    m_trackerDock->setObjectName("TrackerPanel");
+    m_trackerDock->setWidget(m_trackerPanel);
+    m_trackerDock->setMinimumWidth(240);
+    m_trackerDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_trackerDock);
+    
+    // Content-Aware Fill Panel
+    m_contentAwareFillPanel = new ContentAwareFillPanel(this);
+    m_contentAwareFillDock = new QDockWidget("Content-Aware Fill", this);
+    m_contentAwareFillDock->setObjectName("ContentAwareFillPanel");
+    m_contentAwareFillDock->setWidget(m_contentAwareFillPanel);
+    m_contentAwareFillDock->setMinimumWidth(240);
+    m_contentAwareFillDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_contentAwareFillDock);
+    
+    // Roto Brush Panel
+    m_rotoBrushPanel = new RotoBrushPanel(this);
+    m_rotoBrushDock = new QDockWidget("Roto Brush", this);
+    m_rotoBrushDock->setObjectName("RotoBrushPanel");
+    m_rotoBrushDock->setWidget(m_rotoBrushPanel);
+    m_rotoBrushDock->setMinimumWidth(240);
+    m_rotoBrushDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_rotoBrushDock);
+    
+    // Planar Editor Panel
+    m_planarEditorPanel = new PlanarEditorPanel(this);
+    m_planarEditorDock = new QDockWidget("Planar Editor", this);
+    m_planarEditorDock->setObjectName("PlanarEditorPanel");
+    m_planarEditorDock->setWidget(m_planarEditorPanel);
+    m_planarEditorDock->setMinimumWidth(240);
+    m_planarEditorDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_planarEditorDock);
+    
+    // Data-Driven Panel
+    m_dataDrivenPanel = new DataDrivenPanel(this);
+    m_dataDrivenDock = new QDockWidget("Data-Driven", this);
+    m_dataDrivenDock->setObjectName("DataDrivenPanel");
+    m_dataDrivenDock->setWidget(m_dataDrivenPanel);
+    m_dataDrivenDock->setMinimumWidth(240);
+    m_dataDrivenDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_dataDrivenDock);
+    
+    // Essential Graphics Panel (enhanced)
+    m_essentialGraphicsPanel = new EssentialGraphicsPanel(this);
+    m_essentialGraphicsDock = new QDockWidget("Essential Graphics", this);
+    m_essentialGraphicsDock->setObjectName("EssentialGraphicsPanel");
+    m_essentialGraphicsDock->setWidget(m_essentialGraphicsPanel);
+    m_essentialGraphicsDock->setMinimumWidth(240);
+    m_essentialGraphicsDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_essentialGraphicsDock);
+    
+    // Libraries Panel
+    m_librariesPanel = new LibrariesPanel(this);
+    m_librariesDock = new QDockWidget("Libraries", this);
+    m_librariesDock->setObjectName("LibrariesPanel");
+    m_librariesDock->setWidget(m_librariesPanel);
+    m_librariesDock->setMinimumWidth(240);
+    m_librariesDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+    addDockWidget(Qt::RightDockWidgetArea, m_librariesDock);
+    
     // Tabify all right-side panels together
     tabifyDockWidget(m_aiDock, m_infoDock);
     tabifyDockWidget(m_infoDock, m_audioDock);
@@ -292,6 +372,14 @@ void MainWindow::setupDockWidgets() {
     tabifyDockWidget(m_smootherDock, m_motionSketchDock);
     tabifyDockWidget(m_motionSketchDock, m_wigglerDock);
     tabifyDockWidget(m_wigglerDock, m_posterizeTimeDock);
+    tabifyDockWidget(m_posterizeTimeDock, m_alignDock);
+    tabifyDockWidget(m_alignDock, m_trackerDock);
+    tabifyDockWidget(m_trackerDock, m_contentAwareFillDock);
+    tabifyDockWidget(m_contentAwareFillDock, m_rotoBrushDock);
+    tabifyDockWidget(m_rotoBrushDock, m_planarEditorDock);
+    tabifyDockWidget(m_planarEditorDock, m_dataDrivenDock);
+    tabifyDockWidget(m_dataDrivenDock, m_essentialGraphicsDock);
+    tabifyDockWidget(m_essentialGraphicsDock, m_librariesDock);
     
     // Hide most panels by default - only show Info and Character
     m_audioDock->hide();
@@ -303,6 +391,14 @@ void MainWindow::setupDockWidgets() {
     m_motionSketchDock->hide();
     m_wigglerDock->hide();
     m_posterizeTimeDock->hide();
+    m_alignDock->hide();
+    m_trackerDock->hide();
+    m_contentAwareFillDock->hide();
+    m_rotoBrushDock->hide();
+    m_planarEditorDock->hide();
+    m_dataDrivenDock->hide();
+    m_essentialGraphicsDock->hide();
+    m_librariesDock->hide();
 }
 
 void MainWindow::setupStatusBar() {
@@ -552,6 +648,30 @@ void MainWindow::connectMenuActions() {
     });
     connectAction("actionTogglePosterizeTime", [this]() {
         if (m_posterizeTimeDock) { m_posterizeTimeDock->isVisible() ? m_posterizeTimeDock->hide() : (m_posterizeTimeDock->show(), m_posterizeTimeDock->raise()); }
+    });
+    connectAction("actionToggleAlign", [this]() {
+        if (m_alignDock) { m_alignDock->isVisible() ? m_alignDock->hide() : (m_alignDock->show(), m_alignDock->raise()); }
+    });
+    connectAction("actionToggleTracker", [this]() {
+        if (m_trackerDock) { m_trackerDock->isVisible() ? m_trackerDock->hide() : (m_trackerDock->show(), m_trackerDock->raise()); }
+    });
+    connectAction("actionToggleContentAwareFill", [this]() {
+        if (m_contentAwareFillDock) { m_contentAwareFillDock->isVisible() ? m_contentAwareFillDock->hide() : (m_contentAwareFillDock->show(), m_contentAwareFillDock->raise()); }
+    });
+    connectAction("actionToggleRotoBrush", [this]() {
+        if (m_rotoBrushDock) { m_rotoBrushDock->isVisible() ? m_rotoBrushDock->hide() : (m_rotoBrushDock->show(), m_rotoBrushDock->raise()); }
+    });
+    connectAction("actionTogglePlanarEditor", [this]() {
+        if (m_planarEditorDock) { m_planarEditorDock->isVisible() ? m_planarEditorDock->hide() : (m_planarEditorDock->show(), m_planarEditorDock->raise()); }
+    });
+    connectAction("actionToggleDataDriven", [this]() {
+        if (m_dataDrivenDock) { m_dataDrivenDock->isVisible() ? m_dataDrivenDock->hide() : (m_dataDrivenDock->show(), m_dataDrivenDock->raise()); }
+    });
+    connectAction("actionToggleEssentialGraphics", [this]() {
+        if (m_essentialGraphicsDock) { m_essentialGraphicsDock->isVisible() ? m_essentialGraphicsDock->hide() : (m_essentialGraphicsDock->show(), m_essentialGraphicsDock->raise()); }
+    });
+    connectAction("actionToggleLibraries", [this]() {
+        if (m_librariesDock) { m_librariesDock->isVisible() ? m_librariesDock->hide() : (m_librariesDock->show(), m_librariesDock->raise()); }
     });
     
     // Effect menu - connect all dynamically created effect actions

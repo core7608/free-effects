@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "../effect_registry.h"
 #include "gaussian_blur_effect.h"
 #include <cmath>

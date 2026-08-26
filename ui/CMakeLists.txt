@@ -73,6 +73,22 @@ set(UI_SOURCES
     panels/wiggler_panel.cpp
     panels/posterize_time_panel.h
     panels/posterize_time_panel.cpp
+    panels/align_panel.h
+    panels/align_panel.cpp
+    panels/tracker_panel.h
+    panels/tracker_panel.cpp
+    panels/content_aware_fill_panel.h
+    panels/content_aware_fill_panel.cpp
+    panels/roto_brush_panel.h
+    panels/roto_brush_panel.cpp
+    panels/planar_editor_panel.h
+    panels/planar_editor_panel.cpp
+    panels/data_driven_panel.h
+    panels/data_driven_panel.cpp
+    panels/essential_graphics_panel.h
+    panels/essential_graphics_panel.cpp
+    panels/libraries_panel.h
+    panels/libraries_panel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/../resources/resources.qrc
 )
 

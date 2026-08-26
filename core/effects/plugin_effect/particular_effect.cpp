@@ -97,11 +97,11 @@ void ParticularEffect::render(PixelBuffer& buffer, double time) {
                 double sa = p[3] / 255.0;
                 double outA = sa + fa * (1.0 - sa);
                 if (outA > 0.001) {
-                    p[0] = static_cast<uint8_t>(std::clamp((p[0] * sa + fr * fa * (1.0 - sa)) / outA, 0.0, 255.0));
-                    p[1] = static_cast<uint8_t>(std::clamp((p[1] * sa + fg * fa * (1.0 - sa)) / outA, 0.0, 255.0));
-                    p[2] = static_cast<uint8_t>(std::clamp((p[2] * sa + fb * fa * (1.0 - sa)) / outA, 0.0, 255.0));
+                    p[0] = static_cast<uint8_t>(std::clamp(static_cast<double>((p[0] * sa + fr * fa * (1.0 - sa)) / outA), 0.0, 255.0));
+                    p[1] = static_cast<uint8_t>(std::clamp(static_cast<double>((p[1] * sa + fg * fa * (1.0 - sa)) / outA), 0.0, 255.0));
+                    p[2] = static_cast<uint8_t>(std::clamp(static_cast<double>((p[2] * sa + fb * fa * (1.0 - sa)) / outA), 0.0, 255.0));
                 }
-                p[3] = static_cast<uint8_t>(std::clamp(outA * 255.0, 0.0, 255.0));
+                p[3] = static_cast<uint8_t>(std::clamp(static_cast<double>(outA * 255.0), 0.0, 255.0));
             }
         }
     }

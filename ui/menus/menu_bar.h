@@ -28,6 +28,7 @@ private:
     void createAnimationMenu();
     void createViewMenu();
     void createWindowMenu();
+    void createScriptMenu();
     void createHelpMenu();
     
     QAction* createNamedAction(const QString& name, const QString& text, QMenu* menu = nullptr);
@@ -46,6 +47,7 @@ private:
     QMenu* m_animationMenu;
     QMenu* m_viewMenu;
     QMenu* m_windowMenu;
+    QMenu* m_scriptMenu;
     QMenu* m_helpMenu;
 };
 

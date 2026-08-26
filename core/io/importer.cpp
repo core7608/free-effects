@@ -54,7 +54,9 @@ bool Importer::isSupportedFormat(const std::string& filePath) const {
 
 bool Importer::isImageFormat(const std::string& ext) {
     return ext == ".png" || ext == ".jpg" || ext == ".jpeg" || 
-           ext == ".bmp" || ext == ".tiff" || ext == ".tif" || ext == ".gif";
+           ext == ".bmp" || ext == ".tiff" || ext == ".tif" || ext == ".gif" ||
+           ext == ".exr" || ext == ".hdr" || ext == ".rgbe" ||
+           ext == ".dpx" || ext == ".tga" || ext == ".vda" || ext == ".icb" || ext == ".vst";
 }
 
 bool Importer::isAudioFormat(const std::string& ext) {

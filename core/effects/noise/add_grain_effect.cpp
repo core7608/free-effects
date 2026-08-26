@@ -37,13 +37,13 @@ void AddGrainEffect::render(PixelBuffer& buffer, double time) {
             uint8_t* p = buffer.pixelAt(x, y);
             if (mono) {
                 double n = dist(gen) * scale;
-                p[0] = static_cast<uint8_t>(std::clamp(p[0] + n, 0.0, 255.0));
-                p[1] = static_cast<uint8_t>(std::clamp(p[1] + n, 0.0, 255.0));
-                p[2] = static_cast<uint8_t>(std::clamp(p[2] + n, 0.0, 255.0));
+                p[0] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[0] + n), 0.0, 255.0));
+                p[1] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[1] + n), 0.0, 255.0));
+                p[2] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[2] + n), 0.0, 255.0));
             } else {
-                p[0] = static_cast<uint8_t>(std::clamp(p[0] + dist(gen) * scale, 0.0, 255.0));
-                p[1] = static_cast<uint8_t>(std::clamp(p[1] + dist(gen) * scale, 0.0, 255.0));
-                p[2] = static_cast<uint8_t>(std::clamp(p[2] + dist(gen) * scale, 0.0, 255.0));
+                p[0] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[0] + dist(gen) * scale), 0.0, 255.0));
+                p[1] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[1] + dist(gen) * scale), 0.0, 255.0));
+                p[2] = static_cast<uint8_t>(std::clamp(static_cast<double>(p[2] + dist(gen) * scale), 0.0, 255.0));
             }
         }
     }

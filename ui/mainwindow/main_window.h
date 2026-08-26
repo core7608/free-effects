@@ -34,6 +34,14 @@ class SmootherPanel;
 class MotionSketchPanel;
 class WigglerPanel;
 class PosterizeTimePanel;
+class AlignPanel;
+class TrackerPanel;
+class ContentAwareFillPanel;
+class RotoBrushPanel;
+class PlanarEditorPanel;
+class DataDrivenPanel;
+class EssentialGraphicsPanel;
+class LibrariesPanel;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -140,6 +148,14 @@ private:
     MotionSketchPanel* m_motionSketchPanel = nullptr;
     WigglerPanel* m_wigglerPanel = nullptr;
     PosterizeTimePanel* m_posterizeTimePanel = nullptr;
+    AlignPanel* m_alignPanel = nullptr;
+    TrackerPanel* m_trackerPanel = nullptr;
+    ContentAwareFillPanel* m_contentAwareFillPanel = nullptr;
+    RotoBrushPanel* m_rotoBrushPanel = nullptr;
+    PlanarEditorPanel* m_planarEditorPanel = nullptr;
+    DataDrivenPanel* m_dataDrivenPanel = nullptr;
+    EssentialGraphicsPanel* m_essentialGraphicsPanel = nullptr;
+    LibrariesPanel* m_librariesPanel = nullptr;
     
     QDockWidget* m_projectDock = nullptr;
     QDockWidget* m_compositionDock = nullptr;
@@ -159,6 +175,14 @@ private:
     QDockWidget* m_motionSketchDock = nullptr;
     QDockWidget* m_wigglerDock = nullptr;
     QDockWidget* m_posterizeTimeDock = nullptr;
+    QDockWidget* m_alignDock = nullptr;
+    QDockWidget* m_trackerDock = nullptr;
+    QDockWidget* m_contentAwareFillDock = nullptr;
+    QDockWidget* m_rotoBrushDock = nullptr;
+    QDockWidget* m_planarEditorDock = nullptr;
+    QDockWidget* m_dataDrivenDock = nullptr;
+    QDockWidget* m_essentialGraphicsDock = nullptr;
+    QDockWidget* m_librariesDock = nullptr;
     
     int m_selectedLayerIndex = -1;
 };

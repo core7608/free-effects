@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "../effect_registry.h"
 #include "motion_blur_effect.h"
 #include <cmath>

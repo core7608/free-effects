@@ -17,6 +17,7 @@ MenuBar::MenuBar(MainWindow* parent)
     createAnimationMenu();
     createViewMenu();
     createWindowMenu();
+    createScriptMenu();
     createHelpMenu();
 }
 
@@ -95,6 +96,9 @@ void MenuBar::createEditMenu() {
     m_editMenu->addAction(createNamedActionWithShortcut("actionSelectAll", "Select &All", ShortcutAction::SelectAll));
     m_editMenu->addAction(createNamedActionWithShortcut("actionDeselectAll", "&Deselect All", ShortcutAction::DeselectAll));
     m_editMenu->addSeparator();
+    m_editMenu->addAction(createNamedAction("actionAutoTrace", "Auto-trace..."));
+    m_editMenu->addAction(createNamedAction("actionConvertToBezier", "Convert to Bezier Path"));
+    m_editMenu->addSeparator();
     
     QMenu* purgeMenu = m_editMenu->addMenu("&Purge");
     purgeMenu->addAction(createMenuAction("All Memory & Disk Cache"));
@@ -112,6 +116,8 @@ void MenuBar::createCompositionMenu() {
     m_compositionMenu->addSeparator();
     m_compositionMenu->addAction(createMenuAction("Trim Composition to Work Area"));
     m_compositionMenu->addAction(createMenuAction("Crop Composition to Region of Interest"));
+    m_compositionMenu->addSeparator();
+    m_compositionMenu->addAction(createMenuAction("Pre-render"));
     m_compositionMenu->addSeparator();
     m_compositionMenu->addAction(createNamedActionWithShortcut("actionAddToRenderQueue", "Add to &Render Queue", ShortcutAction::AddToRenderQueue));
     m_compositionMenu->addSeparator();
@@ -133,7 +139,40 @@ void MenuBar::createLayerMenu() {
     m_layerMenu->addSeparator();
     m_layerMenu->addAction(createNamedAction("actionDuplicateLayer", "Duplicate Layer"));
     m_layerMenu->addAction(createNamedAction("actionDeleteLayer", "Delete Layer"));
+    m_layerMenu->addAction(createNamedAction("actionPrecompose", "Pre-compose..."));
+    m_layerMenu->addAction(createNamedAction("actionSplitLayer", "Split Layer"));
     m_layerMenu->addAction(createMenuAction("Layer &Settings..."));
+    
+    QMenu* timeMenu = m_layerMenu->addMenu("T&ime");
+    timeMenu->addAction(createMenuAction("Enable Time Remapping"));
+    timeMenu->addSeparator();
+    timeMenu->addAction(createMenuAction("Time Reverse Layer"));
+    timeMenu->addAction(createMenuAction("Time Stretch..."));
+    timeMenu->addAction(createMenuAction("Freeze Frame"));
+    
+    QMenu* maskMenu = m_layerMenu->addMenu("&Mask");
+    maskMenu->addAction(createMenuAction("New Mask"));
+    maskMenu->addAction(createMenuAction("Mask Shape..."));
+    maskMenu->addAction(createMenuAction("Mask Feather..."));
+    maskMenu->addAction(createMenuAction("Mask Opacity..."));
+    maskMenu->addAction(createMenuAction("Mask Expansion..."));
+    maskMenu->addSeparator();
+    maskMenu->addAction(createMenuAction("Lock Mask"));
+    maskMenu->addAction(createMenuAction("Invert Mask"));
+    
+    QMenu* switchesMenu = m_layerMenu->addMenu("S&witches");
+    switchesMenu->addAction(createMenuAction("Shy"));
+    switchesMenu->addAction(createMenuAction("Collapse Transformations"));
+    switchesMenu->addAction(createMenuAction("Quality Best"));
+    switchesMenu->addAction(createMenuAction("Quality Draft"));
+    switchesMenu->addAction(createMenuAction("Effect On"));
+    switchesMenu->addAction(createMenuAction("Frame Blending"));
+    switchesMenu->addAction(createMenuAction("Motion Blur"));
+    switchesMenu->addAction(createMenuAction("Adjustment Layer"));
+    
+    QMenu* createMenu = m_layerMenu->addMenu("&Create");
+    createMenu->addAction(createMenuAction("Create Masks from Text"));
+    createMenu->addAction(createMenuAction("Create Shapes from Text"));
     
     QMenu* transformMenu = m_layerMenu->addMenu("&Transform");
     transformMenu->addAction(createMenuActionWithShortcut("Position", ShortcutAction::ShowPosition));
@@ -195,6 +234,23 @@ void MenuBar::createViewMenu() {
     m_viewMenu->addAction(createNamedActionWithShortcut("actionToggleGrid", "Show &Grid", ShortcutAction::ToggleGrid));
     m_viewMenu->addAction(createNamedActionWithShortcut("actionToggleRulers", "Show &Rulers", ShortcutAction::ToggleRulers));
     m_viewMenu->addAction(createMenuAction("Show &Guides"));
+    m_viewMenu->addAction(createMenuAction("Show Safe Margins"));
+    m_viewMenu->addSeparator();
+    QMenu* channelMenu = m_viewMenu->addMenu("Channel &Display");
+    channelMenu->addAction(createMenuAction("RGB"));
+    channelMenu->addAction(createMenuAction("Red"));
+    channelMenu->addAction(createMenuAction("Green"));
+    channelMenu->addAction(createMenuAction("Blue"));
+    channelMenu->addAction(createMenuAction("Alpha"));
+    QMenu* multiViewMenu = m_viewMenu->addMenu("&Multi-View");
+    multiViewMenu->addAction(createMenuAction("2 Views - Horizontal"));
+    multiViewMenu->addAction(createMenuAction("2 Views - Vertical"));
+    multiViewMenu->addAction(createMenuAction("4 Views"));
+    QMenu* resMenu = m_viewMenu->addMenu("&Resolution");
+    resMenu->addAction(createMenuAction("Full"));
+    resMenu->addAction(createMenuAction("Half"));
+    resMenu->addAction(createMenuAction("Third"));
+    resMenu->addAction(createMenuAction("Quarter"));
 }
 
 void MenuBar::createWindowMenu() {
@@ -210,6 +266,15 @@ void MenuBar::createWindowMenu() {
     m_windowMenu->addAction(createNamedAction("actionToggleMotionSketch", "Motion Sketch"));
     m_windowMenu->addAction(createNamedAction("actionToggleWiggler", "Wiggler"));
     m_windowMenu->addAction(createNamedAction("actionTogglePosterizeTime", "Posterize Time"));
+    m_windowMenu->addSeparator();
+    m_windowMenu->addAction(createNamedAction("actionToggleAlign", "Align"));
+    m_windowMenu->addAction(createNamedAction("actionToggleTracker", "Tracker"));
+    m_windowMenu->addAction(createNamedAction("actionToggleContentAwareFill", "Content-Aware Fill"));
+    m_windowMenu->addAction(createNamedAction("actionToggleRotoBrush", "Roto Brush"));
+    m_windowMenu->addAction(createNamedAction("actionTogglePlanarEditor", "Planar Editor"));
+    m_windowMenu->addAction(createNamedAction("actionToggleDataDriven", "Data-Driven"));
+    m_windowMenu->addAction(createNamedAction("actionToggleEssentialGraphics", "Essential Graphics"));
+    m_windowMenu->addAction(createNamedAction("actionToggleLibraries", "Libraries"));
     m_windowMenu->addSeparator();
     m_windowMenu->addAction(createNamedAction("actionToggleAI", "AI Assistant"));
     m_windowMenu->addSeparator();
@@ -227,6 +292,14 @@ void MenuBar::createHelpMenu() {
     m_helpMenu->addAction(createNamedAction("actionAbout", "About FreeEffect"));
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(createMenuAction("FreeEffect Help"));
+}
+
+void MenuBar::createScriptMenu() {
+    m_scriptMenu = addMenu("&Scripts");
+    m_scriptMenu->addAction(createNamedAction("actionRunScript", "Run Script..."));
+    m_scriptMenu->addAction(createNamedAction("actionOpenScriptEditor", "Script Editor"));
+    m_scriptMenu->addSeparator();
+    m_scriptMenu->addAction(createMenuAction("Recent Scripts"));
 }
 
 } // namespace FreeEffect
